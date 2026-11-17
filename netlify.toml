@@ -1,0 +1,15 @@
+# Netlify builds the site from GitHub on every push.
+# The build copies ONLY website files into _site, so the private notes (*.md),
+# print-assets/ and repo tooling are never published.
+
+[build]
+  command = "sh scripts/build.sh"
+  publish = "_site"
+
+# Production = pushes to main. Deploy previews = every pull request.
+# Branch deploys = every other pushed branch.
+[context.deploy-preview]
+  command = "sh scripts/build.sh"
+
+[context.branch-deploy]
+  command = "sh scripts/build.sh"
