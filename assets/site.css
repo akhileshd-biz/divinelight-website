@@ -1,0 +1,364 @@
+/* Divine Light — shared motion & polish layer (loaded after each page's own styles) */
+
+/* ---------- Smooth page-to-page transitions (Chrome, Edge, Safari 18+) ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .45s; animation-timing-function: cubic-bezier(.22,.61,.36,1); }
+.top-banner  { view-transition-name: dl-banner; }
+.site-header { view-transition-name: dl-header; }
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Accessible focus ring (keyboard users) ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--rose-deep);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Gentle, consistent hover motion ---------- */
+a, .btn, .tb-btn, .card, .svc-card, .quote-card, .quote-strip, .social-dot {
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease,
+              transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
+}
+.btn:hover, .top-banner a.tb-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(46,42,58,.14); }
+.btn:active, .top-banner a.tb-btn:active { transform: translateY(0); box-shadow: none; }
+.svc-card:hover, .quote-card:hover, .quote-strip:hover, a > .card:hover, a.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(46,42,58,.10);
+}
+.svc-row { transition: background-color .3s ease, padding .35s cubic-bezier(.22,.61,.36,1); border-radius: 3px; }
+a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-right: 12px; }
+
+/* Nav underline that grows from the centre */
+.nav-links a:not(.btn) { position: relative; }
+.nav-links a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1.5px;
+  background: currentColor; transform: scaleX(0); transform-origin: center;
+  transition: transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.nav-links a:not(.btn):hover::after, .nav-links a.current::after { transform: scaleX(1); }
+
+/* ---------- Header: sticks on larger screens, soft shadow once you scroll ---------- */
+@media (min-width: 900px) {
+  .site-header { position: sticky; top: 0; z-index: 30; }
+}
+.site-header { transition: box-shadow .35s ease, background-color .35s ease; }
+.site-header.is-scrolled { box-shadow: 0 6px 22px rgba(46,42,58,.08); }
+
+/* ---------- Banner: arrival, breathing lotus, rising motes of light ---------- */
+.top-banner { position: relative; overflow: hidden; isolation: isolate; }
+.tb-inner { position: relative; z-index: 1; }
+.dl-motes { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.dl-mote {
+  position: absolute; bottom: -12px; border-radius: 50%;
+  background: rgba(255,248,225,.95);
+  box-shadow: 0 0 12px 4px rgba(233,196,106,.45), 0 0 3px 1px rgba(255,255,255,.9);
+  opacity: 0;
+  animation: dl-rise var(--dur, 14s) linear var(--delay, 0s) infinite;
+}
+@keyframes dl-rise {
+  0%   { transform: translate3d(0, 0, 0) scale(.6); opacity: 0; }
+  12%  { opacity: var(--alpha, .7); }
+  85%  { opacity: var(--alpha, .7); }
+  100% { transform: translate3d(var(--drift, 20px), -560px, 0) scale(1); opacity: 0; }
+}
+
+.tb-logo-wrap { display: contents; }
+.tb-logo { animation: dl-arrive 1.1s cubic-bezier(.22,.61,.36,1) both; transform-origin: 50% 60%; }
+@keyframes dl-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+@keyframes dl-arrive  { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: scale(1); } }
+
+.tb-title, .tb-sub-row, .tb-tag, .tb-ctas { animation: dl-fade-up .9s cubic-bezier(.22,.61,.36,1) both; }
+.tb-title   { animation-delay: .15s; }
+.tb-sub-row { animation-delay: .32s; }
+.tb-tag     { animation-delay: .48s; }
+.tb-ctas    { animation-delay: .64s; }
+.tb-rule    { transform-origin: left; animation: dl-draw 1s cubic-bezier(.22,.61,.36,1) .45s both; }
+@keyframes dl-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes dl-draw    { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ---------- Content reveals softly as you scroll ---------- */
+.js-motion .dl-reveal:not(.is-visible) { opacity: 0; translate: 0 22px; }
+.js-motion .dl-reveal {
+  transition: opacity .8s cubic-bezier(.22,.61,.36,1) var(--dl-delay, 0ms), translate .8s cubic-bezier(.22,.61,.36,1) var(--dl-delay, 0ms),
+              transform .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out, color .3s ease;
+}
+
+/* Testimonial stars twinkle in once */
+.js-motion .is-visible .stars { animation: dl-twinkle 1.4s ease .3s both; }
+@keyframes dl-twinkle { 0% { opacity: .2; letter-spacing: 6px; } 100% { opacity: 1; letter-spacing: 2px; } }
+
+/* Booking call-to-action band: one slow, calm pulse to draw the eye */
+.cta-band .btn, .cta-box .btn { animation: dl-glow 3.5s ease-in-out 1s 2; }
+@keyframes dl-glow { 0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } 50% { box-shadow: 0 0 0 8px rgba(255,255,255,.18); } }
+
+/* ---------- Phones: a calmer, shorter first screen ---------- */
+@media (max-width: 640px) {
+  .top-banner { padding: 28px 20px 30px; }
+  .tb-inner { gap: 14px; }
+  .tb-logo { width: 120px; }
+  .tb-title { font-size: 38px; }
+  .tb-sub { font-size: 22px; }
+  .tb-tag { font-size: 16px; }
+  .top-banner a.tb-btn { min-height: 44px; padding: 0 22px; font-size: 15px; }
+  /* one tidy, swipeable row of menu links; booking lives in the sticky bottom bar */
+  .site-header { padding: 12px 16px; }
+  .nav-links { flex-wrap: nowrap; overflow-x: auto; gap: 18px; width: 100%; padding-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; }
+  .nav-links a.btn-primary { display: none; }
+  .sticky-cta { animation: dl-slide-up .6s cubic-bezier(.22,.61,.36,1) 1.2s both; }
+}
+@keyframes dl-slide-up { from { transform: translateY(100%); } to { transform: none; } }
+
+/* ---------- Respect people who prefer less motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .dl-motes { display: none; }
+  .js-motion .dl-reveal, .js-motion .dl-reveal:not(.is-visible) { opacity: 1; translate: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+}
+
+/* =====================================================================
+   Premium layer: notice banner, frosted header, bento grid, pricing deck,
+   booking section. Lavender tokens come from each page's :root.
+   ===================================================================== */
+:root { --dl-ease: cubic-bezier(.22,.61,.36,1); --dl-notice-h: 0px; --dl-hairline: rgba(46,42,58,.10); }
+
+/* ---------- 1. Dismissible notice banner ---------- */
+.dl-notice { position: relative; z-index: 40; background: var(--rose-tint); border-bottom: 1px solid var(--dl-hairline); view-transition-name: dl-notice; transition: opacity .3s var(--dl-ease), transform .3s var(--dl-ease); }
+.dl-notice-inner { max-width: 1080px; margin: 0 auto; padding: 10px 36px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; min-height: 44px; }
+.dl-notice-badge { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rose-deep); border: 1px solid var(--rose); border-radius: 999px; padding: 3px 10px; background: #fff; }
+.dl-notice-text { margin: 0; font-size: 14.5px; color: var(--ink); }
+.dl-notice-btn { display: inline-flex; align-items: center; min-height: 32px; padding: 0 16px; border-radius: 999px; background: var(--ink); color: #fff !important; font-size: 13.5px; font-weight: 600; letter-spacing: .02em; }
+.dl-notice-btn:hover { background: var(--rose-deep); transform: scale(1.03); }
+.dl-notice-close { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--ink-soft); cursor: pointer; transition: background-color .3s var(--dl-ease), color .3s var(--dl-ease), transform .3s var(--dl-ease); }
+.dl-notice-close:hover { background: rgba(255,255,255,.7); color: var(--ink); transform: translateY(-50%) rotate(90deg); }
+.dl-notice.is-closing { opacity: 0; transform: translateY(-100%); }
+.dl-notice-off .dl-notice { display: none; }
+@media (min-width: 900px) { .dl-notice { position: sticky; top: 0; } }
+@media (max-width: 640px) {
+  .dl-notice-inner { padding: 8px 48px 8px 16px; gap: 8px 10px; justify-content: flex-start; }
+  .dl-notice-text { font-size: 13px; flex-basis: 100%; }
+  .dl-notice-badge { font-size: 10px; }
+}
+
+/* ---------- 2. Frosted-glass sticky header ---------- */
+.site-header {
+  background: transparent; border-bottom: 1px solid transparent;
+  transition: background-color .3s var(--dl-ease), border-color .3s var(--dl-ease), box-shadow .3s var(--dl-ease), padding .3s var(--dl-ease), top .3s var(--dl-ease);
+}
+@media (min-width: 900px) { .site-header { top: var(--dl-notice-h); } }
+.site-header.is-scrolled {
+  background: rgba(247,245,250,.82);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+  border-bottom-color: var(--dl-hairline);
+  box-shadow: 0 1px 2px rgba(46,42,58,.05), 0 8px 24px rgba(46,42,58,.06);
+  padding-top: 12px; padding-bottom: 12px;
+}
+.nav-links a:not(.btn):hover { color: var(--rose-deep); }
+
+/* ---------- Shared section rhythm ---------- */
+.dl-section { padding-top: 88px; padding-bottom: 88px; }
+.dl-stack { display: flex; flex-direction: column; gap: 36px; }
+.dl-section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.dl-section-head .eyebrow { display: block; margin-bottom: 10px; }
+.dl-h2 { font-size: clamp(28px, 3.2vw, 38px); line-height: 1.15; letter-spacing: -.005em; }
+.dl-text-link { font-weight: 500; }
+.dl-text-link:hover { color: var(--rose-deep); }
+
+/* ---------- 3. Bento services grid ---------- */
+.dl-bento { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.dl-tile {
+  grid-column: span 1; display: flex; flex-direction: column; gap: 12px; min-height: 240px;
+  padding: 32px; border-radius: 24px; background: #fff; border: 1px solid var(--dl-hairline);
+  color: var(--ink); text-decoration: none;
+  transition: transform .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+.dl-tile--wide { grid-column: span 2; }
+a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow: 0 18px 40px rgba(46,42,58,.09); color: var(--ink); }
+.dl-tile-kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rose-deep); }
+.dl-tile-title { font-size: 26px; line-height: 1.15; }
+.dl-tile-copy { color: var(--ink-soft); font-size: 16px; line-height: 1.6; max-width: 46ch; }
+.dl-tile-meta { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--dl-hairline); display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; font-weight: 600; color: var(--rose-deep); }
+.dl-arrow { display: inline-block; transition: transform .3s ease-in-out; }
+a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
+.dl-tile--dark { background: var(--cream-dark); border-color: transparent; color: #fff; }
+.dl-tile--dark .dl-tile-kicker { color: #C9BEE6; }
+.dl-tile--dark .dl-tile-copy { color: #E4DFEE; }
+.dl-stat { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 84px; line-height: .95; color: #fff; margin: 8px 0 4px; }
+.dl-tile--accent { background: var(--rose-tint); border-color: rgba(110,95,146,.25); }
+.dl-tile--accent:hover { background: #E4DCF1; }
+@media (max-width: 900px) { .dl-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .dl-bento { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .dl-tile, .dl-tile--wide { grid-column: span 1; min-height: 0; padding: 24px; border-radius: 20px; }
+  .dl-stat { font-size: 64px; }
+  .dl-section { padding-top: 56px; padding-bottom: 56px; }
+}
+
+/* ---------- 4. Pricing deck (subgrid keeps every row aligned) ---------- */
+.dl-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.dl-plan {
+  display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 16px;
+  padding: 32px; border-radius: 24px; background: #fff; border: 1px solid var(--dl-hairline);
+  transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.dl-plan:hover { transform: scale(1.015); box-shadow: 0 18px 40px rgba(46,42,58,.09); }
+.dl-plan-name { font-size: 24px; line-height: 1.2; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.dl-plan-badge { font-family: 'Work Sans', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.35); }
+.dl-plan-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 48px; font-weight: 600; line-height: 1; color: var(--ink); }
+.dl-plan-price span:not(.dl-num) { font-family: 'Work Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--ink-soft); }
+.dl-plan-copy { color: var(--ink-soft); font-size: 15.5px; }
+.dl-plan-list { list-style: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--dl-hairline); display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: var(--ink); }
+.dl-plan-list li { display: flex; gap: 10px; align-items: baseline; }
+.dl-plan-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); flex: none; transform: translateY(-2px); }
+.dl-plan-btn { align-self: end; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink); font-weight: 600; font-size: 15px; transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out; }
+.dl-plan-btn:hover { background: var(--ink); color: #fff; transform: scale(1.02); }
+.dl-plan--featured { background: var(--cream-dark); border-color: transparent; box-shadow: 0 24px 48px rgba(46,42,58,.18); }
+.dl-plan--featured .dl-plan-name, .dl-plan--featured .dl-plan-price { color: #fff; }
+.dl-plan--featured .dl-plan-price span:not(.dl-num), .dl-plan--featured .dl-plan-copy { color: #E4DFEE; }
+.dl-plan--featured .dl-plan-list { color: #fff; border-top-color: rgba(255,255,255,.16); }
+.dl-plan--featured .dl-plan-list li::before { background: #C9BEE6; }
+.dl-plan--featured .dl-plan-btn { background: #fff; border-color: #fff; color: var(--cream-dark); }
+.dl-plan--featured .dl-plan-btn:hover { background: var(--rose-tint); color: var(--cream-dark); }
+@media (max-width: 900px) { .dl-plans { grid-template-columns: minmax(0, 1fr); max-width: 520px; } }
+
+/* ---------- 5. Booking section (Calendly-ready) ---------- */
+.dl-booking { scroll-margin-top: 120px; }
+.dl-booking-frame { position: relative; min-height: 700px; border-radius: 20px; overflow: hidden; background: var(--paper); border: 1px solid var(--dl-hairline); }
+.dl-booking-frame .calendly-inline-widget { position: relative; z-index: 1; min-width: 320px; height: 700px; }
+.dl-loader { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--ink-soft); font-size: 14.5px; z-index: 0; transition: opacity .4s var(--dl-ease); }
+.dl-loader::before { content: ""; width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--rose); animation: dl-spin 1s linear infinite; }
+.dl-booking-frame.is-loaded .dl-loader { opacity: 0; }
+@keyframes dl-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .dl-loader::before { animation: none !important; border-top-color: var(--line); }
+  a.dl-tile:hover, .dl-plan:hover { transform: none; }
+}
+
+/* Phones: one consistent 20px side gutter instead of stacked section + container padding */
+@media (max-width: 640px) {
+  .section, .section-tight, .dl-section { padding-left: 0; padding-right: 0; }
+  .container { padding-inline: 20px; }
+}
+
+/* =====================================================================
+   Menu bar: centred on the same 1080px column as the content, balanced
+   at every width, sticky on every screen size.
+   ===================================================================== */
+.site-header {
+  position: sticky; top: var(--dl-notice-h); z-index: 30;
+  /* full-width glass background, but the logo + links line up with the page content */
+  padding-left: max(72px, calc((100% - 1008px) / 2));
+  padding-right: max(72px, calc((100% - 1008px) / 2));
+  column-gap: 32px;
+}
+.site-header .brand { flex: none; }
+.nav-links { gap: clamp(16px, 1.7vw, 26px); }
+
+/* Laptops / tablets: when logo and links no longer fit on one line,
+   stack them and centre both so nothing hangs to one side */
+@media (max-width: 1020px) {
+  .site-header { flex-direction: column; justify-content: center; align-items: center; row-gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .nav-links { justify-content: center; }
+  .site-header.is-scrolled { padding-top: 10px; padding-bottom: 10px; }
+}
+
+/* Phones: compact sticky bar — logo on top, one centred, swipeable row of links */
+@media (max-width: 640px) {
+  .site-header { padding-left: 16px; padding-right: 16px; row-gap: 8px; }
+  .nav-links { justify-content: flex-start; gap: 20px; }
+  .nav-links > :first-child { margin-left: auto; }
+  .nav-links > a:last-child:not(.btn-primary),
+  .nav-links > a:nth-last-child(2):not(.btn-primary) { margin-right: auto; }
+  .site-header.is-scrolled { padding-top: 8px; padding-bottom: 8px; row-gap: 4px; }
+  .site-header.is-scrolled .brand-sub { display: none; }
+}
+
+/* Final sticky rule: the notice scrolls away with the page; the menu bar
+   always sticks to the very top, so the two can never overlap. */
+.dl-notice { position: relative !important; top: auto; }
+.site-header { top: 0 !important; }
+
+/* =====================================================================
+   Rate card motion (Rates page)
+   ===================================================================== */
+.dl-num { font-variant-numeric: tabular-nums; display: inline-block; }
+
+/* plan cards: features arrive one by one after the card */
+.js-motion .dl-plan .dl-plan-list li { opacity: 0; translate: -8px 0; transition: opacity .5s var(--dl-ease), translate .5s var(--dl-ease); }
+.js-motion .dl-plan.is-visible .dl-plan-list li { opacity: 1; translate: none; }
+.js-motion .dl-plan.is-visible .dl-plan-list li:nth-child(1) { transition-delay: .55s; }
+.js-motion .dl-plan.is-visible .dl-plan-list li:nth-child(2) { transition-delay: .7s; }
+.js-motion .dl-plan.is-visible .dl-plan-list li:nth-child(3) { transition-delay: .85s; }
+
+/* old price gets a hand-drawn strike-through */
+.dl-plan-price s { position: relative; text-decoration: none; }
+.dl-plan-price s::after { content: ""; position: absolute; left: -2px; right: -2px; top: 52%; height: 1.5px; background: currentColor; transform: scaleX(1); transform-origin: left; }
+.js-motion .dl-plan .dl-plan-price s::after { transform: scaleX(0); transition: transform .6s var(--dl-ease) 1.1s; }
+.js-motion .dl-plan.is-visible .dl-plan-price s::after { transform: scaleX(1); }
+
+/* featured plan: a slow band of light drifts across now and then */
+.dl-plan--featured { position: relative; overflow: hidden; isolation: isolate; }
+.dl-plan--featured > * { position: relative; z-index: 1; }
+.dl-plan--featured::before {
+  content: ""; position: absolute; inset: -40% auto -40% -60%; width: 45%; z-index: 0; pointer-events: none;
+  background: linear-gradient(100deg, transparent 0%, rgba(201,190,230,.0) 20%, rgba(201,190,230,.22) 50%, rgba(201,190,230,0) 80%, transparent 100%);
+  transform: rotate(12deg) translateX(0);
+  animation: dl-sheen 7s ease-in-out 2s infinite;
+}
+@keyframes dl-sheen { 0% { transform: rotate(12deg) translateX(0); } 45%, 100% { transform: rotate(12deg) translateX(420%); } }
+.dl-plan-badge { animation: dl-badge 4s ease-in-out 2.5s infinite; }
+@keyframes dl-badge { 0%,100% { border-color: rgba(255,255,255,.35); } 50% { border-color: rgba(255,255,255,.75); } }
+
+/* full price table: rows cascade in, soft highlight on hover */
+.dl-table tbody tr { transition: background-color .3s ease; }
+.dl-table tbody tr:hover { background: var(--rose-tint); }
+.js-motion .table-scroll.dl-reveal tbody tr { opacity: 0; translate: 0 10px; transition: opacity .5s var(--dl-ease), translate .5s var(--dl-ease), background-color .3s ease; }
+.js-motion .table-scroll.dl-reveal.is-visible tbody tr { opacity: 1; translate: none; transition-delay: calc(.15s + var(--r, 0) * 60ms), calc(.15s + var(--r, 0) * 60ms), 0s; }
+.price-cell { transition: color .3s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dl-plan--featured::before { display: none; }
+  .js-motion .dl-plan .dl-plan-list li, .js-motion .table-scroll.dl-reveal tbody tr { opacity: 1; translate: none; }
+  .js-motion .dl-plan .dl-plan-price s::after { transform: scaleX(1); }
+}
+
+/* =====================================================================
+   Audit quick wins
+   ===================================================================== */
+/* Menu links: comfortable ~44px tap areas; underline stays tight to the word */
+.nav-links a:not(.btn) { padding-top: 10px; padding-bottom: 10px; }
+.nav-links a:not(.btn)::after { bottom: 6px; }
+
+/* No text smaller than ~14px except tiny all-caps labels */
+.brand-sub { font-size: 10.5px; }
+.footer-links a, .site-footer p { font-size: 15.5px !important; }
+.footer-bottom { font-size: 14px; }
+.quote-attr, .quote-card .attr { font-size: 14px; }
+.footer-links a { padding: 3px 0; }
+
+/* Star rating under the banner buttons */
+.top-banner a.tb-rating {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; align-self: flex-start;
+  font-size: 15px; font-weight: 500; color: var(--ink-soft); text-decoration: none; min-height: 32px;
+  animation: dl-fade-up .9s cubic-bezier(.22,.61,.36,1) .8s both;
+}
+.top-banner a.tb-rating:hover { color: var(--rose-deep); }
+.tb-stars { color: #9A7428; letter-spacing: 2px; font-size: 16px; }
+
+/* Google reviews link (replaces placeholder social icons) */
+.dl-reviews-link { display: inline-flex; align-items: center; min-height: 40px; font-size: 15px; font-weight: 500; }
+.site-footer .dl-reviews-link { color: #E4DFEE; }
+.site-footer .dl-reviews-link:hover { color: #FFFFFF; }
+
+/* Phones: notice bar collapses to a single 44px line */
+@media (max-width: 640px) {
+  .dl-notice-inner { flex-wrap: nowrap; min-height: 44px; padding-top: 6px; padding-bottom: 6px; }
+  .dl-notice-text { display: none; }
+  .dl-notice-btn { min-height: 32px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
+  .top-banner a.tb-rating { align-self: center; }
+}

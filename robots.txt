@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://divinelighthealing-lifecoach.com/sitemap.xml

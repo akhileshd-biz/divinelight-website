@@ -1,0 +1,498 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1400" viewBox="0 0 1400 1400">
+ <rect width="1400" height="1400" fill="#F7F5FA"/>
+ <g transform="translate(160,0)">
+  <rect width="1080" height="570" fill="#E9E4F1"/>
+  <svg x="428" y="14" width="224" height="213" viewBox="0 0 400 380">
+  <defs>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#F8E4A6" stop-opacity="0.85"></stop>
+      <stop offset="0.6" stop-color="#F3D27E" stop-opacity="0.35"></stop>
+      <stop offset="1" stop-color="#F3D27E" stop-opacity="0"></stop>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+    <linearGradient id="bamboo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDCF86"></stop><stop offset="0.5" stop-color="#C8963E"></stop><stop offset="1" stop-color="#8A5E22"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <circle cx="200" cy="190" r="118" fill="url(#halo)"></circle>
+  <g transform="translate(200,190)" stroke="#C9A24A" stroke-linecap="round" stroke-opacity="0.75">
+    <line x1="0" y1="-92" x2="0" y2="-138" stroke-width="2" transform="rotate(-75)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-120" stroke-width="1.4" transform="rotate(-60)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-138" stroke-width="2" transform="rotate(-45)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-120" stroke-width="1.4" transform="rotate(-30)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-138" stroke-width="2" transform="rotate(-15)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-128" stroke-width="1.4" transform="rotate(0)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-138" stroke-width="2" transform="rotate(15)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-120" stroke-width="1.4" transform="rotate(30)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-138" stroke-width="2" transform="rotate(45)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-120" stroke-width="1.4" transform="rotate(60)"></line>
+    <line x1="0" y1="-92" x2="0" y2="-138" stroke-width="2" transform="rotate(75)"></line>
+  </g>
+
+  
+  <g transform="translate(68,226) rotate(15)">
+    <g fill="none" stroke-width="0.8" stroke-opacity="0.85" stroke-linecap="round"><path d="M0,104 Q-2.8,101.0 -5.0,94.0" stroke="#4E9A6E"></path><path d="M0,104 Q2.8,101.0 5.0,94.0" stroke="#4E9A6E"></path><path d="M0,98 Q-3.5,95.0 -6.3,87.7" stroke="#7FA94E"></path><path d="M0,98 Q3.5,95.0 6.3,87.7" stroke="#7FA94E"></path><path d="M0,92 Q-4.2,89.0 -7.6,81.4" stroke="#3F8C63"></path><path d="M0,92 Q4.2,89.0 7.6,81.4" stroke="#3F8C63"></path><path d="M0,86 Q-4.9,83.0 -8.8,75.1" stroke="#4E9A6E"></path><path d="M0,86 Q4.9,83.0 8.8,75.1" stroke="#4E9A6E"></path><path d="M0,80 Q-5.5,77.0 -10.1,68.8" stroke="#7FA94E"></path><path d="M0,80 Q5.5,77.0 10.1,68.8" stroke="#7FA94E"></path><path d="M0,74 Q-6.2,71.0 -11.3,62.5" stroke="#3F8C63"></path><path d="M0,74 Q6.2,71.0 11.3,62.5" stroke="#3F8C63"></path><path d="M0,68 Q-6.8,65.0 -12.4,56.2" stroke="#4E9A6E"></path><path d="M0,68 Q6.8,65.0 12.4,56.2" stroke="#4E9A6E"></path><path d="M0,62 Q-7.5,59.0 -13.6,49.8" stroke="#7FA94E"></path><path d="M0,62 Q7.5,59.0 13.6,49.8" stroke="#7FA94E"></path><path d="M0,56 Q-8.1,53.0 -14.7,43.5" stroke="#3F8C63"></path><path d="M0,56 Q8.1,53.0 14.7,43.5" stroke="#3F8C63"></path><path d="M0,50 Q-8.6,47.0 -15.7,37.2" stroke="#4E9A6E"></path><path d="M0,50 Q8.6,47.0 15.7,37.2" stroke="#4E9A6E"></path><path d="M0,44 Q-9.2,41.0 -16.7,30.9" stroke="#7FA94E"></path><path d="M0,44 Q9.2,41.0 16.7,30.9" stroke="#7FA94E"></path><path d="M0,38 Q-9.7,35.0 -17.6,24.6" stroke="#3F8C63"></path><path d="M0,38 Q9.7,35.0 17.6,24.6" stroke="#3F8C63"></path><path d="M0,32 Q-10.1,29.0 -18.4,18.3" stroke="#4E9A6E"></path><path d="M0,32 Q10.1,29.0 18.4,18.3" stroke="#4E9A6E"></path><path d="M0,26 Q-10.5,23.0 -19.1,12.0" stroke="#7FA94E"></path><path d="M0,26 Q10.5,23.0 19.1,12.0" stroke="#7FA94E"></path><path d="M0,20 Q-10.9,17.0 -19.8,5.7" stroke="#3F8C63"></path><path d="M0,20 Q10.9,17.0 19.8,5.7" stroke="#3F8C63"></path><path d="M0,14 Q-11.2,11.0 -20.4,-0.6" stroke="#4E9A6E"></path><path d="M0,14 Q11.2,11.0 20.4,-0.6" stroke="#4E9A6E"></path><path d="M0,8 Q-11.5,5.0 -20.9,-6.9" stroke="#7FA94E"></path><path d="M0,8 Q11.5,5.0 20.9,-6.9" stroke="#7FA94E"></path><path d="M0,2 Q-11.7,-1.0 -21.3,-13.2" stroke="#3F8C63"></path><path d="M0,2 Q11.7,-1.0 21.3,-13.2" stroke="#3F8C63"></path><path d="M0,-4 Q-11.9,-7.0 -21.6,-19.5" stroke="#4E9A6E"></path><path d="M0,-4 Q11.9,-7.0 21.6,-19.5" stroke="#4E9A6E"></path><path d="M0,-10 Q-12.0,-13.0 -21.8,-25.8" stroke="#7FA94E"></path><path d="M0,-10 Q12.0,-13.0 21.8,-25.8" stroke="#7FA94E"></path><path d="M0,-16 Q-12.1,-19.0 -22.0,-32.2" stroke="#3F8C63"></path><path d="M0,-16 Q12.1,-19.0 22.0,-32.2" stroke="#3F8C63"></path><path d="M0,-22 Q-12.1,-25.0 -22.0,-38.5" stroke="#4E9A6E"></path><path d="M0,-22 Q12.1,-25.0 22.0,-38.5" stroke="#4E9A6E"></path><path d="M0,-28 Q-12.1,-31.0 -22.0,-44.8" stroke="#7FA94E"></path><path d="M0,-28 Q12.1,-31.0 22.0,-44.8" stroke="#7FA94E"></path><path d="M0,-34 Q-12.1,-37.0 -22.0,-51.1" stroke="#3F8C63"></path><path d="M0,-34 Q12.1,-37.0 22.0,-51.1" stroke="#3F8C63"></path><path d="M0,-40 Q-12.1,-43.0 -22.0,-57.4" stroke="#4E9A6E"></path><path d="M0,-40 Q12.1,-43.0 22.0,-57.4" stroke="#4E9A6E"></path><path d="M0,-46 Q-12.1,-49.0 -22.0,-63.7" stroke="#7FA94E"></path><path d="M0,-46 Q12.1,-49.0 22.0,-63.7" stroke="#7FA94E"></path></g>
+    <g fill="none" stroke-width="0.9" stroke-opacity="0.8" stroke-linecap="round"><path d="M0.0,-108.0 Q3.2,-114.4 2.5,-120.9" stroke="#9AA84A"></path><path d="M4.0,-107.4 Q8.8,-114.9 9.7,-123.2" stroke="#5FAE76"></path><path d="M7.7,-105.8 Q13.1,-110.2 14.8,-116.2" stroke="#9AA84A"></path><path d="M11.2,-103.0 Q18.3,-107.7 22.1,-114.7" stroke="#5FAE76"></path><path d="M14.1,-99.4 Q20.7,-101.1 24.6,-105.7" stroke="#9AA84A"></path><path d="M16.5,-95.0 Q24.6,-96.0 30.7,-100.5" stroke="#5FAE76"></path><path d="M18.1,-90.0 Q24.7,-88.6 30.2,-91.0" stroke="#9AA84A"></path><path d="M18.9,-84.7 Q26.7,-81.9 34.0,-83.1" stroke="#5FAE76"></path><path d="M18.9,-79.3 Q24.5,-75.1 30.5,-74.8" stroke="#9AA84A"></path><path d="M18.1,-74.0 Q24.1,-67.8 31.4,-65.5" stroke="#5FAE76"></path><path d="M16.5,-69.0 Q20.0,-62.7 25.5,-59.9" stroke="#9AA84A"></path><path d="M14.1,-64.6 Q17.4,-56.2 23.4,-50.8" stroke="#5FAE76"></path><path d="M11.2,-61.0 Q12.0,-53.7 16.2,-48.7" stroke="#9AA84A"></path><path d="M7.7,-58.2 Q7.7,-49.0 11.3,-41.4" stroke="#5FAE76"></path><path d="M4.0,-56.6 Q2.0,-49.5 4.0,-43.3" stroke="#9AA84A"></path><path d="M0.0,-56.0 Q-3.4,-47.6 -2.7,-39.1" stroke="#5FAE76"></path><path d="M-4.0,-56.6 Q-8.4,-51.0 -8.8,-44.6" stroke="#9AA84A"></path><path d="M-7.7,-58.2 Q-13.8,-52.1 -16.3,-44.2" stroke="#5FAE76"></path><path d="M-11.2,-61.0 Q-17.3,-57.8 -20.2,-52.4" stroke="#9AA84A"></path><path d="M-14.1,-64.6 Q-21.9,-61.7 -27.0,-55.9" stroke="#5FAE76"></path><path d="M-16.5,-69.0 Q-23.2,-68.9 -28.0,-65.3" stroke="#9AA84A"></path><path d="M-18.1,-74.0 Q-26.2,-74.9 -33.1,-72.0" stroke="#5FAE76"></path><path d="M-18.9,-79.3 Q-25.2,-82.1 -31.0,-81.0" stroke="#9AA84A"></path><path d="M-18.9,-84.7 Q-25.9,-89.3 -33.4,-89.9" stroke="#5FAE76"></path><path d="M-18.1,-90.0 Q-22.7,-95.4 -28.6,-97.0" stroke="#9AA84A"></path><path d="M-16.5,-95.0 Q-21.2,-102.4 -28.0,-106.4" stroke="#5FAE76"></path><path d="M-14.1,-99.4 Q-16.4,-106.3 -21.3,-110.3" stroke="#9AA84A"></path><path d="M-11.2,-103.0 Q-12.8,-112.0 -17.7,-118.7" stroke="#5FAE76"></path><path d="M-7.7,-105.8 Q-7.2,-113.1 -10.3,-118.8" stroke="#9AA84A"></path><path d="M-4.0,-107.4 Q-2.2,-116.5 -4.4,-124.6" stroke="#5FAE76"></path></g>
+    <path d="M-1.5,112 Q-2,0 -0.5,-112 L0.5,-112 Q0.5,0 1.5,112Z" fill="#BFA060"></path>
+    <ellipse cx="0" cy="-82" rx="20" ry="27" fill="#4CAF7A"></ellipse>
+    <ellipse cx="0" cy="-81" rx="16.5" ry="22.5" fill="#C9A548"></ellipse>
+    <ellipse cx="0" cy="-80" rx="13" ry="18" fill="#1A8E9C"></ellipse>
+    <path d="M0,-66 C-11,-72 -10,-90 -3,-92 C-1,-92.5 0,-91 0,-90 C0,-91 1,-92.5 3,-92 C10,-90 11,-72 0,-66Z" fill="#23479C"></path>
+    <path d="M0,-71 C-6,-75 -5.5,-85 -1.5,-86 C-0.5,-86 0,-85.5 0,-85 C0,-85.5 0.5,-86 1.5,-86 C5.5,-85 6,-75 0,-71Z" fill="#121F52"></path>
+    <ellipse cx="-3.5" cy="-88" rx="2.2" ry="3" fill="#FFFFFF" fill-opacity="0.35"></ellipse>
+    </g>
+
+  
+  <g transform="translate(332,226) rotate(-15)">
+    <g fill="none" stroke-width="0.8" stroke-opacity="0.85" stroke-linecap="round"><path d="M0,104 Q-2.8,101.0 -5.0,94.0" stroke="#4E9A6E"></path><path d="M0,104 Q2.8,101.0 5.0,94.0" stroke="#4E9A6E"></path><path d="M0,98 Q-3.5,95.0 -6.3,87.7" stroke="#7FA94E"></path><path d="M0,98 Q3.5,95.0 6.3,87.7" stroke="#7FA94E"></path><path d="M0,92 Q-4.2,89.0 -7.6,81.4" stroke="#3F8C63"></path><path d="M0,92 Q4.2,89.0 7.6,81.4" stroke="#3F8C63"></path><path d="M0,86 Q-4.9,83.0 -8.8,75.1" stroke="#4E9A6E"></path><path d="M0,86 Q4.9,83.0 8.8,75.1" stroke="#4E9A6E"></path><path d="M0,80 Q-5.5,77.0 -10.1,68.8" stroke="#7FA94E"></path><path d="M0,80 Q5.5,77.0 10.1,68.8" stroke="#7FA94E"></path><path d="M0,74 Q-6.2,71.0 -11.3,62.5" stroke="#3F8C63"></path><path d="M0,74 Q6.2,71.0 11.3,62.5" stroke="#3F8C63"></path><path d="M0,68 Q-6.8,65.0 -12.4,56.2" stroke="#4E9A6E"></path><path d="M0,68 Q6.8,65.0 12.4,56.2" stroke="#4E9A6E"></path><path d="M0,62 Q-7.5,59.0 -13.6,49.8" stroke="#7FA94E"></path><path d="M0,62 Q7.5,59.0 13.6,49.8" stroke="#7FA94E"></path><path d="M0,56 Q-8.1,53.0 -14.7,43.5" stroke="#3F8C63"></path><path d="M0,56 Q8.1,53.0 14.7,43.5" stroke="#3F8C63"></path><path d="M0,50 Q-8.6,47.0 -15.7,37.2" stroke="#4E9A6E"></path><path d="M0,50 Q8.6,47.0 15.7,37.2" stroke="#4E9A6E"></path><path d="M0,44 Q-9.2,41.0 -16.7,30.9" stroke="#7FA94E"></path><path d="M0,44 Q9.2,41.0 16.7,30.9" stroke="#7FA94E"></path><path d="M0,38 Q-9.7,35.0 -17.6,24.6" stroke="#3F8C63"></path><path d="M0,38 Q9.7,35.0 17.6,24.6" stroke="#3F8C63"></path><path d="M0,32 Q-10.1,29.0 -18.4,18.3" stroke="#4E9A6E"></path><path d="M0,32 Q10.1,29.0 18.4,18.3" stroke="#4E9A6E"></path><path d="M0,26 Q-10.5,23.0 -19.1,12.0" stroke="#7FA94E"></path><path d="M0,26 Q10.5,23.0 19.1,12.0" stroke="#7FA94E"></path><path d="M0,20 Q-10.9,17.0 -19.8,5.7" stroke="#3F8C63"></path><path d="M0,20 Q10.9,17.0 19.8,5.7" stroke="#3F8C63"></path><path d="M0,14 Q-11.2,11.0 -20.4,-0.6" stroke="#4E9A6E"></path><path d="M0,14 Q11.2,11.0 20.4,-0.6" stroke="#4E9A6E"></path><path d="M0,8 Q-11.5,5.0 -20.9,-6.9" stroke="#7FA94E"></path><path d="M0,8 Q11.5,5.0 20.9,-6.9" stroke="#7FA94E"></path><path d="M0,2 Q-11.7,-1.0 -21.3,-13.2" stroke="#3F8C63"></path><path d="M0,2 Q11.7,-1.0 21.3,-13.2" stroke="#3F8C63"></path><path d="M0,-4 Q-11.9,-7.0 -21.6,-19.5" stroke="#4E9A6E"></path><path d="M0,-4 Q11.9,-7.0 21.6,-19.5" stroke="#4E9A6E"></path><path d="M0,-10 Q-12.0,-13.0 -21.8,-25.8" stroke="#7FA94E"></path><path d="M0,-10 Q12.0,-13.0 21.8,-25.8" stroke="#7FA94E"></path><path d="M0,-16 Q-12.1,-19.0 -22.0,-32.2" stroke="#3F8C63"></path><path d="M0,-16 Q12.1,-19.0 22.0,-32.2" stroke="#3F8C63"></path><path d="M0,-22 Q-12.1,-25.0 -22.0,-38.5" stroke="#4E9A6E"></path><path d="M0,-22 Q12.1,-25.0 22.0,-38.5" stroke="#4E9A6E"></path><path d="M0,-28 Q-12.1,-31.0 -22.0,-44.8" stroke="#7FA94E"></path><path d="M0,-28 Q12.1,-31.0 22.0,-44.8" stroke="#7FA94E"></path><path d="M0,-34 Q-12.1,-37.0 -22.0,-51.1" stroke="#3F8C63"></path><path d="M0,-34 Q12.1,-37.0 22.0,-51.1" stroke="#3F8C63"></path><path d="M0,-40 Q-12.1,-43.0 -22.0,-57.4" stroke="#4E9A6E"></path><path d="M0,-40 Q12.1,-43.0 22.0,-57.4" stroke="#4E9A6E"></path><path d="M0,-46 Q-12.1,-49.0 -22.0,-63.7" stroke="#7FA94E"></path><path d="M0,-46 Q12.1,-49.0 22.0,-63.7" stroke="#7FA94E"></path></g>
+    <g fill="none" stroke-width="0.9" stroke-opacity="0.8" stroke-linecap="round"><path d="M0.0,-108.0 Q3.2,-114.4 2.5,-120.9" stroke="#9AA84A"></path><path d="M4.0,-107.4 Q8.8,-114.9 9.7,-123.2" stroke="#5FAE76"></path><path d="M7.7,-105.8 Q13.1,-110.2 14.8,-116.2" stroke="#9AA84A"></path><path d="M11.2,-103.0 Q18.3,-107.7 22.1,-114.7" stroke="#5FAE76"></path><path d="M14.1,-99.4 Q20.7,-101.1 24.6,-105.7" stroke="#9AA84A"></path><path d="M16.5,-95.0 Q24.6,-96.0 30.7,-100.5" stroke="#5FAE76"></path><path d="M18.1,-90.0 Q24.7,-88.6 30.2,-91.0" stroke="#9AA84A"></path><path d="M18.9,-84.7 Q26.7,-81.9 34.0,-83.1" stroke="#5FAE76"></path><path d="M18.9,-79.3 Q24.5,-75.1 30.5,-74.8" stroke="#9AA84A"></path><path d="M18.1,-74.0 Q24.1,-67.8 31.4,-65.5" stroke="#5FAE76"></path><path d="M16.5,-69.0 Q20.0,-62.7 25.5,-59.9" stroke="#9AA84A"></path><path d="M14.1,-64.6 Q17.4,-56.2 23.4,-50.8" stroke="#5FAE76"></path><path d="M11.2,-61.0 Q12.0,-53.7 16.2,-48.7" stroke="#9AA84A"></path><path d="M7.7,-58.2 Q7.7,-49.0 11.3,-41.4" stroke="#5FAE76"></path><path d="M4.0,-56.6 Q2.0,-49.5 4.0,-43.3" stroke="#9AA84A"></path><path d="M0.0,-56.0 Q-3.4,-47.6 -2.7,-39.1" stroke="#5FAE76"></path><path d="M-4.0,-56.6 Q-8.4,-51.0 -8.8,-44.6" stroke="#9AA84A"></path><path d="M-7.7,-58.2 Q-13.8,-52.1 -16.3,-44.2" stroke="#5FAE76"></path><path d="M-11.2,-61.0 Q-17.3,-57.8 -20.2,-52.4" stroke="#9AA84A"></path><path d="M-14.1,-64.6 Q-21.9,-61.7 -27.0,-55.9" stroke="#5FAE76"></path><path d="M-16.5,-69.0 Q-23.2,-68.9 -28.0,-65.3" stroke="#9AA84A"></path><path d="M-18.1,-74.0 Q-26.2,-74.9 -33.1,-72.0" stroke="#5FAE76"></path><path d="M-18.9,-79.3 Q-25.2,-82.1 -31.0,-81.0" stroke="#9AA84A"></path><path d="M-18.9,-84.7 Q-25.9,-89.3 -33.4,-89.9" stroke="#5FAE76"></path><path d="M-18.1,-90.0 Q-22.7,-95.4 -28.6,-97.0" stroke="#9AA84A"></path><path d="M-16.5,-95.0 Q-21.2,-102.4 -28.0,-106.4" stroke="#5FAE76"></path><path d="M-14.1,-99.4 Q-16.4,-106.3 -21.3,-110.3" stroke="#9AA84A"></path><path d="M-11.2,-103.0 Q-12.8,-112.0 -17.7,-118.7" stroke="#5FAE76"></path><path d="M-7.7,-105.8 Q-7.2,-113.1 -10.3,-118.8" stroke="#9AA84A"></path><path d="M-4.0,-107.4 Q-2.2,-116.5 -4.4,-124.6" stroke="#5FAE76"></path></g>
+    <path d="M-1.5,112 Q2,0 -0.5,-112 L0.5,-112 Q4.5,0 1.5,112Z" fill="#BFA060"></path>
+    <ellipse cx="0" cy="-82" rx="20" ry="27" fill="#4CAF7A"></ellipse>
+    <ellipse cx="0" cy="-81" rx="16.5" ry="22.5" fill="#C9A548"></ellipse>
+    <ellipse cx="0" cy="-80" rx="13" ry="18" fill="#1A8E9C"></ellipse>
+    <path d="M0,-66 C-11,-72 -10,-90 -3,-92 C-1,-92.5 0,-91 0,-90 C0,-91 1,-92.5 3,-92 C10,-90 11,-72 0,-66Z" fill="#23479C"></path>
+    <path d="M0,-71 C-6,-75 -5.5,-85 -1.5,-86 C-0.5,-86 0,-85.5 0,-85 C0,-85.5 0.5,-86 1.5,-86 C5.5,-85 6,-75 0,-71Z" fill="#121F52"></path>
+    <ellipse cx="-3.5" cy="-88" rx="2.2" ry="3" fill="#FFFFFF" fill-opacity="0.35"></ellipse>
+    </g>
+
+  
+  <ellipse cx="142" cy="270" rx="34" ry="7" fill="#2F8A5F"></ellipse>
+  <ellipse cx="258" cy="270" rx="34" ry="7" fill="#2F8A5F"></ellipse>
+  <path d="M120,280 Q200,296 280,280" fill="none" stroke="#13889A" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M148,291 Q200,302 252,291" fill="none" stroke="#13889A" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.7"></path>
+
+  
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="1">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+
+  
+  <g transform="translate(200,40)">
+    <rect x="-112" y="-6.5" width="224" height="13" rx="6.5" fill="url(#bamboo)" stroke="#7A5220" stroke-width="0.8"></rect>
+    <rect x="-102" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="-95" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
+    <rect x="91" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="98" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
+    <ellipse cx="-70" cy="0" rx="3.6" ry="2.6" fill="#4A2E10"></ellipse>
+    <circle cx="-10" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="6" cy="0" r="2.6" fill="#4A2E10"></circle>
+    <circle cx="22" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="38" cy="0" r="2.6" fill="#4A2E10"></circle>
+    <circle cx="54" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="70" cy="0" r="2.6" fill="#4A2E10"></circle>
+    <path d="M-100,6 C-106,18 -96,26 -102,38" fill="none" stroke="#B03A48" stroke-width="2" stroke-linecap="round"></path>
+    <circle cx="-102" cy="40" r="3" fill="#C9A24A"></circle>
+  </g>
+
+  
+  <g transform="translate(200,322)">
+    <rect x="-112" y="-6.5" width="224" height="13" rx="6.5" fill="url(#bamboo)" stroke="#7A5220" stroke-width="0.8"></rect>
+    <rect x="-102" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="-95" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
+    <rect x="91" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="98" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
+    <ellipse cx="70" cy="0" rx="3.6" ry="2.6" fill="#4A2E10"></ellipse>
+    <circle cx="-70" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="-54" cy="0" r="2.6" fill="#4A2E10"></circle>
+    <circle cx="-38" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="-22" cy="0" r="2.6" fill="#4A2E10"></circle>
+    <circle cx="-6" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="10" cy="0" r="2.6" fill="#4A2E10"></circle>
+    <path d="M100,6 C106,18 96,26 102,38" fill="none" stroke="#B03A48" stroke-width="2" stroke-linecap="round"></path>
+    <circle cx="102" cy="40" r="3" fill="#C9A24A"></circle>
+  </g>
+</svg>
+  <text x="540" y="298" text-anchor="middle" font-family="Georgia, serif" font-size="76" letter-spacing="9" fill="#2E2A3A">DIVINE LIGHT</text>
+  <line x1="130" y1="340" x2="212" y2="340" stroke="#A89BC9" stroke-width="3"/>
+  <line x1="868" y1="340" x2="950" y2="340" stroke="#A89BC9" stroke-width="3"/>
+  <text x="540" y="354" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="42" fill="#5E5180">Healing and Life Coaching</text>
+  <text x="540" y="428" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#2E2A3A">Feeling stressed, stuck</text>
+  <text x="540" y="492" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#2E2A3A">or overwhelmed?</text>
+  <text x="540" y="556" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#6E5F92">Find your calm again.</text>
+
+  <text x="540" y="628" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="35" font-weight="600" fill="#2E2A3A">Reiki · Life Coaching · Subconscious Programming</text>
+  <text x="540" y="678" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="35" font-weight="600" fill="#2E2A3A">Chakra Healing · Emotional Detox · Anxiety Support</text>
+
+  <rect x="370" y="716" width="340" height="74" rx="37" fill="#6E5F92"/>
+  <text x="540" y="765" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Book a call</text>
+
+  <rect x="36" y="830" width="1008" height="176" rx="24" fill="#FFFFFF" stroke="#D9D0E8" stroke-width="2"/>
+  <svg x="62" y="846" width="144" height="144" viewBox="0 0 33 33" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h33v33H0z"/><path stroke="#2E2A3A" d="M0 0.5h7m3 0h1m1 0h1m3 0h6m1 0h1m2 0h7M0 1.5h1m5 0h1m3 0h1m4 0h4m1 0h3m1 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h2m4 0h2m1 0h1m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h3m5 0h1m3 0h2m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h3m1 0h4m1 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h1m4 0h2m3 0h1m1 0h3m1 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h3m5 0h1m2 0h5M0 8.5h1m1 0h5m2 0h2m2 0h2m2 0h1m1 0h1m2 0h3m1 0h5M0 9.5h2m1 0h2m2 0h1m2 0h1m2 0h1m2 0h6m1 0h1m2 0h2m1 0h2m1 0h1M0 10.5h4m1 0h2m1 0h1m4 0h3m1 0h1m3 0h1m3 0h2m1 0h1m1 0h2M0 11.5h2m1 0h3m2 0h2m1 0h1m1 0h1m1 0h4m2 0h2m1 0h3m1 0h5M0 12.5h1m1 0h5m2 0h1m4 0h1m1 0h1m2 0h1m2 0h4m1 0h3m1 0h2M3 13.5h1m1 0h1m6 0h1m2 0h1m1 0h4m2 0h1m2 0h1m3 0h3M0 14.5h5m1 0h2m1 0h3m3 0h2m3 0h3m2 0h2m1 0h4M3 15.5h2m2 0h3m2 0h4m2 0h4m1 0h1m1 0h3m1 0h2M0 16.5h3m1 0h3m2 0h7m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M1 17.5h2m1 0h2m1 0h1m3 0h2m1 0h1m1 0h1m1 0h4m1 0h1m2 0h2m1 0h2m1 0h1M5 18.5h3m1 0h5m1 0h2m1 0h1m5 0h5m1 0h2M0 19.5h3m2 0h1m2 0h2m4 0h3m3 0h4m1 0h1m1 0h6M1 20.5h1m4 0h1m1 0h4m1 0h1m4 0h1m3 0h1m1 0h1m2 0h3M0 21.5h1m1 0h3m4 0h1m1 0h1m3 0h3m1 0h2m1 0h2m2 0h1m3 0h1m1 0h1M0 22.5h1m2 0h1m2 0h1m2 0h1m1 0h1m1 0h1m4 0h1m2 0h1m3 0h1m1 0h3m1 0h1M0 23.5h1m8 0h2m1 0h2m2 0h1m2 0h1m1 0h4m3 0h4M0 24.5h1m3 0h1m1 0h1m2 0h1m1 0h2m4 0h1m2 0h1m1 0h1m1 0h5m2 0h1M8 25.5h6m3 0h5m1 0h2m3 0h1m1 0h1m1 0h1M0 26.5h7m2 0h2m3 0h4m3 0h4m1 0h1m1 0h1m1 0h2M0 27.5h1m5 0h1m1 0h6m2 0h3m2 0h1m1 0h2m3 0h4M0 28.5h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h2m2 0h1m4 0h6m1 0h1M0 29.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m1 0h5m1 0h3m2 0h1m2 0h2M0 30.5h1m1 0h3m1 0h1m1 0h2m5 0h3m2 0h1m1 0h1m3 0h2m2 0h1M0 31.5h1m5 0h1m3 0h1m4 0h1m2 0h2m1 0h2m2 0h2m1 0h1m1 0h1M0 32.5h7m1 0h3m1 0h1m1 0h2m1 0h1m4 0h6m3 0h1"/></svg>
+  <text x="236" y="893" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" fill="#2E2A3A">Scan to book a call</text>
+  <text x="236" y="942" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="33" font-weight="500" fill="#54467A">divinelighthealing-lifecoach.com</text>
+  <text x="236" y="984" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" fill="#5C566E">info@divinelighthealing-lifecoach.com</text>
+
+  <text x="540" y="1048" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="44" font-weight="700" fill="#2E2A3A">Call or text (971) 246-4628</text>
+  <text x="540" y="1082" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="25" fill="#5C566E">Please call or send a regular text. This number is not on WhatsApp.</text>
+
+  <rect x="0" y="1096" width="1080" height="304" fill="#FFFFFF"/>
+  <line x1="0" y1="1096" x2="1080" y2="1096" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="43.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(67.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Healing begins within.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="135" y1="1096" x2="135" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="178.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(202.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Calm is your true nature.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="270" y1="1096" x2="270" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="313.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(337.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Let your inner light shine.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="405" y1="1096" x2="405" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="448.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(472.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Breathe. Heal. Begin again.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="540" y1="1096" x2="540" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="583.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(607.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Your energy, restored.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="675" y1="1096" x2="675" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="718.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(742.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Peace is a daily practice.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="810" y1="1096" x2="810" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="853.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(877.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Release. Restore. Renew.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+  <line x1="945" y1="1096" x2="945" y2="1400" stroke="#A89BC9" stroke-width="2" stroke-dasharray="8 7"/>
+  <svg x="988.5" y="1108" width="48" height="48" viewBox="80 92 240 240">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.55">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="0.55" stop-color="#F1EBF8"/>
+      <stop offset="1" stop-color="#E4DCF1"/>
+    </radialGradient>
+    <linearGradient id="pOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F9DDE5"></stop><stop offset="1" stop-color="#E592A8"></stop>
+    </linearGradient>
+    <linearGradient id="pMid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F6C3D0"></stop><stop offset="1" stop-color="#D65C7C"></stop>
+    </linearGradient>
+    <linearGradient id="pCenter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FCE6EC"></stop><stop offset="1" stop-color="#C63F64"></stop>
+    </linearGradient>
+    <linearGradient id="pFront" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFF6F8"></stop><stop offset="1" stop-color="#EE9DB2"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="92" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <g transform="translate(200,264)" stroke="#B8892F" stroke-width="2.2">
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(78)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(-56)"></path>
+    <path d="M0,0 C-26,-28 -24,-74 0,-100 C24,-74 26,-28 0,0Z" fill="url(#pOuter)" transform="rotate(56)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(36)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(-18)"></path>
+    <path d="M0,0 C-28,-32 -26,-82 0,-110 C26,-82 28,-32 0,0Z" fill="url(#pMid)" transform="rotate(18)"></path>
+    <path d="M0,0 C-30,-36 -28,-94 0,-126 C28,-94 30,-36 0,0Z" fill="url(#pCenter)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(-28)"></path>
+    <path d="M0,0 C-22,-26 -20,-60 0,-80 C20,-60 22,-26 0,0Z" fill="url(#pFront)" transform="rotate(28)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(-10)"></path>
+    <path d="M0,0 C-20,-22 -18,-50 0,-66 C18,-50 20,-22 0,0Z" fill="url(#pFront)" transform="rotate(10)"></path>
+    <path d="M-34,-2 Q0,10 34,-2 Q0,4 -34,-2Z" fill="#2F8A5F" stroke="none"></path>
+  </g>
+</svg>
+  <g transform="translate(1012.5,1282) rotate(-90)">
+    <text x="0" y="-16" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#2E2A3A">(971) 246-4628</text>
+    <text x="0" y="13" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#5E5180">Mind, body, soul aligned.</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#5C566E">Call or text · not WhatsApp</text>
+  </g>
+ </g>
+</svg>
