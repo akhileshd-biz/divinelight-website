@@ -169,6 +169,22 @@ img,svg{display:block;max-width:100%;}
 </section>
 
 <footer class="site-footer">
+  <div class="dl-footer-signup">
+    <div class="dl-footer-signup-copy">
+      <div class="footer-heading">Free guided meditation</div>
+      <p>Join the list and get a calming meditation from Akhilesh.</p>
+    </div>
+    <form class="dl-signup-form dl-signup-form--dark" name="newsletter" method="POST" action="/free-meditation" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="dl-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="dl-signup-fields">
+          <label class="dl-field"><span class="dl-field-label">First name</span><input type="text" name="first-name" autocomplete="given-name" placeholder="Your first name"></label>
+          <label class="dl-field"><span class="dl-field-label">Email</span><input type="email" name="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <button type="submit" class="dl-signup-btn">Get my free meditation</button>
+        </div>
+        <p class="dl-signup-note">You'll get the free meditation now, plus occasional calming notes from Akhilesh. Unsubscribe anytime. <a href="/legal#privacy">Privacy</a></p>
+      </form>
+  </div>
   <div class="footer-grid">
     <div>
       <div class="footer-heading">Divine Light</div>

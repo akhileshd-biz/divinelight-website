@@ -362,3 +362,52 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   .dl-notice-btn { min-height: 32px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
   .top-banner a.tb-rating { align-self: center; }
 }
+
+/* =====================================================================
+   Email signup + free meditation
+   ===================================================================== */
+.dl-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.dl-signup { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); gap: 40px; align-items: center; padding: 48px; border-radius: 24px; background: var(--rose-tint); border: 1px solid rgba(110,95,146,.22); }
+.dl-signup-copy { display: flex; flex-direction: column; gap: 12px; }
+.dl-signup-lead { color: var(--ink-soft); font-size: 17px; }
+.dl-signup-fields { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 12px; }
+.dl-signup-btn { grid-column: 1 / -1; min-height: 50px; border: 0; border-radius: 999px; background: var(--rose); color: #fff; font: 600 16px/1 'Work Sans', sans-serif; letter-spacing: .02em; cursor: pointer; transition: background-color .3s ease, transform .3s ease; }
+.dl-signup-btn:hover { background: var(--rose-deep); transform: scale(1.02); }
+.dl-field { display: flex; flex-direction: column; gap: 6px; }
+.dl-field-label { font-size: 13.5px; font-weight: 600; color: var(--ink-soft); }
+.dl-field input { min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line); background: #fff; font: 400 16px 'Work Sans', sans-serif; color: var(--ink); transition: border-color .3s ease, box-shadow .3s ease; }
+.dl-field input:focus { outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgba(110,95,146,.18); }
+.dl-signup-note { margin-top: 12px; font-size: 14px; color: var(--ink-soft); }
+.dl-signup-note a { color: var(--rose-deep); text-decoration: underline; }
+/* footer version (dark) */
+.dl-footer-signup { max-width: 1080px; margin: 0 auto 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.12); display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.4fr); gap: 32px; align-items: end; }
+.dl-footer-signup p { color: #E4DFEE; }
+.dl-signup-form--dark .dl-field-label { color: #C9BEE6; }
+.dl-signup-form--dark .dl-field input { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); color: #fff; }
+.dl-signup-form--dark .dl-field input::placeholder { color: #ABA3C4; }
+.dl-signup-form--dark .dl-signup-btn { background: #fff; color: var(--cream-dark); }
+.dl-signup-form--dark .dl-signup-btn:hover { background: var(--rose-tint); }
+.dl-signup-form--dark .dl-signup-note { color: #C9BEE6; }
+.dl-signup-form--dark .dl-signup-note a { color: #E4DFEE; }
+@media (min-width: 900px) { .dl-signup-form--dark .dl-signup-fields { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr) auto; align-items: end; } .dl-signup-form--dark .dl-signup-btn { grid-column: auto; padding: 0 24px; } }
+@media (max-width: 800px) { .dl-signup, .dl-footer-signup { grid-template-columns: minmax(0,1fr); padding: 28px 22px; gap: 20px; } .dl-footer-signup { padding: 0 0 28px; } .dl-signup-fields { grid-template-columns: minmax(0,1fr); } }
+/* thank-you page */
+.dl-thanks { display: flex; flex-direction: column; gap: 18px; }
+.dl-thanks-lead, .dl-thanks-next { color: var(--ink-soft); font-size: 17px; }
+.dl-med-card { padding: 28px; border-radius: 24px; background: #fff; border: 1px solid var(--dl-hairline); display: flex; flex-direction: column; gap: 10px; }
+.dl-med-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; }
+.dl-med-meta { color: var(--ink-soft); font-size: 14.5px; }
+.dl-med-audio { width: 100%; margin-top: 6px; }
+.dl-med-pending { font-size: 14.5px; color: var(--sage-deep); background: var(--sage-tint); border-radius: 12px; padding: 10px 14px; }
+.dl-med-download { font-weight: 600; font-size: 15px; }
+
+/* ---------- Final checklist: bigger tap targets on phones (2026-11-13) ---------- */
+@media (max-width: 640px) {
+  .dl-text-link,
+  .toc a,
+  .container > div > a[href="testimonials"],
+  .container > a[href="services"]:first-child { display: inline-flex; align-items: center; min-height: 44px; }
+  .toc { gap: 4px 20px; }
+  .sticky-cta { padding: 2px 16px; }
+  .sticky-cta a { display: flex; align-items: center; justify-content: center; min-height: 48px; }
+}
