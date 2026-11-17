@@ -65,6 +65,9 @@ The project has no automated tests or linters. Before you ask for a review:
 The member portal is at `/members`. Netlify runs `scripts/build.sh` and publishes
 `_site`, with the membership API deployed separately as a Netlify Function.
 
+- Passkey accounts work without email delivery. Keep the passkey in a synced
+  device or password manager to sign in elsewhere. Passkey and email-link
+  accounts are separate.
 - For email sign-in, verify a sender domain in Resend and set
   `MEMBER_EMAIL_API_KEY` and `MEMBER_EMAIL_FROM` in Netlify’s Functions environment.
   The verified sender can be set as `Divine Light <members@example.com>` with

@@ -31,10 +31,9 @@ function cookie(value, age) {
   return `${cookieName}=${value}; Path=/; Max-Age=${age}; HttpOnly; Secure; SameSite=Lax`;
 }
 
-export async function startSession(request, email) {
+export async function startSession(request, user) {
   await endSession(request);
   const value = token();
-  const user = { id: digest(email), email };
   await authStore().setJSON('session/' + digest(value), { user, expires: Date.now() + sessionSeconds * 1000 });
   return cookie(value, sessionSeconds);
 }

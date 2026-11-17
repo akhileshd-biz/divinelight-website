@@ -78,7 +78,7 @@ export default async function auth(request, context) {
       const record = await store.getWithMetadata(key, { type: 'json' });
       if (record?.data?.expires > Date.now()) {
         const redeemed = await store.setJSON(key, { expires: 0 }, { onlyIfMatch: record.etag });
-        if (redeemed.modified) return json({ signedIn: true }, 200, await startSession(request, record.data.email));
+        if (redeemed.modified) return json({ signedIn: true }, 200, await startSession(request, { id: digest(record.data.email), email: record.data.email }));
       }
       return json({ error: 'This link expired or was already used. Request a new sign-in email.' }, 400);
     }

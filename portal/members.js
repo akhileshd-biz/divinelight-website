@@ -1,3 +1,5 @@
+import { browserSupportsWebAuthn, startAuthentication, startRegistration } from '@simplewebauthn/browser';
+
 const byId = id => document.getElementById(id);
 const auth = byId('auth');
 const status = byId('status');
@@ -144,6 +146,23 @@ auth.addEventListener('submit', event => {
   });
 });
 
+const passkeyButtons = [byId('create-passkey'), byId('sign-in-passkey')];
+for (const button of passkeyButtons) {
+  button.onclick = () => {
+    const other = passkeyButtons.find(item => item !== button);
+    other.disabled = true;
+    void run(button, async () => {
+      const kind = button.id === 'create-passkey' ? 'register' : 'login';
+      const endpoint = '/api/member-passkey';
+      const { flow, options } = await api({ action: 'begin', kind }, endpoint);
+      const verify = kind === 'register' ? startRegistration : startAuthentication;
+      const response = await verify({ optionsJSON: options });
+      await api({ action: 'finish', kind, flow, response }, endpoint);
+      await openAccount();
+    }).finally(() => { other.disabled = false; });
+  };
+}
+
 byId('sign-out').onclick = event => void run(event.currentTarget, async () => {
   if (!demo) await signInApi({ action: 'logout' });
   location.replace(demo ? '/members?demo=1' : '/members');
@@ -192,5 +211,10 @@ void run(byId('auth-submit'), async () => {
     byId('auth-submit').textContent = 'Continue to account';
   } else if ((await signInApi()).signedIn) {
     await openAccount();
+  } else if (browserSupportsWebAuthn()) {
+    byId('passkey-actions').hidden = false;
+    byId('auth-copy').textContent = 'Use your device or password manager to create a passkey.';
+  } else {
+    byId('auth-copy').textContent = 'This browser does not support passkeys. A supported device can create an account.';
   }
 });
