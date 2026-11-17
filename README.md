@@ -27,8 +27,8 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 ## Branches
 
 - `main` is **exactly what is live** on the website right now.
-- `draft-email-signup` is the free meditation email signup. It is waiting on the meditation MP3, so it is **not live yet**. Do not merge it until Akhilesh says so.
-- Make every new change on its **own branch** from `main`, for example `fix-rates-typo`. Open a pull request so it can be reviewed.
+- `draft-email-signup` is the free meditation email signup. It is waiting on the meditation MP3, so it is **not live yet**. It is not finished, so don't merge it yet.
+- Make every new change on its **own branch** from `main`, for example `fix-rates-typo`. Open a pull request so the change is easy to see.
 
 ## Library audio
 
@@ -48,8 +48,7 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 ## Going live
 
 - The live site is deployed by hand with the Netlify CLI. GitHub is **not** connected to Netlify, so merging or pushing never changes the live site by itself.
-- **Nothing goes live and nothing is merged into `main` without Akhilesh's explicit OK.**
-- After Akhilesh approves:
+- No approval is needed to merge or deploy (Akhilesh turned approvals off on 2026-11-17). When a change is ready:
   1. Merge the pull request into `main`.
   2. From an up-to-date `main`, make the same `rsync` copy, then run `netlify deploy --dir ../site-deploy --prod`.
 - Never deploy the project folder itself, because it would publish the private notes. If you aren't sure, ask first.
