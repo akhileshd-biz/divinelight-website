@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Member Library | Divine Light</title>
+<link rel="icon" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/members.css">
+<script type="module" src="/assets/members.js"></script>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✧</span><span class="brand-name">Divine Light</span></a>
+<nav class="member-links" aria-label="Member navigation"><a class="ghost-btn" href="/library">Public library</a><button class="ghost-btn" id="sign-out" hidden>Sign out</button></nav>
+</header>
+<main>
+<p class="member-status" id="status" role="status" hidden></p>
+<section class="login" id="login">
+<div class="login-art"><div class="brand-name">DIVINE LIGHT</div><h2>Your light is<br><em>always within.</em></h2></div>
+<div class="login-panel"><div class="login-content">
+<h1 id="auth-title">Welcome back.</h1>
+<p id="auth-copy">Sign in to open your Divine Light member library.</p>
+<form id="auth" method="post">
+<label class="field" id="email-field"><span>Email address</span><input name="email" type="email" autocomplete="username" required></label>
+<label class="field" id="password-field"><span>Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+<button class="cta login-submit" id="auth-submit" disabled>Sign in</button>
+</form>
+<button class="text-link" id="recover" type="button">Reset password</button>
+<button class="text-link" id="switch-auth" type="button">Create an account</button>
+</div></div>
+</section>
+<section class="page" id="account" hidden>
+<div class="hero"><div><div class="eyebrow">Membership</div><h1 id="account-title">A softer space to return to yourself.</h1><p id="subscription-status"></p></div>
+<div class="membership"><strong>$25 / month</strong><button class="cta" id="billing" type="button">Join membership</button></div></div>
+<div class="grid" id="lessons"></div>
+</section>
+<section class="page" id="lesson" hidden>
+<button class="back" id="back" type="button">← Library</button>
+<h1 class="detail-title" id="lesson-title" tabindex="-1"></h1><p class="detail-description" id="lesson-copy"></p>
+<div class="member-links"><a id="lesson-audio" class="ghost-btn" hidden>Listen to Relax</a><button type="button" class="cta" id="complete">Mark complete</button></div>
+</section>
+</main>
+<footer>DIVINE LIGHT · MEMBER LIBRARY</footer>
+</div>
+</body>
+</html>

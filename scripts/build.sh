@@ -2,13 +2,7 @@
 # Copy only the public website files into _site (used by Netlify; see netlify.toml),
 # then fetch the library audio from Google Drive.
 set -e
-rm -rf _site
-mkdir _site
-tar -cf - \
-  --exclude='./_site' --exclude='./.git' --exclude='./.github' --exclude='./.netlify' --exclude='./.claude' \
-  --exclude='./print-assets' --exclude='./scripts' --exclude='./node_modules' \
-  --exclude='*.md' --exclude='./netlify.toml' --exclude='./.gitignore' --exclude='.DS_Store' \
-  . | tar -xf - -C _site
+npm run build
 
 # Library audio: skip files already present (local builds), otherwise download.
 mkdir -p _site/media
