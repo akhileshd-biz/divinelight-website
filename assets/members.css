@@ -9,3 +9,48 @@
 .member-status {max-width:1200px;margin:0 auto;padding:12px 25px;}
 .card-body progress {width:100%;accent-color:#76668a;}
 .login-panel button {margin-bottom:8px;}
+
+/* Member portal palette */
+:root {
+  --ink: #102641;
+  --muted: #4c6178;
+  --paper: #eef3f9;
+  --line: #c9d6e5;
+  --navy: #102846;
+  --navy-hover: #23466e;
+  --navy-light: #d9e7f6;
+}
+
+.topbar {
+  background: var(--navy);
+  border-bottom-color: #28466a;
+}
+
+.topbar .brand, .topbar .ghost-btn { color: #f5f8ff; }
+.brand-mark { border-color: #a8c7e8; color: #d9e7f6; }
+
+.login-art, .cover-light {
+  background: radial-gradient(ellipse at 53% 32%, #365e89, transparent 62%),
+    linear-gradient(148deg, #1c3b61, #102846 62%, #091a31);
+}
+.cover-sleep {
+  background: radial-gradient(ellipse at 72% 25%, #325581, transparent 56%),
+    linear-gradient(148deg, #203d63, #0b1d37 68%, #071326);
+}
+.cover-sleep::after { background: #132d4c; }
+.login-art .brand-name, .login-art h2 em { color: var(--navy-light); }
+
+.cta { background: var(--navy); }
+.cta:hover { background: var(--navy-hover); }
+.eyebrow, .text-link, .back, .ghost-btn { color: #254d78; }
+.hero p, .card-description, .detail-description, .login-content p, footer { color: var(--muted); }
+.membership { background: #e0ebf7; border-color: var(--line); }
+.field input { border-color: var(--line); color: var(--ink); }
+.card-body progress { accent-color: var(--navy-hover); }
+
+:focus-visible { outline: 2px solid #386b9f; outline-offset: 3px; }
+.topbar :focus-visible { outline-color: #b4d2f3; }
+
+@media (max-width: 620px) {
+  .topbar { height: auto; min-height: 68px; gap: 12px; padding-block: 12px; }
+}

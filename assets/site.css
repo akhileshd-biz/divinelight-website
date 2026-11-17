@@ -21,11 +21,11 @@ a, .btn, .tb-btn, .card, .svc-card, .quote-card, .quote-strip, .social-dot {
   transition: color .3s ease, background-color .3s ease, border-color .3s ease,
               transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
 }
-.btn:hover, .top-banner a.tb-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16,36,61,.14); }
+.btn:hover, .top-banner a.tb-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(46,42,58,.14); }
 .btn:active, .top-banner a.tb-btn:active { transform: translateY(0); box-shadow: none; }
 .svc-card:hover, .quote-card:hover, .quote-strip:hover, a > .card:hover, a.card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(16,36,61,.10);
+  box-shadow: 0 14px 32px rgba(46,42,58,.10);
 }
 .svc-row { transition: background-color .3s ease, padding .35s cubic-bezier(.22,.61,.36,1); border-radius: 3px; }
 a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-right: 12px; }
@@ -44,7 +44,7 @@ a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-r
   .site-header { position: sticky; top: 0; z-index: 30; }
 }
 .site-header { transition: box-shadow .35s ease, background-color .35s ease; }
-.site-header.is-scrolled { box-shadow: 0 6px 22px rgba(16,36,61,.08); }
+.site-header.is-scrolled { box-shadow: 0 6px 22px rgba(46,42,58,.08); }
 
 /* ---------- Banner: arrival, breathing lotus, rising motes of light ---------- */
 .top-banner { position: relative; overflow: hidden; isolation: isolate; }
@@ -124,7 +124,7 @@ a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-r
    Premium layer: notice banner, frosted header, bento grid, pricing deck,
    booking section. Lavender tokens come from each page's :root.
    ===================================================================== */
-:root { --dl-ease: cubic-bezier(.22,.61,.36,1); --dl-notice-h: 0px; --dl-hairline: rgba(16,36,61,.10); }
+:root { --dl-ease: cubic-bezier(.22,.61,.36,1); --dl-notice-h: 0px; --dl-hairline: rgba(46,42,58,.10); }
 
 /* ---------- 1. Dismissible notice banner ---------- */
 .dl-notice { position: relative; z-index: 40; background: var(--rose-tint); border-bottom: 1px solid var(--dl-hairline); view-transition-name: dl-notice; transition: opacity .3s var(--dl-ease), transform .3s var(--dl-ease); }
@@ -154,7 +154,7 @@ a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-r
   background: rgba(247,245,250,.82);
   -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
   border-bottom-color: var(--dl-hairline);
-  box-shadow: 0 1px 2px rgba(16,36,61,.05), 0 8px 24px rgba(16,36,61,.06);
+  box-shadow: 0 1px 2px rgba(46,42,58,.05), 0 8px 24px rgba(46,42,58,.06);
   padding-top: 12px; padding-bottom: 12px;
 }
 .nav-links a:not(.btn):hover { color: var(--rose-deep); }
@@ -177,7 +177,7 @@ a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-r
   transition: transform .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
 }
 .dl-tile--wide { grid-column: span 2; }
-a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow: 0 18px 40px rgba(16,36,61,.09); color: var(--ink); }
+a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow: 0 18px 40px rgba(46,42,58,.09); color: var(--ink); }
 .dl-tile-kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rose-deep); }
 .dl-tile-title { font-size: 26px; line-height: 1.15; }
 .dl-tile-copy { color: var(--ink-soft); font-size: 16px; line-height: 1.6; max-width: 46ch; }
@@ -185,11 +185,11 @@ a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow
 .dl-arrow { display: inline-block; transition: transform .3s ease-in-out; }
 a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 .dl-tile--dark { background: var(--cream-dark); border-color: transparent; color: #fff; }
-.dl-tile--dark .dl-tile-kicker { color: #b8d0ea; }
-.dl-tile--dark .dl-tile-copy { color: #dce7f4; }
+.dl-tile--dark .dl-tile-kicker { color: #C9BEE6; }
+.dl-tile--dark .dl-tile-copy { color: #E4DFEE; }
 .dl-stat { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 84px; line-height: .95; color: #fff; margin: 8px 0 4px; }
-.dl-tile--accent { background: var(--rose-tint); border-color: rgba(40,82,123,.25); }
-.dl-tile--accent:hover { background: #dbe8f6; }
+.dl-tile--accent { background: var(--rose-tint); border-color: rgba(110,95,146,.25); }
+.dl-tile--accent:hover { background: #E4DCF1; }
 @media (max-width: 900px) { .dl-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) {
   .dl-bento { grid-template-columns: minmax(0, 1fr); gap: 14px; }
@@ -205,7 +205,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   padding: 32px; border-radius: 24px; background: #fff; border: 1px solid var(--dl-hairline);
   transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
 }
-.dl-plan:hover { transform: scale(1.015); box-shadow: 0 18px 40px rgba(16,36,61,.09); }
+.dl-plan:hover { transform: scale(1.015); box-shadow: 0 18px 40px rgba(46,42,58,.09); }
 .dl-plan-name { font-size: 24px; line-height: 1.2; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
 .dl-plan-badge { font-family: 'Work Sans', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.35); }
 .dl-plan-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 48px; font-weight: 600; line-height: 1; color: var(--ink); }
@@ -216,11 +216,11 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 .dl-plan-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); flex: none; transform: translateY(-2px); }
 .dl-plan-btn { align-self: end; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink); font-weight: 600; font-size: 15px; transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out; }
 .dl-plan-btn:hover { background: var(--ink); color: #fff; transform: scale(1.02); }
-.dl-plan--featured { background: var(--cream-dark); border-color: transparent; box-shadow: 0 24px 48px rgba(16,36,61,.18); }
+.dl-plan--featured { background: var(--cream-dark); border-color: transparent; box-shadow: 0 24px 48px rgba(46,42,58,.18); }
 .dl-plan--featured .dl-plan-name, .dl-plan--featured .dl-plan-price { color: #fff; }
-.dl-plan--featured .dl-plan-price span:not(.dl-num), .dl-plan--featured .dl-plan-copy { color: #dce7f4; }
+.dl-plan--featured .dl-plan-price span:not(.dl-num), .dl-plan--featured .dl-plan-copy { color: #E4DFEE; }
 .dl-plan--featured .dl-plan-list { color: #fff; border-top-color: rgba(255,255,255,.16); }
-.dl-plan--featured .dl-plan-list li::before { background: #b8d0ea; }
+.dl-plan--featured .dl-plan-list li::before { background: #C9BEE6; }
 .dl-plan--featured .dl-plan-btn { background: #fff; border-color: #fff; color: var(--cream-dark); }
 .dl-plan--featured .dl-plan-btn:hover { background: var(--rose-tint); color: var(--cream-dark); }
 @media (max-width: 900px) { .dl-plans { grid-template-columns: minmax(0, 1fr); max-width: 520px; } }
@@ -306,7 +306,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 .dl-plan--featured > * { position: relative; z-index: 1; }
 .dl-plan--featured::before {
   content: ""; position: absolute; inset: -40% auto -40% -60%; width: 45%; z-index: 0; pointer-events: none;
-  background: linear-gradient(100deg, transparent 0%, rgba(184,208,234,.0) 20%, rgba(184,208,234,.22) 50%, rgba(184,208,234,0) 80%, transparent 100%);
+  background: linear-gradient(100deg, transparent 0%, rgba(201,190,230,.0) 20%, rgba(201,190,230,.22) 50%, rgba(201,190,230,0) 80%, transparent 100%);
   transform: rotate(12deg) translateX(0);
   animation: dl-sheen 7s ease-in-out 2s infinite;
 }
@@ -352,7 +352,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 
 /* Google reviews link (replaces placeholder social icons) */
 .dl-reviews-link { display: inline-flex; align-items: center; min-height: 40px; font-size: 15px; font-weight: 500; }
-.site-footer .dl-reviews-link { color: #dce7f4; }
+.site-footer .dl-reviews-link { color: #E4DFEE; }
 .site-footer .dl-reviews-link:hover { color: #FFFFFF; }
 
 /* Phones: notice bar collapses to a single 44px line */
