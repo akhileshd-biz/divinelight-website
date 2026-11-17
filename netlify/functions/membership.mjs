@@ -13,6 +13,15 @@ const lessons = [
   { id: 'sleep', title: 'Sleep', description: 'A gentle way to transition into rest.', content: 'Lower the lights and get comfortable. Let your shoulders soften and notice the rhythm of your breathing. When your thoughts wander, gently return your attention to the next breath.', audio: '/library-relax' },
 ];
 
+// Files a one-time library buyer can download. Add new recordings here.
+const downloads = [
+  { id: "relax", title: "Relax", file: "/media/relax.mp3", name: "Divine-Light-Relax.mp3", size: "44 MB" },
+];
+
+export function isLibraryPurchase(session, libraryPrice) {
+  return session.mode === "payment" && session.payment_status === "paid" && session.metadata?.libraryPrice === libraryPrice;
+}
+
 export function matchesMembership(subscription, price, statuses = liveStatuses) {
   return statuses.has(subscription.status) && subscription.items.data.some(item => item.price.id === price);
 }
@@ -31,6 +40,7 @@ export default async function membership(request) {
       : json({ error: 'Member sign-in is being set up.' }, 503);
 
     const price = process.env.STRIPE_MEMBERSHIP_PRICE_ID;
+    const libraryPrice = process.env.STRIPE_LIBRARY_PRICE_ID;
     const stripeKey = process.env.STRIPE_SECRET_KEY;
     if (!price || !stripeKey) return json({ error: 'Membership billing is being set up.' }, 503);
 
@@ -41,6 +51,14 @@ export default async function membership(request) {
     const userKey = encodeURIComponent(user.id);
     const body = request.method === 'POST' ? await request.json().catch(() => null) : null;
     let customer = await accounts.get(userKey);
+    const ensureCustomer = async () => {
+      if (customer) return customer;
+      const record = await stripe.customers.create({ email: user.email, metadata: { memberId: user.id } }, {
+        idempotencyKey: `divine-light-member-${userKey}`,
+      });
+      await accounts.set(userKey, record.id);
+      return record.id;
+    };
     let active = false;
     let hasBilling = false;
 
@@ -52,10 +70,20 @@ export default async function membership(request) {
       }
     }
 
+    // One-time $100 library purchase: remembered once Stripe confirms payment.
+    const ownedKey = `${userKey}/library`;
+    let ownsLibrary = (await accounts.get(ownedKey)) === "owned";
+    if (!ownsLibrary && customer && libraryPrice) {
+      for await (const session of stripe.checkout.sessions.list({ customer, status: "complete", limit: 100 })) {
+        if (isLibraryPurchase(session, libraryPrice)) { ownsLibrary = true; await accounts.set(ownedKey, "owned"); break; }
+      }
+    }
+
     if (request.method === 'GET') {
       const completed = active ? await Promise.all(lessons.map(async ({ id }) =>
         (await progress.get(`${userKey}/${id}`)) === 'complete' ? id : null)) : [];
-      return json({ email: user.email, active, hasBilling, lessons: active ? lessons : [], completed: completed.filter(Boolean) });
+      return json({ email: user.email, active, hasBilling, lessons: active ? lessons : [], completed: completed.filter(Boolean),
+        libraryForSale: Boolean(libraryPrice), ownsLibrary, downloads: ownsLibrary ? downloads : [] });
     }
 
     if (body?.action === 'complete' && lessons.some(lesson => lesson.id === body.lesson) && typeof body.complete === 'boolean') {
@@ -79,13 +107,7 @@ export default async function membership(request) {
         return json({ error: 'Membership checkout is temporarily unavailable.' }, 503);
       }
 
-      if (!customer) {
-        const record = await stripe.customers.create({ metadata: { memberId: user.id } }, {
-          idempotencyKey: `divine-light-member-${userKey}`,
-        });
-        customer = record.id;
-        await accounts.set(userKey, customer);
-      }
+      customer = await ensureCustomer();
 
       for await (const session of stripe.checkout.sessions.list({ customer, status: 'open', limit: 10 })) {
         if (session.mode === 'subscription' && session.metadata?.memberPrice === price && session.url) {
@@ -101,6 +123,28 @@ export default async function membership(request) {
         success_url: `${origin}/members?checkout=complete`,
         cancel_url: `${origin}/members`,
       }, { idempotencyKey: `divine-light-checkout-${customer}-${Math.floor(Date.now() / 60000)}` });
+      return json({ url: session.url });
+    }
+
+    if (body?.action === "buy-library") {
+      if (!libraryPrice) return json({ error: "The library download is not for sale yet." }, 503);
+      if (ownsLibrary) return json({ error: "You already own the library. Your downloads are on this page." }, 409);
+      const item = await stripe.prices.retrieve(libraryPrice);
+      if (!item.active || item.currency !== "usd" || item.unit_amount !== 10000 || item.type !== "one_time") {
+        return json({ error: "Library checkout is temporarily unavailable." }, 503);
+      }
+      customer = await ensureCustomer();
+      for await (const session of stripe.checkout.sessions.list({ customer, status: "open", limit: 10 })) {
+        if (session.mode === "payment" && session.metadata?.libraryPrice === libraryPrice && session.url) return json({ url: session.url });
+      }
+      const session = await stripe.checkout.sessions.create({
+        customer,
+        mode: "payment",
+        line_items: [{ price: libraryPrice, quantity: 1 }],
+        metadata: { libraryPrice },
+        success_url: `${origin}/members?purchase=complete`,
+        cancel_url: `${origin}/members`,
+      }, { idempotencyKey: `divine-light-library-${customer}-${Math.floor(Date.now() / 60000)}` });
       return json({ url: session.url });
     }
 

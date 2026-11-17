@@ -68,8 +68,10 @@ The member portal is at `/members`. Netlify runs `scripts/build.sh` and publishe
 - Enable Netlify Identity and email confirmation. Configure the confirmation
   and recovery email links to return to `/members` with their Identity token
   fragments, so the portal can complete the corresponding flow.
-- Set `STRIPE_SECRET_KEY` and `STRIPE_MEMBERSHIP_PRICE_ID` in Netlify's Functions
-  environment. The price must be a USD 25 monthly recurring price. Enable
+- Set `STRIPE_SECRET_KEY`, `STRIPE_MEMBERSHIP_PRICE_ID` and `STRIPE_LIBRARY_PRICE_ID` in
+  Netlify's Functions environment. The membership price must be a USD 25 monthly
+  recurring price. The library price must be a USD 100 **one-time** price; buyers
+  get the files listed in `downloads` in `netlify/functions/membership.mjs`. Enable
   Stripe's customer portal for payment updates and subscription cancellation.
 - Run `npm ci` and `npm run build` locally. Use Stripe test-mode configuration
   for a draft deploy and verify signup, login, checkout, lesson access, saved
