@@ -70,8 +70,10 @@ The member portal is at `/members`. Netlify runs `scripts/build.sh` and publishe
   The verified sender can be set as `Divine Light <members@example.com>` with
   the real domain substituted. The first successful one-time link establishes
   the member account. Account sessions are stored in Netlify Blobs.
-- Set `STRIPE_SECRET_KEY` and `STRIPE_MEMBERSHIP_PRICE_ID` in Netlify's Functions
-  environment. The price must be a USD 25 monthly recurring price. Enable
+- Set `STRIPE_SECRET_KEY`, `STRIPE_MEMBERSHIP_PRICE_ID` and `STRIPE_LIBRARY_PRICE_ID` in
+  Netlify's Functions environment. The membership price must be a USD 25 monthly
+  recurring price. The library price must be a USD 100 **one-time** price; buyers
+  get the files listed in `downloads` in `netlify/functions/membership.mjs`. Enable
   Stripe's customer portal for payment updates and subscription cancellation.
 - Run `npm ci` and `npm run build` locally. Use Stripe test-mode configuration
   for a draft deploy and verify email signup, sign-in, checkout, lesson access, saved

@@ -74,6 +74,25 @@ function showLesson(lesson) {
   byId('lesson-title').focus();
 }
 
+function renderLibraryOffer() {
+  const owns = Boolean(account.ownsLibrary);
+  byId('library-offer').hidden = demo || owns || !account.libraryForSale;
+  byId('downloads').hidden = !owns;
+  byId('download-list').replaceChildren(...(account.downloads || []).map(item => {
+    const row = element('li', 'download-item');
+    const link = element('a', 'cta download-btn', 'Download');
+    link.href = item.file;
+    link.setAttribute('download', item.name);
+    link.setAttribute('aria-label', `Download ${item.title} (${item.size})`);
+    row.append(element('span', 'download-title', `${item.title} · ${item.size}`), link);
+    return row;
+  }));
+  if (new URLSearchParams(location.search).get('purchase') === 'complete') {
+    message(owns ? 'Payment received. Your downloads are ready below.'
+      : 'Payment received. Your downloads will appear in a moment. Refresh the page if they do not.');
+  }
+}
+
 async function openAccount() {
   byId('login').hidden = true;
   byId('sign-out').hidden = false;
@@ -90,6 +109,7 @@ async function openAccount() {
     byId('billing').closest('.membership').hidden = true;
   }
   byId('billing').textContent = account.hasBilling ? 'Manage membership' : 'Join membership';
+  renderLibraryOffer();
   renderCards();
 }
 
@@ -130,6 +150,10 @@ byId('sign-out').onclick = event => void run(event.currentTarget, async () => {
 });
 byId('billing').onclick = event => void run(event.currentTarget, async () => {
   const { url } = await api({ action: account.hasBilling ? 'manage' : 'checkout' });
+  location.assign(url);
+});
+byId('buy-library').onclick = event => void run(event.currentTarget, async () => {
+  const { url } = await api({ action: 'buy-library' });
   location.assign(url);
 });
 byId('back').onclick = () => {
