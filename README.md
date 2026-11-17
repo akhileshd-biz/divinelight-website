@@ -30,7 +30,9 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 
 - **On your computer:** from the project folder, run `python3 -m http.server 8000` and open http://localhost:8000/index.html.
   - Note: pages are linked without `.html` (for example `/about`), and this simple server needs the `.html` added by hand.
-- **On Netlify (a shareable draft link):** run `netlify deploy --dir .` from the branch. Without `--prod` this makes a **draft** link only, and the live site doesn't change. You need to be a member of the Netlify team, and you sign in with `netlify login`.
+- **On Netlify (a shareable draft link):** First copy only the website files to a separate folder, so the notes (`*.md`), `print-assets/` and hidden files are **never** published:
+  `rsync -a --exclude "*.md" --exclude ".*" --exclude "print-assets" ./ ../site-deploy/`
+  Then run `netlify deploy --dir ../site-deploy`. Without `--prod` this makes a **draft** link only, and the live site doesn't change. You need to be a member of the Netlify team, and you sign in with `netlify login`.
 
 ## Going live
 
@@ -38,8 +40,8 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 - **Nothing goes live and nothing is merged into `main` without Akhilesh's explicit OK.**
 - After Akhilesh approves:
   1. Merge the pull request into `main`.
-  2. From an up-to-date `main`, with no draft files in the folder, run `netlify deploy --dir . --prod`.
-- Deploy only the website files. If you aren't sure, ask first.
+  2. From an up-to-date `main`, make the same `rsync` copy, then run `netlify deploy --dir ../site-deploy --prod`.
+- Never deploy the project folder itself, because it would publish the private notes. If you aren't sure, ask first.
 
 ## Checks
 
