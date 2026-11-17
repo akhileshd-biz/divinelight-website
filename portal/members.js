@@ -6,6 +6,19 @@ const status = byId('status');
 let mode = 'login';
 let account;
 let selected;
+const demo = new URLSearchParams(location.search).get('demo') === '1';
+const demoLogin = { email: 'demo@example.com', password: 'DivineLightDemo25' };
+const demoLessons = [
+  { id: 'divine', title: 'Divine Light', description: 'A sample grounding lesson.', content: 'Sit comfortably, take three easy breaths, and notice where your feet meet the ground.' },
+  { id: 'sleep', title: 'Sleep', description: 'A sample wind-down lesson.', content: 'Let your shoulders settle and take a moment to notice your breathing.', audio: '/library-relax' },
+];
+const demoProgressKey = 'divine-light-demo-progress';
+
+function demoAccount() {
+  const completed = JSON.parse(sessionStorage.getItem(demoProgressKey) || '[]');
+  return { active: true, hasBilling: false, lessons: demoLessons, completed };
+}
+
 
 function message(text = '') {
   status.textContent = text;
@@ -84,10 +97,14 @@ function showLesson(lesson) {
 async function openAccount() {
   byId('login').hidden = true;
   byId('sign-out').hidden = false;
-  account = await api();
+  account = demo ? demoAccount() : await api();
   byId('account').hidden = false;
   byId('subscription-status').textContent = account.active ? 'Your membership is active.' :
     account.hasBilling ? 'Manage billing to restore access.' : 'Join to unlock your member library and save lesson progress.';
+  if (demo) {
+    byId('subscription-status').textContent = 'Demo account · progress is saved in this tab.';
+    byId('billing').closest('.membership').hidden = true;
+  }
   byId('billing').textContent = account.hasBilling ? 'Manage membership' : 'Join membership';
   renderCards();
 }
@@ -106,7 +123,13 @@ auth.addEventListener('submit', event => {
   event.preventDefault();
   void run(byId('auth-submit'), async () => {
     const { email, password } = Object.fromEntries(new FormData(auth));
-    if (mode === 'recover') {
+    if (demo) {
+      if (email !== demoLogin.email || password !== demoLogin.password) {
+        throw new Error('Use the sample sign-in details shown above.');
+      }
+      auth.reset();
+      await openAccount();
+    } else if (mode === 'recover') {
       await requestPasswordRecovery(email);
       message('If an account exists, check your email for a password reset link.');
       setMode('login');
@@ -125,8 +148,11 @@ auth.addEventListener('submit', event => {
 });
 
 byId('sign-out').onclick = event => void run(event.currentTarget, async () => {
-  await logout();
-  location.replace('/members');
+  if (demo) location.replace('/members?demo=1');
+  else {
+    await logout();
+    location.replace('/members');
+  }
 });
 byId('billing').onclick = event => void run(event.currentTarget, async () => {
   const { url } = await api({ action: account.hasBilling ? 'manage' : 'checkout' });
@@ -140,14 +166,28 @@ byId('back').onclick = () => {
 byId('complete').onclick = event => void run(event.currentTarget, async () => {
   const lesson = selected;
   const complete = !account.completed.includes(lesson.id);
-  await api({ action: 'complete', lesson: lesson.id, complete });
+  if (!demo) await api({ action: 'complete', lesson: lesson.id, complete });
   account.completed = account.completed.filter(id => id !== lesson.id);
   if (complete) account.completed.push(lesson.id);
+  if (demo) sessionStorage.setItem(demoProgressKey, JSON.stringify(account.completed));
   if (selected === lesson && !byId('lesson').hidden) showLesson(lesson);
   else renderCards();
 });
 
 void run(byId('auth-submit'), async () => {
+  if (demo) {
+    byId('auth-title').textContent = 'Try the demo library.';
+    byId('auth-copy').textContent = 'Sample sign-in details only. This demo uses sample lessons and has no billing.';
+    byId('switch-auth').hidden = true;
+    byId('recover').hidden = true;
+    auth.email.value = demoLogin.email;
+    auth.password.value = demoLogin.password;
+    auth.autocomplete = 'off';
+    auth.email.readOnly = true;
+    auth.password.readOnly = true;
+    byId('auth-submit').textContent = 'Sign in to demo';
+    return;
+  }
   const result = await handleAuthCallback();
   if (result?.type === 'recovery') setMode('password');
   else if (await getUser()) await openAccount();
