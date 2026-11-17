@@ -1,13 +1,11 @@
-import { getUser, handleAuthCallback, login, logout, requestPasswordRecovery, signup, updateUser } from '@netlify/identity';
-
 const byId = id => document.getElementById(id);
 const auth = byId('auth');
 const status = byId('status');
-let mode = 'login';
+let linkCode;
 let account;
 let selected;
 const demo = new URLSearchParams(location.search).get('demo') === '1';
-const demoLogin = { email: 'demo@example.com', password: 'DivineLightDemo25' };
+const demoEmail = 'demo@example.com';
 const demoLessons = [
   { id: 'divine', title: 'Divine Light', description: 'A sample grounding lesson.', content: 'Sit comfortably, take three easy breaths, and notice where your feet meet the ground.' },
   { id: 'sleep', title: 'Sleep', description: 'A sample wind-down lesson.', content: 'Let your shoulders settle and take a moment to notice your breathing.', audio: '/library-relax' },
@@ -25,28 +23,8 @@ function message(text = '') {
   status.hidden = !text;
 }
 
-function setMode(next) {
-  mode = next;
-  const titles = { login: 'Welcome back.', signup: 'Become a member.', recover: 'Reset your password.', password: 'Set a new password.' };
-  const actions = { login: 'Sign in', signup: 'Create account', recover: 'Send reset email', password: 'Save password' };
-  byId('auth-title').textContent = titles[next];
-  byId('auth-copy').textContent = next === 'signup' ? 'Create an account to join the $25 monthly membership or buy the whole library for $100.' :
-    next === 'login' ? 'Sign in to open your Divine Light member library.' : 'Use the email address for your Divine Light account.';
-  byId('auth-copy').hidden = next === 'password';
-  byId('auth-submit').textContent = actions[next];
-  auth.email.required = next !== 'password';
-  byId('email-field').hidden = !auth.email.required;
-  auth.password.required = next !== 'recover';
-  auth.password.autocomplete = next === 'login' ? 'current-password' : 'new-password';
-  auth.password.minLength = ['signup', 'password'].includes(next) ? 8 : 0;
-  byId('password-field').hidden = !auth.password.required;
-  byId('switch-auth').textContent = next === 'login' ? 'Create an account' : 'Back to sign in';
-  byId('switch-auth').hidden = next === 'password';
-  byId('recover').hidden = next !== 'login';
-}
-
-async function api(payload) {
-  const response = await fetch('/api/membership', payload ? {
+async function api(payload, endpoint = '/api/membership') {
+  const response = await fetch(endpoint, payload ? {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
@@ -55,6 +33,8 @@ async function api(payload) {
   if (!response.ok) throw new Error(data.error || 'Membership is temporarily unavailable.');
   return data;
 }
+
+const signInApi = payload => api(payload, '/api/member-auth');
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -120,6 +100,10 @@ async function openAccount() {
   byId('account').hidden = false;
   byId('subscription-status').textContent = account.active ? 'Your membership is active.' :
     account.hasBilling ? 'Manage billing to restore access.' : 'Join to unlock your member library and save lesson progress.';
+  if (account.billingReady === false) {
+    byId('subscription-status').textContent = 'You’re signed in. Membership billing is being set up.';
+    byId('billing').closest('.membership').hidden = true;
+  }
   if (demo) {
     byId('subscription-status').textContent = 'Demo account · progress is saved in this tab.';
     byId('billing').closest('.membership').hidden = true;
@@ -137,42 +121,32 @@ async function run(button, action) {
   finally { button.disabled = false; }
 }
 
-byId('switch-auth').onclick = () => { message(); setMode(mode === 'login' ? 'signup' : 'login'); };
-byId('recover').onclick = () => { message(); setMode('recover'); };
 auth.addEventListener('submit', event => {
   event.preventDefault();
   void run(byId('auth-submit'), async () => {
-    const { email, password } = Object.fromEntries(new FormData(auth));
     if (demo) {
-      if (email !== demoLogin.email || password !== demoLogin.password) {
-        throw new Error('Use the sample sign-in details shown above.');
+      await openAccount();
+    } else if (linkCode) {
+      const code = linkCode;
+      try {
+        await signInApi({ action: 'redeem', code });
+        await openAccount();
+      } finally {
+        linkCode = null;
+        byId('email-field').hidden = false;
+        auth.email.required = true;
+        byId('auth-submit').textContent = 'Send sign-in link';
       }
-      auth.reset();
-      await openAccount();
-    } else if (mode === 'recover') {
-      await requestPasswordRecovery(email);
-      message('If an account exists, check your email for a password reset link.');
-      setMode('login');
-    } else if (mode === 'signup') {
-      await signup(email, password);
-      auth.password.value = '';
-      if (await getUser()) await openAccount();
-      else { setMode('login'); message('Check your email to confirm your account, then sign in.'); }
     } else {
-      if (mode === 'password') await updateUser({ password });
-      else await login(email, password);
-      auth.reset();
-      await openAccount();
+      const result = await signInApi({ action: 'send', email: auth.email.value });
+      message(result.message);
     }
   });
 });
 
 byId('sign-out').onclick = event => void run(event.currentTarget, async () => {
-  if (demo) location.replace('/members?demo=1');
-  else {
-    await logout();
-    location.replace('/members');
-  }
+  if (!demo) await signInApi({ action: 'logout' });
+  location.replace(demo ? '/members?demo=1' : '/members');
 });
 byId('billing').onclick = event => void run(event.currentTarget, async () => {
   const { url } = await api({ action: account.hasBilling ? 'manage' : 'checkout' });
@@ -202,17 +176,21 @@ void run(byId('auth-submit'), async () => {
   if (demo) {
     byId('auth-title').textContent = 'Try the demo library.';
     byId('auth-copy').textContent = 'Sample sign-in details only. This demo uses sample lessons and has no billing.';
-    byId('switch-auth').hidden = true;
-    byId('recover').hidden = true;
-    auth.email.value = demoLogin.email;
-    auth.password.value = demoLogin.password;
+    auth.email.value = demoEmail;
     auth.autocomplete = 'off';
     auth.email.readOnly = true;
-    auth.password.readOnly = true;
     byId('auth-submit').textContent = 'Sign in to demo';
     return;
   }
-  const result = await handleAuthCallback();
-  if (result?.type === 'recovery') setMode('password');
-  else if (await getUser()) await openAccount();
+  linkCode = new URLSearchParams(location.hash.slice(1)).get('member_link');
+  if (linkCode) {
+    history.replaceState(null, '', location.pathname + location.search);
+    byId('auth-title').textContent = 'Finish signing in.';
+    byId('auth-copy').textContent = 'Continue to your Divine Light account.';
+    byId('email-field').hidden = true;
+    auth.email.required = false;
+    byId('auth-submit').textContent = 'Continue to account';
+  } else if ((await signInApi()).signedIn) {
+    await openAccount();
+  }
 });

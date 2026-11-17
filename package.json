@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@netlify/blobs": "^11.1.9",
-    "@netlify/identity": "^2.0.1",
     "stripe": "^23.1.0"
   },
   "devDependencies": {

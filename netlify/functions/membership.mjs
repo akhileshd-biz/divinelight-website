@@ -1,5 +1,5 @@
 import { getStore } from '@netlify/blobs';
-import { getIdentityConfig, getUser, verifyRequestOrigin } from '@netlify/identity';
+import { getMember, sameOrigin } from '../lib/member-session.mjs';
 import Stripe from 'stripe';
 
 export const config = { path: '/api/membership' };
@@ -28,21 +28,20 @@ export function matchesMembership(subscription, price, statuses = liveStatuses) 
 
 export default async function membership(request) {
   if (!['GET', 'POST'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
-  if (request.method === 'POST') {
-    try { verifyRequestOrigin(request); }
-    catch { return json({ error: 'Request origin is invalid.' }, 403); }
-  }
+  if (request.method === 'POST' && !sameOrigin(request)) return json({ error: 'Request origin is invalid.' }, 403);
 
   try {
-    const user = await getUser();
-    if (!user?.id) return getIdentityConfig()
-      ? json({ error: 'Sign in to continue.' }, 401)
-      : json({ error: 'Member sign-in is being set up.' }, 503);
+    const user = await getMember(request);
+    if (!user) return json({ error: 'Sign in to continue.' }, 401);
 
     const price = process.env.STRIPE_MEMBERSHIP_PRICE_ID;
     const libraryPrice = process.env.STRIPE_LIBRARY_PRICE_ID;
     const stripeKey = process.env.STRIPE_SECRET_KEY;
-    if (!price || !stripeKey) return json({ error: 'Membership billing is being set up.' }, 503);
+    if (!price || !stripeKey) {
+      return request.method === 'GET'
+        ? json({ email: user.email, active: false, hasBilling: false, billingReady: false, lessons: [], completed: [] })
+        : json({ error: 'Membership billing is being set up.' }, 503);
+    }
 
     const stripe = new Stripe(stripeKey);
     const accounts = getStore({ name: 'member-accounts', consistency: 'strong' });
@@ -82,7 +81,7 @@ export default async function membership(request) {
     if (request.method === 'GET') {
       const completed = active ? await Promise.all(lessons.map(async ({ id }) =>
         (await progress.get(`${userKey}/${id}`)) === 'complete' ? id : null)) : [];
-      return json({ email: user.email, active, hasBilling, lessons: active ? lessons : [], completed: completed.filter(Boolean),
+      return json({ email: user.email, active, hasBilling, billingReady: true, lessons: active ? lessons : [], completed: completed.filter(Boolean),
         libraryForSale: Boolean(libraryPrice), ownsLibrary, downloads: ownsLibrary ? downloads : [] });
     }
 
