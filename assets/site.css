@@ -365,3 +365,13 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 
 /* Hide the public Netlify badge. */
 #nl-badge-frame { display: none !important; }
+
+.nav-links .dl-member-sign-in {
+  padding: 8px 14px;
+  border-color: #254d78;
+  color: #254d78;
+}
+.nav-links .dl-member-sign-in:hover {
+  background: #102846;
+  color: #fff;
+}
