@@ -1,0 +1,16 @@
+{
+  "name": "divine-light-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node portal/build.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.9",
+    "@netlify/identity": "^2.0.1",
+    "stripe": "^23.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
