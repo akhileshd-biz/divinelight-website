@@ -19,7 +19,7 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 | `library.html` | The meditation and course library (browse, filter) |
 | `library-relax.html` | Lesson page for the "Relax" meditation, with the audio player |
 | `assets/library.css`, `assets/library.js` | Library styles, filters and the audio player |
-| `media/` | Audio files for local preview only. **Ignored by Git and never deployed.** |
+| `media/` | Library audio (`relax.mp3`). **Ignored by Git** (the files are large), but **deployed and public** on the website. |
 | `sitemap.xml`, `robots.txt` | For search engines |
 | `print-assets/` | Flyers, logo files and the WhatsApp flyer. **Not part of the website.** |
 | `Divine-Light-*.md` | The owner's notes: audit log, print brief, upkeep guide. Not part of the website. |
@@ -32,17 +32,17 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 
 ## Library audio
 
-- The site has no member login or private storage yet, so audio files are **not** in Git and **not** on the live site.
-- To hear the audio locally, put `relax.mp3` in `media/` (ask Akhilesh for the file).
+- Library audio is **free and public** (Akhilesh decided this on 2026-11-17). It is served from `/media/` on the website.
+- Audio files are **not** in Git, because they are large. Ask Akhilesh for them and put them in `media/` (for example `media/relax.mp3`).
+- Before every deploy, make sure `media/` has every audio file, or those lessons will show "not available yet".
 - If the file is missing, the player says the recording is not available yet.
-- Before any audio goes online, Akhilesh will choose where to host it: free and public, or members-only behind a paid membership tool.
 
 ## Previewing a change
 
 - **On your computer:** from the project folder, run `python3 -m http.server 8000` and open http://localhost:8000/index.html.
   - Note: pages are linked without `.html` (for example `/about`), and this simple server needs the `.html` added by hand.
-- **On Netlify (a shareable draft link):** First copy only the website files to a separate folder, so the notes (`*.md`), `print-assets/`, `media/` and hidden files are **never** published:
-  `rsync -a --exclude "*.md" --exclude ".*" --exclude "print-assets" --exclude "media" ./ ../site-deploy/`
+- **On Netlify (a shareable draft link):** First copy only the website files to a separate folder, so the notes (`*.md`), `print-assets/` and hidden files are **never** published (`media/` **is** included, for the audio):
+  `rsync -a --exclude "*.md" --exclude ".*" --exclude "print-assets" ./ ../site-deploy/`
   Then run `netlify deploy --dir ../site-deploy`. Without `--prod` this makes a **draft** link only, and the live site doesn't change. You need to be a member of the Netlify team, and you sign in with `netlify login`.
 
 ## Going live

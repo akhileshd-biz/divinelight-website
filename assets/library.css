@@ -115,3 +115,5 @@ a.lib-card:hover .lib-card-title{color:var(--rose-deep);}
 .lib-list .is-current{background:var(--sage-tint);}
 
 @media (max-width:640px){.lib-hero,.lib-feature,.lib-browse,.lib-lesson,.lib-cta{padding-left:16px;padding-right:16px;}.lib-crumbs{padding-left:16px;padding-right:16px;}}
+.lib-download{align-self:flex-start;font-size:14px;font-weight:500;color:var(--rose-deep);text-decoration:underline;text-underline-offset:3px;}
+.lib-player.is-unavailable .lib-download{display:none;}
