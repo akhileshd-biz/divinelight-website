@@ -45,7 +45,38 @@ function element(tag, className, text) {
   return node;
 }
 
+function renderLibraryProgress() {
+  const lessons = account.lessons;
+  const completed = lessons.filter(lesson => account.completed.includes(lesson.id)).length;
+  byId('course-library').hidden = lessons.length === 0;
+  if (!lessons.length) return;
+
+  byId('course-progress').textContent = `${completed} of ${lessons.length} lessons complete`;
+  const progress = byId('library-progress');
+  progress.max = lessons.length;
+  progress.value = completed;
+  const next = lessons.find(lesson => !account.completed.includes(lesson.id)) || lessons[0];
+  const resume = byId('resume');
+  resume.textContent = completed === lessons.length ? 'Revisit the library' : completed ? 'Continue learning' : 'Start first lesson';
+  resume.onclick = () => showLesson(next);
+}
+
+function renderLessonOutline() {
+  byId('lesson-list').replaceChildren(...account.lessons.map(lesson => {
+    const row = element('li', '');
+    const complete = account.completed.includes(lesson.id);
+    const button = element('button', 'lesson-link', lesson.title);
+    button.type = 'button';
+    if (lesson.id === selected.id) button.setAttribute('aria-current', 'step');
+    button.append(element('span', 'lesson-state', complete ? 'Complete' : 'To do'));
+    button.onclick = () => showLesson(lesson);
+    row.append(button);
+    return row;
+  }));
+}
+
 function renderCards() {
+  renderLibraryProgress();
   byId('lessons').replaceChildren(...account.lessons.map(lesson => {
     const card = element('article', 'course-card');
     const cover = element('div', `cover cover-${lesson.id === 'sleep' ? 'sleep' : 'light'}`);
@@ -72,6 +103,19 @@ function showLesson(lesson) {
   byId('lesson-copy').textContent = lesson.content;
   byId('lesson-audio').hidden = !lesson.audio;
   if (lesson.audio) byId('lesson-audio').href = lesson.audio;
+  const player = byId('lesson-player');
+  const recording = lesson.audio === '/library-relax' ? '/media/relax.mp3' : '';
+  if ((player.getAttribute('src') || '') !== recording) {
+    player.pause();
+    if (recording) player.src = recording;
+    else player.removeAttribute('src');
+    player.load();
+  }
+  player.hidden = !recording;
+  const next = account.lessons[account.lessons.indexOf(lesson) + 1];
+  byId('next-lesson').hidden = !next;
+  byId('next-lesson').onclick = next ? () => showLesson(next) : null;
+  renderLessonOutline();
   byId('complete').textContent = account.completed.includes(lesson.id) ? 'Mark incomplete' : 'Mark complete';
   byId('lesson-title').focus();
 }
@@ -176,9 +220,11 @@ byId('buy-library').onclick = event => void run(event.currentTarget, async () =>
   location.assign(url);
 });
 byId('back').onclick = () => {
+  byId('lesson-player').pause();
   byId('lesson').hidden = true;
   byId('account').hidden = false;
   renderCards();
+  byId('account-title').focus();
 };
 byId('complete').onclick = event => void run(event.currentTarget, async () => {
   const lesson = selected;

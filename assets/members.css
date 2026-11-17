@@ -20,3 +20,53 @@
 .download-title{font-weight:600}
 .download-btn{width:auto;height:44px;padding:0 22px;display:inline-flex;align-items:center;text-decoration:none}
 @media(max-width:620px){.offers{flex-direction:column;width:100%}.offers .membership{max-width:none}}
+
+.resume-panel, .lesson-content, .lesson-outline {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--white);
+  padding: clamp(20px, 4vw, 34px);
+}
+.resume-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.resume-panel h2, .lesson-outline h2 {
+  font: 400 clamp(25px, 4vw, 34px)/1.1 var(--serif);
+  margin: 0 0 8px;
+}
+.resume-panel p { margin: 0 0 8px; color: var(--ink); }
+.resume-panel progress { width: min(250px, 100%); accent-color: #76668a; }
+.resume-panel .cta, .lesson-actions .cta { width: auto; padding: 0 24px; }
+.lesson-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(210px, 1fr);
+  align-items: start;
+  gap: 24px;
+  margin-top: 18px;
+}
+.lesson-content .detail-title { margin-top: 0; }
+.lesson-content audio { display: block; width: 100%; margin: 18px 0 8px; }
+.lesson-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 24px; }
+.lesson-outline ol { list-style: none; margin: 0; padding: 0; }
+.lesson-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+  width: 100%;
+  padding: 12px 10px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+.lesson-link[aria-current="step"], .lesson-link:hover { background: #f1edf7; }
+.lesson-state { font-size: 12px; flex: none; color: #5f5271; }
+@media (max-width: 720px) {
+  .lesson-layout { grid-template-columns: 1fr; }
+}
