@@ -1,4 +1,5 @@
 import { browserSupportsWebAuthn, startAuthentication, startRegistration } from '@simplewebauthn/browser';
+import { divineLightDetails, relaxDetails } from './lesson-details.js';
 
 const byId = id => document.getElementById(id);
 const auth = byId('auth');
@@ -9,8 +10,8 @@ let selected;
 const demo = new URLSearchParams(location.search).get('demo') === '1';
 const demoEmail = 'demo@example.com';
 const demoLessons = [
-  { id: 'divine', title: 'Divine Light', description: 'A sample grounding lesson.', content: 'Sit comfortably, take three easy breaths, and notice where your feet meet the ground.' },
-  { id: 'sleep', title: 'Sleep', description: 'A sample wind-down lesson.', content: 'Let your shoulders settle and take a moment to notice your breathing.', audio: '/library-relax' },
+  { id: 'divine', title: 'Divine Light', ...divineLightDetails },
+  { id: 'sleep', title: 'Sleep', ...relaxDetails },
 ];
 const demoProgressKey = 'divine-light-demo-progress';
 
@@ -101,6 +102,10 @@ function showLesson(lesson) {
   byId('lesson').hidden = false;
   byId('lesson-title').textContent = lesson.title;
   byId('lesson-copy').textContent = lesson.content;
+  byId('lesson-meta').textContent = lesson.meta || '';
+  byId('lesson-meta').hidden = !lesson.meta;
+  byId('lesson-notes').hidden = !lesson.notes?.length;
+  byId('lesson-notes-list').replaceChildren(...(lesson.notes || []).map(note => element('li', '', note)));
   byId('lesson-audio').hidden = !lesson.audio;
   if (lesson.audio) byId('lesson-audio').href = lesson.audio;
   const player = byId('lesson-player');

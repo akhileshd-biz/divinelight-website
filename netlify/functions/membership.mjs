@@ -1,4 +1,5 @@
 import { getStore } from '@netlify/blobs';
+import { divineLightDetails, relaxDetails } from '../../portal/lesson-details.js';
 import { getMember, sameOrigin } from '../lib/member-session.mjs';
 import Stripe from 'stripe';
 
@@ -9,8 +10,8 @@ const json = (data, status = 200) => Response.json(data, { status, headers });
 const liveStatuses = new Set(['active', 'trialing']);
 const billingStatuses = new Set(['active', 'trialing', 'past_due', 'unpaid', 'paused', 'incomplete']);
 const lessons = [
-  { id: 'divine', title: 'Divine Light', description: 'A quiet practice for reconnecting with yourself.', content: 'Find a comfortable seat and let your hands rest. Notice where your body meets the chair or floor. Take a few easy breaths, then ask yourself what would feel supportive today. Give yourself a moment to listen before you return to your day.' },
-  { id: 'sleep', title: 'Sleep', description: 'A gentle way to transition into rest.', content: 'Lower the lights and get comfortable. Let your shoulders soften and notice the rhythm of your breathing. When your thoughts wander, gently return your attention to the next breath.', audio: '/library-relax' },
+  { id: 'divine', title: 'Divine Light', ...divineLightDetails },
+  { id: 'sleep', title: 'Sleep', ...relaxDetails },
 ];
 
 // Files a one-time library buyer can download. Add new recordings here.
