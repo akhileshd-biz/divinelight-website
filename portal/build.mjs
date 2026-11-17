@@ -1,7 +1,7 @@
 import { copyFile, cp, mkdir, readdir, rm, stat } from 'node:fs/promises';
 import { build } from 'esbuild';
 
-const destination = 'site-deploy';
+const destination = '_site';
 await rm(destination, { recursive: true, force: true });
 await mkdir(destination);
 for (const file of await readdir('.')) {

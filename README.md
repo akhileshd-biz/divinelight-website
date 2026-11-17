@@ -64,3 +64,20 @@ The project has no automated tests or linters. Before you ask for a review:
 
 - Never put passwords, API keys or Stripe secret keys (`sk_live_...`, `sk_test_...`) in any file or commit. Secrets go in Netlify environment variables only.
 - This repository is private. Don't share its contents.
+
+## Member library
+
+The member portal is at `/members`. Netlify runs `scripts/build.sh` and publishes
+`_site`, with the membership API deployed separately as a Netlify Function.
+
+- Enable Netlify Identity and email confirmation. Configure the confirmation
+  and recovery email links to return to `/members` with their Identity token
+  fragments, so the portal can complete the corresponding flow.
+- Set `STRIPE_SECRET_KEY` and `STRIPE_MEMBERSHIP_PRICE_ID` in Netlify's Functions
+  environment. The price must be a USD 25 monthly recurring price. Enable
+  Stripe's customer portal for payment updates and subscription cancellation.
+- Run `npm ci` and `npm run build` locally. Use Stripe test-mode configuration
+  for a draft deploy and verify signup, login, checkout, lesson access, saved
+  progress, and cancellation before accepting live payments.
+- Put the public Relax recording at `media/relax.mp3` in the deploy input. Keep
+  paid recordings out of the public build directory.

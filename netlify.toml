@@ -1,6 +1,7 @@
+# Netlify builds the public site from GitHub.
 [build]
-  command = "npm run build"
-  publish = "site-deploy"
+  command = "sh scripts/build.sh"
+  publish = "_site"
   functions = "netlify/functions"
 
 [build.environment]

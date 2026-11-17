@@ -362,3 +362,6 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   .dl-notice-btn { min-height: 32px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
   .top-banner a.tb-rating { align-self: center; }
 }
+
+/* Hide the public Netlify badge. */
+#nl-badge-frame { display: none !important; }
