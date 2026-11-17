@@ -34,7 +34,7 @@
 </div></div>
 </section>
 <section class="page" id="account" hidden>
-<div class="hero"><div><div class="eyebrow">Membership</div><h1 id="account-title">A softer space to return to yourself.</h1><p id="subscription-status"></p></div>
+<div class="hero"><div><div class="eyebrow">Membership</div><h1 id="account-title" tabindex="-1">Your member library</h1><p id="subscription-status"></p></div>
 <div class="offers">
 <div class="membership"><strong>$25 / month</strong><span>Stream every lesson and save your progress</span><button class="cta" id="billing" type="button">Join membership</button></div>
 <div class="membership" id="library-offer" hidden><strong>$100 one time</strong><span>Download the whole library to keep</span><button class="cta" id="buy-library" type="button">Buy the library</button></div>
@@ -44,12 +44,32 @@
 <p>Thank you for your purchase. These recordings are yours to keep.</p>
 <ul class="download-list" id="download-list"></ul>
 </section>
+<section id="course-library" hidden aria-labelledby="course-heading">
+<div class="resume-panel">
+<div><h2 id="course-heading">Your practices</h2><p id="course-progress"></p><progress id="library-progress" aria-label="Library progress"></progress></div>
+<button type="button" class="cta" id="resume">Start first lesson</button>
+</div>
 <div class="grid" id="lessons"></div>
 </section>
+</section>
 <section class="page" id="lesson" hidden>
-<button class="back" id="back" type="button">← Library</button>
-<h1 class="detail-title" id="lesson-title" tabindex="-1"></h1><p class="detail-description" id="lesson-copy"></p>
-<div class="member-links"><a id="lesson-audio" class="ghost-btn" hidden>Listen to Relax</a><button type="button" class="cta" id="complete">Mark complete</button></div>
+<button class="back" id="back" type="button">← Your library</button>
+<div class="lesson-layout">
+<article class="lesson-content">
+<h1 class="detail-title" id="lesson-title" tabindex="-1"></h1>
+<p class="detail-description" id="lesson-copy"></p>
+<audio id="lesson-player" controls preload="none" aria-label="Relax guided meditation" hidden></audio>
+<a id="lesson-audio" class="text-link" hidden>Open the audio lesson</a>
+<div class="lesson-actions">
+<button type="button" class="cta" id="complete">Mark complete</button>
+<button type="button" class="text-link" id="next-lesson" hidden>Next lesson →</button>
+</div>
+</article>
+<nav class="lesson-outline" aria-label="Library lessons">
+<h2>Lessons</h2>
+<ol id="lesson-list"></ol>
+</nav>
+</div>
 </section>
 </main>
 <footer>DIVINE LIGHT · MEMBER LIBRARY</footer>
