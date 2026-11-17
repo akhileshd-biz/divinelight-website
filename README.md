@@ -65,14 +65,16 @@ The project has no automated tests or linters. Before you ask for a review:
 The member portal is at `/members`. Netlify runs `scripts/build.sh` and publishes
 `_site`, with the membership API deployed separately as a Netlify Function.
 
-- Enable Netlify Identity and email confirmation. Configure the confirmation
-  and recovery email links to return to `/members` with their Identity token
-  fragments, so the portal can complete the corresponding flow.
+- For email sign-in, verify a sender domain in Resend and set
+  `MEMBER_EMAIL_API_KEY` and `MEMBER_EMAIL_FROM` in Netlify’s Functions environment.
+  The verified sender can be set as `Divine Light <members@example.com>` with
+  the real domain substituted. The first successful one-time link establishes
+  the member account. Account sessions are stored in Netlify Blobs.
 - Set `STRIPE_SECRET_KEY` and `STRIPE_MEMBERSHIP_PRICE_ID` in Netlify's Functions
   environment. The price must be a USD 25 monthly recurring price. Enable
   Stripe's customer portal for payment updates and subscription cancellation.
 - Run `npm ci` and `npm run build` locally. Use Stripe test-mode configuration
-  for a draft deploy and verify signup, login, checkout, lesson access, saved
+  for a draft deploy and verify email signup, sign-in, checkout, lesson access, saved
   progress, and cancellation before accepting live payments.
 - Put the public Relax recording at `media/relax.mp3` in the deploy input. Keep
   paid recordings out of the public build directory.
