@@ -42,7 +42,7 @@
           cover.setAttribute('aria-hidden', 'true');
           var title = document.createElement('span');
           title.className = 'lib-card-title';
-          title.textContent = file.name.replace(/\\.mp3$/i, '').replace(/[_-]+/g, ' ');
+          title.textContent = file.name.replace(/\.mp3$/i, '').replace(/[_-]+/g, ' ');
           var type = document.createElement('span');
           type.className = 'lib-card-type';
           type.textContent = file.folder || 'Guided audio';
