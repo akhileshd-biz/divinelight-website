@@ -6,6 +6,7 @@
   var cards = document.querySelectorAll('.lib-grid .lib-card');
   var count = document.querySelector('[data-lib-count]');
   function applyFilter(cat) {
+    cards = document.querySelectorAll('.lib-grid .lib-card');
     var shown = 0;
     Array.prototype.forEach.call(cards, function (c) {
       var match = cat === 'all' || c.getAttribute('data-cat') === cat;
