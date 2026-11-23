@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#F7F5FA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Playfair+Display:wght@600&amp;family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&amp;family=DM+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap">
 <style>
 :root{--ink:#2E2A3A;--ink-soft:#5C566E;--paper:#F7F5FA;--card:#FFFFFF;--line:#E2DCEB;--rose:#6E5F92;--rose-deep:#54467A;--rose-tint:#ECE6F4;--sage:#B3A6CF;--sage-deep:#4E4270;--sage-tint:#F1EDF7;--cream-dark:#3A3450;}
 *{box-sizing:border-box;}
@@ -82,6 +82,7 @@ img,svg{display:block;max-width:100%;}
 .svc-row:last-child{border-bottom:none;}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/editorial.css">
 <script src="/assets/site.js" defer></script>
 </head>
 <body class="home-page">
@@ -99,167 +100,88 @@ img,svg{display:block;max-width:100%;}
   </nav>
 </header>
 
-<section class="home-intro" aria-labelledby="home-title">
+<main>
+  <section class="home-intro" aria-labelledby="home-title">
+    <div class="container">
+      <div class="home-intro-inner">
+        <div class="home-intro-copy">
+          <p class="editorial-meta">Life coaching · Reiki</p>
+          <h1 id="home-title">Find your footing<br> in a time of change.</h1>
+          <p>One-on-one support with Akhilesh Dwivedi, in Beaverton, Oregon or online.</p>
+          <a href="/contact#book" class="btn btn-primary">Book a free 15-minute call</a>
+        </div>
+        <div class="home-intro-art">
+          <picture class="home-intro-mark">
+            <source srcset="/assets/logo.svg" media="(prefers-reduced-motion: reduce)">
+            <img class="home-intro-logo" src="/assets/logo-animated.svg" width="400" height="380" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container home-proof">
+    <span>Certified Life Coach</span>
+    <span>Reiki Master · 25+ years of energy work</span>
+    <a href="/testimonials">Read client reviews</a>
+  </div>
+
+  <section class="editorial-section" aria-labelledby="immersion-title">
+    <div class="container editorial-grid">
+      <figure class="immersion-photo">
+        <img src="/assets/akhilesh.jpg" alt="Akhilesh Dwivedi" loading="lazy">
+        <figcaption class="editorial-meta">Akhilesh Dwivedi · Your coach</figcaption>
+      </figure>
+      <div class="immersion-copy">
+        <p class="editorial-meta">12 private sessions · 6 months</p>
+        <h2 id="immersion-title">The Coaching Immersion</h2>
+        <p>Make space to work through a career change, a relationship shift, or a decision you’ve been putting off.</p>
+        <a class="editorial-link" href="/life-coaching#immersion">Explore the $3,300 package</a>
+        <figure class="immersion-quote">
+          <blockquote>“He helped me realign my focus toward what truly matters in life.”</blockquote>
+          <figcaption>Sarah W., life coaching client</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section home-directory" aria-labelledby="svc-heading">
+    <div class="container editorial-grid">
+      <div class="directory-heading">
+        <h2 id="svc-heading">Other ways to work together</h2>
+        <a class="editorial-link" href="/services">All services and rates</a>
+      </div>
+      <ul class="directory-links">
+        <li><a href="/reiki">Reiki healing <span class="editorial-meta">From $30</span></a></li>
+        <li><a href="/life-coaching">One-month coaching <span class="editorial-meta">$1,080</span></a></li>
+        <li><a href="/listening-service">Listening sessions <span class="editorial-meta">$60</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="editorial-section home-library-section" aria-labelledby="home-library-title">
+    <div class="container">
+      <div class="home-library">
+        <h2 id="home-library-title">Guided meditations</h2>
+        <div class="home-library-links">
+          <a class="editorial-link" href="/library">Free library</a>
+          <a class="editorial-link" href="/members">Membership</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer compact-footer">
   <div class="container">
-    <div class="home-intro-inner">
-      <div class="home-intro-copy">
-        <h1 id="home-title">Reiki healing and life coaching</h1>
-        <p>In person in Beaverton, OR or online.</p>
-        <a href="/contact#book" class="btn btn-primary">Book a free 15-min call</a>
-      </div>
-      <div class="home-intro-art">
-        <picture class="home-intro-mark">
-          <source srcset="/assets/logo.svg" media="(prefers-reduced-motion: reduce)">
-          <img class="home-intro-logo" src="/assets/logo-animated.svg" alt="">
-        </picture>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section home-section" aria-labelledby="svc-heading">
-  <div class="container dl-stack">
-    <div class="dl-section-head">
-      <div>
-        <h2 id="svc-heading" class="dl-h2">Services</h2>
-      </div>
-      <a href="/rates" class="dl-text-link">View rates</a>
-    </div>
-    <div class="dl-bento home-services">
-      <a class="dl-tile" href="reiki">
-        <h3 class="dl-tile-title">Reiki Healing</h3>
-        <p class="dl-tile-copy">Hands-on Reiki in Beaverton or distance Reiki online.</p>
-        <span class="dl-tile-meta"><span>30–50 min · From $30</span></span>
-      </a>
-      <a class="dl-tile" href="life-coaching">
-        <h3 class="dl-tile-title">Life Coaching</h3>
-        <p class="dl-tile-copy">One-on-one coaching for life and career changes.</p>
-        <span class="dl-tile-meta"><span>4–12 sessions · From $1,080</span></span>
-      </a>
-      <a class="dl-tile" href="subconscious-programming">
-        <h3 class="dl-tile-title">Subconscious Programming</h3>
-        <p class="dl-tile-copy">Guided hypnosis to explore habits and beliefs you want to change.</p>
-        <span class="dl-tile-meta"><span>45 min · $100</span></span>
-      </a>
-      <a class="dl-tile" href="listening-service">
-        <h3 class="dl-tile-title">Listening Service</h3>
-        <p class="dl-tile-copy">A private session to talk through what’s on your mind.</p>
-        <span class="dl-tile-meta"><span>45 min · $60</span></span>
-      </a>
-      <a class="dl-tile" href="chakra-healing">
-        <h3 class="dl-tile-title">Chakra Healing</h3>
-        <p class="dl-tile-copy">Guided balancing of your energy centers, in person or remote.</p>
-        <span class="dl-tile-meta"><span>25 min · $40</span></span>
-      </a>
-      <a class="dl-tile" href="emotional-detox">
-        <h3 class="dl-tile-title">Emotional Detox</h3>
-        <p class="dl-tile-copy">A guided session to work through difficult feelings.</p>
-        <span class="dl-tile-meta"><span>30 min · $45</span></span>
-      </a>
-      <a class="dl-tile dl-tile--wide" href="anxiety-support">
-        <h3 class="dl-tile-title">Anxiety Support</h3>
-        <p class="dl-tile-copy">One-on-one support for everyday worries.</p>
-        <span class="dl-tile-meta"><span>30 min · $50</span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section home-section" aria-labelledby="home-library-title">
-  <div class="container">
-    <div class="home-library">
-      <div>
-        <h2 id="home-library-title" class="dl-h2">Guided meditations</h2>
-        <p>Start with a free recording or join to follow guided lessons and save your progress.</p>
-      </div>
-      <div class="home-library-links">
-        <a class="btn" href="/library">Free library</a>
-        <a class="btn" href="/members">Membership</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section home-section" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-  <div class="container">
-    <h2 style="font-size:28px;margin-bottom:28px;">Why Divine Light</h2>
-    <div class="grid-cards">
-      <div class="trust-item" style="align-items:flex-start;"><span class="trust-dot" style="margin-top:8px;"></span><span>25+ years of hands-on energy work as a certified Reiki Master</span></div>
-      <div class="trust-item" style="align-items:flex-start;"><span class="trust-dot" style="margin-top:8px;"></span><span>Certified Life Coach, Jay Shetty Certification School</span></div>
-      <div class="trust-item" style="align-items:flex-start;"><span class="trust-dot" style="margin-top:8px;"></span><span>In-person sessions in Beaverton, plus remote sessions anywhere</span></div>
-      <div class="trust-item" style="align-items:flex-start;"><span class="trust-dot" style="margin-top:8px;"></span><span>Free 15-minute discovery call before you book</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section home-section">
-  <div class="container" style="display:flex;flex-direction:column;gap:28px;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
-      <h2 style="font-size:28px;">What clients say</h2>
-      <a href="testimonials">Read more testimonials</a>
-    </div>
-    <div class="grid-cards">
-      <div class="quote-strip"><p>"Akhilesh has a natural gift for guiding and uplifting others. His passion for Reiki and life coaching shines through his calm energy, insight, and dedication to personal growth."</p><div class="quote-attr">— Priyanka B., Reiki &amp; Life Coaching</div></div>
-      <div class="quote-strip"><p>"Had a lovely experience! The healer is truly gifted — gentle, intuitive, and really tuned in. I felt lighter, clearer, and genuinely cared for."</p><div class="quote-attr">— Rohit O., Reiki</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section home-section">
-  <div class="container">
-    <div class="cta-band">
-      <h2 style="font-size:28px;margin-bottom:20px;">Talk with Akhilesh</h2>
-      <a href="/contact#book" class="btn" style="background:#fff;color:var(--rose-deep);">Book a free 15-min call</a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-heading">Divine Light</div>
-      <p style="color:#E4DFEE;font-size:14.5px;max-width:240px;">Reiki and life coaching in Beaverton, OR and online.</p>
-    </div>
-    <div>
-      <div class="footer-heading">Explore</div>
-      <div class="footer-links">
-        <a href="about">About</a>
-        <a href="services">Services</a>
-        <a href="rates">Rates &amp; Packages</a>
-        <a href="testimonials">Testimonials</a>
-        <a href="library">Library</a>
-        <a href="/members">Membership</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-heading">Services</div>
-      <div class="footer-links">
-        <a href="reiki">Reiki Healing</a>
-        <a href="life-coaching">Life Coaching</a>
-        <a href="listening-service">Listening Service</a>
-        <a href="subconscious-programming">Subconscious Programming</a>
-        <a href="chakra-healing">Chakra Healing</a>
-        <a href="emotional-detox">Emotional Detox</a>
-        <a href="anxiety-support">Anxiety Support</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-heading">Contact</div>
-      <div class="footer-links">
-        <a href="tel:19712464628">(971) 246-4628</a>
-        <a href="mailto:info@divinelighthealing-lifecoach.com">info@divinelighthealing-lifecoach.com</a>
-        <span style="color:#E4DFEE;">Beaverton, OR &amp; remote</span>
-      </div>
-      <div class="social-row" style="margin-top:16px;"><a class="dl-reviews-link" href="https://www.google.com/maps/place/Divine+Light+Reiki+and+Life+Coaching/@45.5457049,-122.7381666,11z/data=!4m8!3m7!1s0x89c82e0fc08af983:0x98c863d5221bbbec!8m2!3d45.5457049!4d-122.7381666!9m1!1b1!16s%2Fg%2F11x8c0wr7s" rel="noopener" target="_blank">Read our Google reviews</a></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Divine Light Healing and Life Coaching. All rights reserved.</span>
-    <div class="footer-links" style="flex-direction:row;gap:18px;">
-      <a href="legal#terms">Terms</a>
-      <a href="legal#privacy">Privacy</a>
-      <a href="legal#disclaimers">Disclaimers</a>
-    </div>
+    <a href="/" class="compact-footer-brand">Divine Light</a>
+    <nav aria-label="Footer">
+      <a href="/contact">Contact</a>
+      <a href="/rates">Rates</a>
+      <a href="/legal#terms">Terms</a>
+      <a href="/legal#privacy">Privacy</a>
+      <a href="/legal#disclaimers">Disclaimers</a>
+    </nav>
   </div>
 </footer>
 </body>
