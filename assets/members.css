@@ -208,3 +208,38 @@
   .member-preview { grid-template-columns: minmax(0, 1fr); }
   .member-preview img { aspect-ratio: 2 / 1; height: auto; }
 }
+
+.members-body .login-art {
+  background: linear-gradient(0deg, rgba(27, 22, 30, .78), transparent 80%),
+    url('/assets/member-woodland-path.webp') center / cover;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-height: clamp(260px, 43vw, 540px);
+  padding: clamp(24px, 5vw, 56px);
+  text-align: left;
+}
+.members-body .login-art::before { content: none; }
+.members-body .login-art p {
+  max-width: 16ch;
+  color: #fff;
+  font: 400 clamp(2rem, 4vw, 3.75rem)/1.05 var(--serif);
+  letter-spacing: normal;
+  text-transform: none;
+}
+#account .hero { margin-bottom: 16px; }
+#account .member-preview {
+  background: var(--brand-lavender);
+  border-color: var(--brand-lavender-line);
+  margin: 0 0 24px;
+}
+#account .member-preview :is(h2, a) { color: var(--brand-plum); }
+#account .offers { width: min(100%, 620px); margin-bottom: 24px; }
+#account .offers:not(:has(> :not([hidden]))) { margin-bottom: 0; }
+@media (max-width: 620px) {
+  .members-body .login-art {
+    display: flex;
+    min-height: 148px;
+    padding: 20px;
+  }
+  .members-body .login-art p { font-size: clamp(1.75rem, 6vw, 2.25rem); }
+}

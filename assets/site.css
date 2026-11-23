@@ -7,7 +7,12 @@
 .site-header { view-transition-name: dl-header; }
 
 html { scroll-behavior: smooth; }
-:root { --display-font: 'Playfair Display', Georgia, serif; }
+:root {
+  --display-font: 'Playfair Display', Georgia, serif;
+  --brand-lavender: #F0EBF5;
+  --brand-lavender-line: #E4DCEC;
+  --brand-plum: #543D60;
+}
 h1, h2, h3, .serif {
   font-family: var(--display-font);
   font-weight: 600;
@@ -240,8 +245,8 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   z-index: 30;
   gap: 4px 32px;
   padding: 12px max(24px, calc((100% - 1008px) / 2));
-  background: #F0EBF5;
-  border-bottom: 1px solid #E4DCEC;
+  background: var(--brand-lavender);
+  border-bottom: 1px solid var(--brand-lavender-line);
 }
 .site-header.is-scrolled { box-shadow: 0 4px 18px rgba(39,40,36,.06); }
 .site-header .brand { flex: none; }
@@ -277,7 +282,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   min-height: 44px;
   padding-inline: 14px;
   border-radius: 6px;
-  background: var(--rose-deep);
+  background: var(--brand-plum);
   color: #fff;
   font-size: .875rem;
   font-weight: 600;

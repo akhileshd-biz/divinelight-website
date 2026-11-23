@@ -100,7 +100,7 @@ body.home-page .container {
 .directory-links a:hover { background: var(--paper); }
 .directory-links .editorial-meta { margin: 0; white-space: nowrap; }
 .home-library-section { padding-block: clamp(2rem, 5vw, 4rem); scroll-margin-top: 120px; }
-.home-library { background: transparent; color: var(--ink); border-radius: 0; padding: 0; }
+.home-library { background: transparent; color: var(--brand-plum); border-radius: 0; padding: 0; }
 .coaching-offer { border-block-start: 1px solid var(--line); padding-block: 1.25rem; }
 .coaching-offer summary { cursor: pointer; font-weight: 600; }
 .coaching-price s { color: var(--ink-soft); margin-inline-start: .5rem; }
