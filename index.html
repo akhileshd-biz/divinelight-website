@@ -83,6 +83,7 @@ img,svg{display:block;max-width:100%;}
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/editorial.css">
 <script src="/assets/site.js" defer></script>
+<script src="/assets/lotus-pause.js" defer></script>
 </head>
 <body class="home-page">
 <header class="site-header">
@@ -157,13 +158,20 @@ img,svg{display:block;max-width:100%;}
     </div>
   </section>
 
-  <section class="editorial-section home-library-section" aria-labelledby="home-library-title">
+  <section class="editorial-section home-library-section" id="guided-meditations" aria-labelledby="home-library-title">
     <div class="container">
       <div class="home-library">
         <h2 id="home-library-title">Guided meditations</h2>
         <div class="home-library-links">
           <a class="editorial-link" href="/library">Free library</a>
           <a class="editorial-link" href="/members">Membership</a>
+        </div>
+      </div>
+      <div class="lotus-pause" id="lotus-pause" hidden>
+        <img class="lotus-pause-mark" src="/assets/logo.svg" width="80" height="76" alt="" loading="lazy">
+        <div class="lotus-pause-controls">
+          <p class="lotus-pause-status" role="status">One breath. Ten seconds.</p>
+          <button class="lotus-pause-button" type="button">Take a breath</button>
         </div>
       </div>
     </div>
