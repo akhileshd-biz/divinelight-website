@@ -240,11 +240,12 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   z-index: 30;
   gap: 4px 32px;
   padding: 12px max(24px, calc((100% - 1008px) / 2));
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: #F0EBF5;
+  border-bottom: 1px solid #E4DCEC;
 }
 .site-header.is-scrolled { box-shadow: 0 4px 18px rgba(39,40,36,.06); }
 .site-header .brand { flex: none; }
+.site-header .brand-logo { width: 32px; height: auto; flex: none; }
 .site-header .brand-word {
   font: 600 1.125rem/1.2 Cinzel, Georgia, serif;
   letter-spacing: .08em;
