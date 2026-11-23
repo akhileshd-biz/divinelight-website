@@ -51,10 +51,26 @@ export default async function membership(request) {
     const userKey = encodeURIComponent(user.id);
     const body = request.method === 'POST' ? await request.json().catch(() => null) : null;
     let customer = await accounts.get(userKey);
+    let clearedCustomer = false;
+    // A saved customer can go missing (deleted in Stripe, or created with a key from
+    // the other Stripe mode). Forget it so the member can start fresh.
+    if (customer) {
+      try {
+        const record = await stripe.customers.retrieve(customer);
+        if (record?.deleted) throw Object.assign(new Error('deleted'), { code: 'resource_missing' });
+      } catch (error) {
+        if (error?.code !== 'resource_missing') throw error;
+        console.warn('Saved Stripe customer not found; clearing it for this member');
+        await accounts.delete(userKey);
+        await accounts.delete(`${userKey}/library`);
+        customer = null;
+        clearedCustomer = true;
+      }
+    }
     const ensureCustomer = async () => {
       if (customer) return customer;
       const record = await stripe.customers.create({ email: user.email, metadata: { memberId: user.id } }, {
-        idempotencyKey: `divine-light-member-${userKey}`,
+        idempotencyKey: `divine-light-member-${userKey}` + (clearedCustomer ? `-${Date.now()}` : ""),
       });
       await accounts.set(userKey, record.id);
       return record.id;
@@ -150,7 +166,8 @@ export default async function membership(request) {
 
     return json({ error: 'Unknown membership action.' }, 400);
   } catch (error) {
-    console.error('Membership request failed', error?.type || error?.name);
+    // Stripe's code and message explain the cause (for example a missing price); they contain no secrets.
+    console.error('Membership request failed', error?.type || error?.name, error?.code || '', error?.message || '');
     return json({ error: 'Membership is temporarily unavailable. Please try again shortly.' }, 503);
   }
 }
