@@ -2,12 +2,12 @@
 :root {
   --paper: #F9F8F6;
   --card: #FFFFFF;
-  --ink: #2E2A3A;
-  --ink-soft: #5C566E;
+  --ink: #272824;
+  --ink-soft: #595A50;
   --line: #DDD8D4;
-  --rose: #54467A;
-  --rose-deep: #54467A;
-  --rose-tint: #F0EBF4;
+  --rose: #35362F;
+  --rose-deep: #35362F;
+  --rose-tint: #EEECE5;
   --display-font: 'Newsreader', Georgia, serif;
   --body-font: 'DM Sans', system-ui, sans-serif;
   --meta-font: 'JetBrains Mono', monospace;
@@ -97,23 +97,6 @@ body:not(.members-body) .btn { border-radius: 6px; }
 .coaching-price s { color: var(--ink-soft); margin-inline-start: .5rem; }
 #immersion { scroll-margin-top: 10rem; }
 
-.compact-footer {
-  background: var(--paper);
-  color: var(--ink-soft);
-  border-top: 1px solid var(--line);
-  padding: .5rem 0;
-}
-.compact-footer .container, .compact-footer nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0 clamp(.75rem, 2vw, 1.5rem);
-}
-.compact-footer .container { justify-content: space-between; }
-.compact-footer a { display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-size: .875rem; }
-.compact-footer a:hover { color: var(--rose); }
-.compact-footer-brand { font-weight: 600; }
-
 @media (max-width: 760px) {
   .home-intro-inner, .editorial-grid { grid-template-columns: minmax(0, 1fr); }
   .home-intro-inner > *, .editorial-grid > * { grid-column: 1; }
@@ -123,7 +106,4 @@ body:not(.members-body) .btn { border-radius: 6px; }
   .home-intro h1 br { display: none; }
   .immersion-photo { max-width: 22rem; }
   .immersion-photo img { aspect-ratio: 5 / 4; }
-}
-@media (max-width: 640px) {
-  body:has(.sticky-cta) .compact-footer { padding-bottom: 4rem; }
 }

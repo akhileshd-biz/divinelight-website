@@ -25,7 +25,7 @@
     loader.textContent = 'Loading available times…';
     var widget = document.createElement('div');
     widget.className = 'calendly-inline-widget';
-    widget.setAttribute('data-url', calUrl + (calUrl.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1&primary_color=6e5f92');
+    widget.setAttribute('data-url', calUrl + (calUrl.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1&primary_color=35362f');
     frame.appendChild(loader);
     frame.appendChild(widget);
     var fallback = booking.querySelector('p');

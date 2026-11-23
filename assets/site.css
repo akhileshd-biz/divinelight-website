@@ -84,7 +84,7 @@ a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-r
 }
 
 
-:root { --dl-ease: cubic-bezier(.22,.61,.36,1); --dl-hairline: rgba(46,42,58,.10); }
+:root { --dl-ease: cubic-bezier(.22,.61,.36,1); --dl-hairline: rgba(39,40,36,.10); }
 
 /* ---------- Shared section rhythm ---------- */
 .dl-section { padding-top: 88px; padding-bottom: 88px; }
@@ -104,7 +104,7 @@ a:hover > .svc-row { background: var(--rose-tint); padding-left: 12px; padding-r
   transition: transform .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
 }
 .dl-tile--wide { grid-column: span 2; }
-a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow: 0 18px 40px rgba(46,42,58,.09); color: var(--ink); }
+a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow: 0 18px 40px rgba(39,40,36,.09); color: var(--ink); }
 .dl-tile-kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rose-deep); }
 .dl-tile-title { font-size: 26px; line-height: 1.15; }
 .dl-tile-copy { color: var(--ink-soft); font-size: 16px; line-height: 1.6; max-width: 46ch; }
@@ -112,11 +112,11 @@ a.dl-tile:hover { transform: scale(1.015); border-color: var(--rose); box-shadow
 .dl-arrow { display: inline-block; transition: transform .3s ease-in-out; }
 a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 .dl-tile--dark { background: var(--cream-dark); border-color: transparent; color: #fff; }
-.dl-tile--dark .dl-tile-kicker { color: #C9BEE6; }
-.dl-tile--dark .dl-tile-copy { color: #E4DFEE; }
+.dl-tile--dark .dl-tile-kicker { color: #E8DFC4; }
+.dl-tile--dark .dl-tile-copy { color: #EEECE5; }
 .dl-stat { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 84px; line-height: .95; color: #fff; margin: 8px 0 4px; }
-.dl-tile--accent { background: var(--rose-tint); border-color: rgba(110,95,146,.25); }
-.dl-tile--accent:hover { background: #E4DCF1; }
+.dl-tile--accent { background: var(--rose-tint); border-color: rgba(63,64,55,.25); }
+.dl-tile--accent:hover { background: #E8E5DE; }
 @media (max-width: 900px) { .dl-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) {
   .dl-bento { grid-template-columns: minmax(0, 1fr); gap: 14px; }
@@ -145,9 +145,9 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 .dl-plan-btn:hover { background: var(--ink); color: #fff; transform: scale(1.02); }
 .dl-plan--featured { background: var(--cream-dark); border-color: transparent; }
 .dl-plan--featured .dl-plan-name, .dl-plan--featured .dl-plan-price { color: #fff; }
-.dl-plan--featured .dl-plan-price span:not(.dl-num), .dl-plan--featured .dl-plan-copy { color: #E4DFEE; }
+.dl-plan--featured .dl-plan-price span:not(.dl-num), .dl-plan--featured .dl-plan-copy { color: #EEECE5; }
 .dl-plan--featured .dl-plan-list { color: #fff; border-top-color: rgba(255,255,255,.16); }
-.dl-plan--featured .dl-plan-list li::before { background: #C9BEE6; }
+.dl-plan--featured .dl-plan-list li::before { background: #E8DFC4; }
 .dl-plan--featured .dl-plan-btn { background: #fff; border-color: #fff; color: var(--cream-dark); }
 .dl-plan--featured .dl-plan-btn:hover { background: var(--rose-tint); color: var(--cream-dark); }
 @media (max-width: 900px) { .dl-plans { grid-template-columns: minmax(0, 1fr); max-width: 520px; } }
@@ -227,7 +227,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 
 /* Google reviews link (replaces placeholder social icons) */
 .dl-reviews-link { display: inline-flex; align-items: center; min-height: 40px; font-size: 15px; font-weight: 500; }
-.site-footer .dl-reviews-link { color: #E4DFEE; }
+.site-footer .dl-reviews-link { color: #EEECE5; }
 .site-footer .dl-reviews-link:hover { color: #FFFFFF; }
 
 /* Hide the public Netlify badge. */
@@ -243,7 +243,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
-.site-header.is-scrolled { box-shadow: 0 4px 18px rgba(46,42,58,.06); }
+.site-header.is-scrolled { box-shadow: 0 4px 18px rgba(39,40,36,.06); }
 .site-header .brand { flex: none; }
 .site-header .brand-word {
   font: 600 1.125rem/1.2 Cinzel, Georgia, serif;
@@ -253,7 +253,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   font: italic 500 1rem/1.1 'Cormorant Garamond', Georgia, serif;
   text-transform: none;
   letter-spacing: normal;
-  color: #5E5180;
+  color: #595A50;
 }
 .site-header .nav-links { justify-content: center; gap: 0 clamp(12px, 2.3vw, 28px); }
 .site-header .nav-links a {
@@ -276,8 +276,8 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: #E9E4F1;
-  border-bottom: 1px solid #D9D0E8;
+  background: #F0EEE7;
+  border-bottom: 1px solid #E8E5DE;
   padding-block: 64px;
 }
 .home-intro > .container { position: relative; z-index: 1; }
@@ -329,7 +329,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 .home-library-links { display: flex; flex-wrap: wrap; gap: 12px; }
 .home-library-links .btn {
   padding: 12px 16px;
-  border: 1px solid #C9BEE6;
+  border: 1px solid #E8DFC4;
   border-radius: 999px;
   color: var(--paper);
 }
@@ -391,3 +391,26 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   85%  { opacity: var(--alpha, .7); }
   100% { transform: translate3d(var(--drift, 20px), -560px, 0) scale(1); opacity: 0; }
 }
+
+/* One compact footer across the public site and member portal. */
+.site-footer.compact-footer, .members-body .member-footer {
+  padding: 0 12px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  letter-spacing: normal;
+}
+.compact-footer nav, .member-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 clamp(8px, 2vw, 20px);
+}
+.compact-footer a, .member-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  font-size: .875rem;
+}
+.compact-footer a:hover, .member-footer a:hover { text-decoration: underline; }
