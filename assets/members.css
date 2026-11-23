@@ -153,3 +153,27 @@
 #account .offers:not(:has(> :not([hidden]))) { display: none; }
 #account .offers .membership { min-width: 0; max-width: none; margin: 0; }
 #account .offers .cta { margin-top: auto; }
+
+@media (max-width: 620px) {
+  #account .offers {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 0;
+  }
+  #account .offers .membership {
+    padding: 16px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+  }
+  #account .offers .membership span { font-size: .95rem; color: var(--ink-soft); }
+  .members-body .cta, .members-body .back { border-radius: 6px; }
+  .members-body .back { margin-bottom: 8px; }
+  .members-body .resume-panel { gap: 12px; }
+  .members-body .lesson-outline { padding: 12px 16px; }
+  .members-body .lesson-link { min-height: 48px; }
+}
+
+.members-body :is(button, .download-btn) { touch-action: manipulation; }
+#account-title, #lesson-title { scroll-margin-top: 160px; }

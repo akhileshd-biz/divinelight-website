@@ -264,14 +264,42 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   white-space: nowrap;
 }
 .nav-links a:not(.btn)::after { bottom: 5px; }
-.site-header .nav-links .nav-booking {
-  padding-inline: 16px;
-  border: 1px solid var(--rose);
-  border-radius: 6px;
-  color: var(--rose-deep);
+.site-header:has(> .nav-booking) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 4px clamp(12px, 2vw, 28px);
 }
-.nav-links .nav-booking::after { display: none; }
-.site-header .nav-links .nav-booking:hover { background: var(--rose-tint); }
+.site-header:has(> .nav-booking) .nav-links { justify-content: flex-end; }
+.site-header > .nav-booking {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-inline: 14px;
+  border-radius: 6px;
+  background: var(--rose-deep);
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.site-header > .nav-booking:hover { background: var(--cream-dark); color: #fff; }
+@media (max-width: 760px) {
+  .site-header:has(> .nav-booking) { grid-template-columns: minmax(0, 1fr) auto; }
+  .site-header:has(> .nav-booking) .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: 0 clamp(8px, 3vw, 20px);
+  }
+  .site-header > .nav-booking { grid-row: 1; grid-column: 2; }
+}
+@media (max-width: 360px) {
+  .site-header:has(> .nav-booking) .brand { gap: 6px; }
+  .site-header:has(> .nav-booking) .brand-word { font-size: .94rem; }
+  .site-header:has(> .nav-booking) .brand-sub { font-size: .69rem; }
+  .site-header > .nav-booking { padding-inline: 8px; }
+}
 
 .home-intro {
   position: relative;
@@ -357,7 +385,6 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 @media (max-width: 520px) {
   .site-header .nav-links a { font-size: .875rem; }
   .dl-booking, #terms, #privacy, #disclaimers { scroll-margin-top: 168px; }
-  .site-header .nav-links .nav-booking { padding-inline: 8px; }
   .home-intro h1 { font-size: clamp(2rem, 9vw, 3rem); }
   .home-intro-mark { width: 124px; }
   .home-intro .btn { padding-inline: 16px; }

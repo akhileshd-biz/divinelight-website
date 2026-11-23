@@ -25,8 +25,6 @@ body:not(.members-body) :is(.card, .svc-card, .quote-strip, .quote-card, .cta-ba
 body:not(.members-body) .btn { border-radius: 6px; }
 .site-header.is-scrolled { box-shadow: none; }
 .site-header .brand-sub { font-family: var(--body-font); font-size: .8rem; font-style: normal; }
-.site-header .nav-links .nav-booking { border-color: var(--line); color: var(--ink); }
-.site-header .nav-links .nav-booking:hover { border-color: var(--rose); }
 
 .home-intro {
   background: var(--paper);
@@ -107,3 +105,18 @@ body:not(.members-body) .btn { border-radius: 6px; }
   .immersion-photo { max-width: 22rem; }
   .immersion-photo img { aspect-ratio: 5 / 4; }
 }
+
+.journal { padding-block: var(--section-space); }
+.journal > .container { max-width: 960px; }
+.journal-heading { padding-bottom: var(--fluid-gap); }
+.journal-heading p, .journal-prose { color: var(--ink-soft); }
+.journal-entry {
+  border-top: 1px solid var(--line);
+  padding-top: var(--fluid-gap);
+  scroll-margin-top: 160px;
+}
+.journal-entry h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+}
+.journal-prose { display: grid; gap: 16px; margin-block: 16px; }
