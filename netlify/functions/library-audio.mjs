@@ -23,7 +23,7 @@ export default async function handler() {
       if (!response.ok) throw new Error('Drive folder request failed');
       const data = await response.json();
       return (data.files || [])
-        .filter(file => file.mimeType === 'audio/mpeg' && /\\.mp3$/i.test(file.name || ''))
+        .filter(file => file.mimeType === 'audio/mpeg' && /\.mp3$/i.test(file.name || ''))
         .filter(file => file.id !== EXISTING_TRACK_ID)
         .map(file => ({
           id: file.id,
