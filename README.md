@@ -50,7 +50,7 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 
 ## Checks
 
-The project has no automated tests or linters. Before you ask for a review:
+GitHub Actions runs the membership smoke test on pull requests and pushes to main. Before you ask for a review:
 - Open every page you changed in the preview, on desktop and on a phone-sized window.
 - Click every link and button you changed.
 - If you changed a price, the name, the email or the phone number, search the whole folder for the old value so every page matches.
@@ -64,6 +64,22 @@ The project has no automated tests or linters. Before you ask for a review:
 
 The member portal is at `/members`. Netlify runs `scripts/build.sh` and publishes
 `_site`, with the membership API deployed separately as a Netlify Function.
+
+
+The [membership test portal](https://divinelighthealing-lifecoach.com/membership-test)
+opens the signed-in demo dashboard with sample lessons and tab-local progress. It uses no real account,
+email, or billing. The daily GitHub check verifies that the live portal opens,
+its demo flow works, and the live membership API requires sign-in. The checks
+do not exercise real passkey registration, email delivery, or Stripe payments.
+
+To run the browser check locally:
+
+```sh
+npm ci
+npx playwright install chromium
+npm run build
+npm run test:membership
+```
 
 - Passkey accounts work without email delivery. Keep the passkey in a synced
   device or password manager to sign in elsewhere. Passkey and email-link

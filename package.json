@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node portal/build.mjs"
+    "build": "node portal/build.mjs",
+    "test:membership": "node scripts/test-membership.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "^11.1.9",
@@ -12,6 +13,7 @@
     "stripe": "^23.1.0"
   },
   "devDependencies": {
-    "esbuild": "^0.28.2"
+    "esbuild": "^0.28.2",
+    "playwright": "1.65.1"
   }
 }

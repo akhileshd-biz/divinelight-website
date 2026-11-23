@@ -7,7 +7,8 @@ const status = byId('status');
 let linkCode;
 let account;
 let selected;
-const demo = new URLSearchParams(location.search).get('demo') === '1';
+const query = new URLSearchParams(location.search);
+const demo = query.get('demo') === '1';
 const demoEmail = 'demo@example.com';
 const demoLessons = [
   { id: 'divine', title: 'Divine Light', ...divineLightDetails },
@@ -244,6 +245,9 @@ byId('complete').onclick = event => void run(event.currentTarget, async () => {
 
 void run(byId('auth-submit'), async () => {
   if (demo) {
+    if (query.get('view') === 'library') {
+      await openAccount();
+    }
     byId('auth-title').textContent = 'Try the demo library.';
     byId('auth-copy').textContent = 'Sample sign-in details only. This demo uses sample lessons and has no billing.';
     auth.email.value = demoEmail;

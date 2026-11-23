@@ -16,3 +16,8 @@
   for = "/members"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+[[redirects]]
+  from = "/membership-test"
+  to = "/members?demo=1&view=library"
+  status = 302

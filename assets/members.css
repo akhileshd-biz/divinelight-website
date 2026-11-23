@@ -192,3 +192,31 @@
 .login-art { background: var(--cream-dark); }
 .login-art:before { border-color: #A89BC9; }
 .login-content > p, .detail-description { max-width: 65ch; }
+
+.members-body .member-footer {
+  background: var(--cream-dark);
+  color: var(--paper);
+  padding: 12px 0;
+  font-size: .875rem;
+  letter-spacing: normal;
+}
+.member-footer-inner,
+.member-footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 20px;
+}
+.member-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+}
+.member-footer a:hover { color: #C9BEE6; }
+.member-footer a:focus-visible { outline-color: var(--paper); }
+.member-footer-brand { font-weight: 600; }
+@media (min-width: 640px) {
+  .member-footer-inner { justify-content: space-between; }
+}
