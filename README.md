@@ -34,11 +34,11 @@ This is a plain HTML and CSS site. It has no build step, framework or packages.
 
 ## Library audio
 
-- Library audio is **free and public** (Akhilesh decided this on 2026-11-17). It is served from `/media/` on the website.
-- Audio files are too large for Git. At each build, Netlify downloads them from Google Drive, using the list in `scripts/audio-sources.txt`. Each Drive file must be shared as "Anyone with the link can view".
-- To add a new recording: share it in Drive that way, then add a line with its file name and Drive file id to `scripts/audio-sources.txt`.
-- For local previews, put a copy in `media/`.
-- If the file is missing, the player says the recording is not available yet.
+- Library audio is **free and public** (Akhilesh decided this on 2026-11-17).
+- The featured Relax recording is copied into `/media/` from `scripts/audio-sources.txt`.
+- New MP3s are discovered by `netlify/functions/library-audio.mjs` from the public `Relaxation`, `Anxiety`, and `Sleep` folders in Google Drive. New MP3s placed in one of those folders appear in the library automatically (cached for up to five minutes); no Git change is needed.
+- Each source folder and its audio files must be shared as "Anyone with the link can view". Add `GOOGLE_DRIVE_API_KEY` to Netlify's Functions environment for the production and deploy-preview contexts. Keep the key restricted to the Google Drive API.
+- For local previews, put the featured Relax audio in `media/relax.mp3`; automatic Drive discovery runs only in Netlify Functions.
 
 ## Previewing and publishing (automatic)
 
