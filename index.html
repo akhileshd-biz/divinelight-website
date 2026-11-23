@@ -22,13 +22,13 @@
 <meta name="theme-color" content="#F7F5FA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Serif&family=Work+Sans:wght@400;500;600&display=swap">
 <style>
 :root{--ink:#2E2A3A;--ink-soft:#5C566E;--paper:#F7F5FA;--card:#FFFFFF;--line:#E2DCEB;--rose:#6E5F92;--rose-deep:#54467A;--rose-tint:#ECE6F4;--sage:#B3A6CF;--sage-deep:#4E4270;--sage-tint:#F1EDF7;--cream-dark:#3A3450;}
 *{box-sizing:border-box;}
 .brand-logo{width:44px;height:auto;flex:none;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:'Work Sans',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
-h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0;color:var(--ink);}
+h1,h2,h3,.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;margin:0;color:var(--ink);}
 p{margin:0;}
 a{color:var(--rose-deep);text-decoration:none;}
 a:hover{color:var(--rose);}
@@ -100,17 +100,24 @@ img,svg{display:block;max-width:100%;}
 </header>
 
 <section class="home-intro" aria-labelledby="home-title">
-  <div class="container home-intro-inner">
-    <div class="home-intro-copy">
-      <h1 id="home-title">Reiki healing and life coaching</h1>
-      <p>In person in Beaverton, OR or online.</p>
-      <a href="/contact#book" class="btn btn-primary">Book a free 15-min call</a>
+  <div class="container">
+    <div class="home-intro-inner">
+      <div class="home-intro-copy">
+        <h1 id="home-title">Reiki healing and life coaching</h1>
+        <p>In person in Beaverton, OR or online.</p>
+        <a href="/contact#book" class="btn btn-primary">Book a free 15-min call</a>
+      </div>
+      <div class="home-intro-art">
+        <picture class="home-intro-mark">
+          <source srcset="/assets/logo.svg" media="(prefers-reduced-motion: reduce)">
+          <img class="home-intro-logo" src="/assets/logo-animated.svg" alt="">
+        </picture>
+      </div>
     </div>
-    <img class="home-intro-logo" src="/assets/logo.svg" alt="">
   </div>
 </section>
 
-<section class="section dl-section" aria-labelledby="svc-heading">
+<section class="section home-service-section" aria-labelledby="svc-heading">
   <div class="container dl-stack">
     <div class="dl-section-head">
       <div>
@@ -154,6 +161,21 @@ img,svg{display:block;max-width:100%;}
         <p class="dl-tile-copy">One-on-one support for everyday worries.</p>
         <span class="dl-tile-meta"><span>30 min · $50</span></span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" aria-labelledby="home-library-title">
+  <div class="container">
+    <div class="home-library">
+      <div>
+        <h2 id="home-library-title" class="dl-h2">Guided meditations</h2>
+        <p>Start with a free recording or join to follow guided lessons and save your progress.</p>
+      </div>
+      <div class="home-library-links">
+        <a class="btn" href="/library">Free library</a>
+        <a class="btn" href="/members">Membership</a>
+      </div>
     </div>
   </div>
 </section>
