@@ -220,7 +220,7 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
 /* =====================================================================
    Audit quick wins
    ===================================================================== */
-.footer-links a, .site-footer p { font-size: 15.5px !important; }
+.footer-links a, .site-footer p:not(.footer-location) { font-size: 15.5px !important; }
 .footer-bottom { font-size: 14px; }
 .quote-attr, .quote-card .attr { font-size: 14px; }
 .footer-links a { padding: 3px 0; }
@@ -427,6 +427,18 @@ a.dl-tile:hover .dl-arrow { transform: translateX(5px); }
   color: var(--ink-soft);
   border-top: 1px solid var(--line);
   letter-spacing: normal;
+}
+.site-footer.compact-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+}
+.compact-footer .footer-location {
+  margin: 0;
+  padding-block: 6px;
+  font-size: .875rem;
 }
 .compact-footer nav, .member-footer nav {
   display: flex;
