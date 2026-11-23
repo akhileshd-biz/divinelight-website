@@ -4,26 +4,6 @@
 (function () {
   var root = document.documentElement;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var STORE_KEY = 'dl-notice-dismissed';
-
-  /* ---------- 1. Dismissible notice banner ---------- */
-  var notice = document.getElementById('dl-notice');
-  function setNoticeHeight() {
-    var visible = notice && !root.classList.contains('dl-notice-off') && window.innerWidth >= 900;
-    root.style.setProperty('--dl-notice-h', visible ? notice.offsetHeight + 'px' : '0px');
-  }
-  if (notice) {
-    setNoticeHeight();
-    window.addEventListener('resize', setNoticeHeight, { passive: true });
-    var close = notice.querySelector('.dl-notice-close');
-    if (close) close.addEventListener('click', function () {
-      try { localStorage.setItem(STORE_KEY, '1'); } catch (e) {}
-      var finish = function () { root.classList.add('dl-notice-off'); setNoticeHeight(); };
-      if (reduce) return finish();
-      notice.classList.add('is-closing');
-      setTimeout(finish, 300);
-    });
-  }
 
   /* ---------- 2. Frosted header once the visitor scrolls ---------- */
   var header = document.querySelector('.site-header');
@@ -64,28 +44,6 @@
 
   if (reduce) return;
 
-  /* ---------- Rising motes of light in the banner ---------- */
-  var banner = document.querySelector('.top-banner');
-  if (banner) {
-    var layer = document.createElement('div');
-    layer.className = 'dl-motes';
-    layer.setAttribute('aria-hidden', 'true');
-    var count = window.innerWidth < 640 ? 9 : 16;
-    for (var i = 0; i < count; i++) {
-      var m = document.createElement('span');
-      m.className = 'dl-mote';
-      var size = 3 + Math.random() * 6;
-      m.style.width = m.style.height = size.toFixed(1) + 'px';
-      m.style.left = (Math.random() * 100).toFixed(1) + '%';
-      m.style.setProperty('--dur', (11 + Math.random() * 9).toFixed(1) + 's');
-      m.style.setProperty('--delay', (-Math.random() * 18).toFixed(1) + 's');
-      m.style.setProperty('--drift', ((Math.random() - 0.5) * 80).toFixed(0) + 'px');
-      m.style.setProperty('--alpha', (0.35 + Math.random() * 0.5).toFixed(2));
-      layer.appendChild(m);
-    }
-    banner.insertBefore(layer, banner.firstChild);
-  }
-
   /* ---------- Reveal content softly as it scrolls into view ---------- */
   if (!('IntersectionObserver' in window)) return;
   var groups = '.grid-cards, .about-grid, .book-grid, .dl-bento, .dl-plans';
@@ -95,7 +53,7 @@
     '.footer-grid > *'
   ].join(',');
   var items = Array.prototype.filter.call(document.querySelectorAll(selector), function (el) {
-    return !el.closest('.top-banner') && !el.closest('.site-header') && !el.closest('.dl-notice') && !el.matches(groups);
+    return !el.closest('.site-header') && !el.matches(groups);
   });
   if (!items.length) return;
   items.forEach(function (el) {
