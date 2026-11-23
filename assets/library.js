@@ -6,6 +6,7 @@
   var cards = document.querySelectorAll('.lib-grid .lib-card');
   var count = document.querySelector('[data-lib-count]');
   function applyFilter(cat) {
+    cards = document.querySelectorAll('.lib-grid .lib-card');
     var shown = 0;
     Array.prototype.forEach.call(cards, function (c) {
       var match = cat === 'all' || c.getAttribute('data-cat') === cat;
@@ -17,10 +18,60 @@
     });
     if (count) count.textContent = shown + (shown === 1 ? ' item' : ' items');
   }
-  Array.prototype.forEach.call(chips, function (b) {
-    b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
-  });
+  var activeCategory = 'all';
   if (chips.length) applyFilter('all');
+  Array.prototype.forEach.call(chips, function (b) {
+    b.addEventListener('click', function () { activeCategory = b.getAttribute('data-filter'); applyFilter(activeCategory); });
+  });
+
+  /* New MP3s are discovered from the public Drive folders by a Netlify Function. */
+  var grid = document.querySelector('.lib-grid');
+  if (grid) {
+    fetch('/.netlify/functions/library-audio')
+      .then(function (response) { if (!response.ok) throw new Error('Library feed unavailable'); return response.json(); })
+      .then(function (payload) {
+        (payload.files || []).forEach(function (file) {
+          if (!file.id || !file.name || !file.downloadUrl) return;
+          var card = document.createElement('article');
+          card.className = 'lib-card lib-drive-file';
+          card.setAttribute('data-cat', 'meditation');
+          card.setAttribute('data-drive-id', file.id);
+
+          var cover = document.createElement('div');
+          cover.className = 'lib-cover lib-cover--mist';
+          cover.setAttribute('aria-hidden', 'true');
+          var title = document.createElement('span');
+          title.className = 'lib-card-title';
+          title.textContent = file.name.replace(/\.mp3$/i, '').replace(/[_-]+/g, ' ');
+          var type = document.createElement('span');
+          type.className = 'lib-card-type';
+          type.textContent = file.folder || 'Guided audio';
+          var description = document.createElement('span');
+          description.className = 'lib-card-desc';
+          description.textContent = 'A guided audio practice from Divine Light.';
+          var audio = document.createElement('audio');
+          audio.controls = true;
+          audio.preload = 'none';
+          audio.src = file.downloadUrl;
+          audio.setAttribute('aria-label', 'Play ' + title.textContent);
+          card.appendChild(cover);
+          card.appendChild(type);
+          card.appendChild(title);
+          card.appendChild(description);
+          card.appendChild(audio);
+          grid.appendChild(card);
+        });
+        if (count) {
+          var total = grid.querySelectorAll('.lib-card:not([hidden])').length;
+          count.textContent = total + (total === 1 ? ' item' : ' items');
+        }
+        applyFilter(activeCategory);
+      })
+      .catch(function () {
+        var status = document.querySelector('[data-drive-feed-status]');
+        if (status) status.textContent = 'New recordings will appear here once the library feed is connected.';
+      });
+  }
 
   /* ---------- Audio player on lesson pages ---------- */
   var player = document.querySelector('.lib-player');
