@@ -18,9 +18,6 @@
     });
     if (count) count.textContent = shown + (shown === 1 ? ' item' : ' items');
   }
-  Array.prototype.forEach.call(chips, function (b) {
-    b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
-  });
   var activeCategory = 'all';
   if (chips.length) applyFilter('all');
   Array.prototype.forEach.call(chips, function (b) {
