@@ -128,7 +128,7 @@
 :root{
   --ink:#2E2A3A;--muted:#5C566E;--paper:#F7F5FA;--white:#FFFFFF;--line:#E2DCEB;
   --gold:#6E5F92;--deep:#3A3450;--sage:#B3A6CF;
-  --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
 }
 .members-body{background:var(--paper);font-family:var(--sans);font-size:16px;}
 .members-body .site-header .ghost-btn{font:inherit;font-size:14.5px;font-weight:500;color:var(--ink);background:none;border:0;padding:0;cursor:pointer;}
@@ -137,7 +137,7 @@
 .member-status{background:var(--sage-tint);border:1px solid var(--line);border-radius:10px;color:var(--ink);margin-top:20px;}
 
 /* Headings use the site's serif, slightly heavier like the rest of the site */
-.hero h1,.detail-title,.login-content h1,.login-art h2,.cover h2,.downloads h2,.resume-panel h2,.lesson-outline h2,.lesson-notes h2{font-family:var(--serif);font-weight:400;letter-spacing:normal;color:inherit;}
+.hero h1,.detail-title,.login-content h1,.login-art h2,.cover h2,.downloads h2,.resume-panel h2,.lesson-outline h2,.lesson-notes h2{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;color:inherit;}
 .hero h1,.detail-title,.login-content h1{color:var(--ink);}
 .eyebrow{color:var(--rose-deep);font-weight:600;}
 .hero p,.detail-description,.login-content>p,.card-description,.downloads p{color:var(--muted);}
@@ -184,3 +184,11 @@
   padding-top: 8px;
   border-top: 1px solid var(--line);
 }
+
+.members-body .page { max-width: 1200px; }
+.members-body .course-card,
+.members-body .course-card:hover { box-shadow: none; }
+.members-body .course-card:hover { transform: none; }
+.login-art { background: var(--cream-dark); }
+.login-art:before { border-color: #A89BC9; }
+.login-content > p, .detail-description { max-width: 65ch; }
