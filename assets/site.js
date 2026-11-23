@@ -44,6 +44,28 @@
 
   if (reduce) return;
 
+  /* ---------- Rising motes of light in the banner ---------- */
+  var banner = document.querySelector('.home-intro');
+  if (banner) {
+    var layer = document.createElement('div');
+    layer.className = 'dl-motes';
+    layer.setAttribute('aria-hidden', 'true');
+    var count = window.innerWidth < 640 ? 9 : 16;
+    for (var i = 0; i < count; i++) {
+      var m = document.createElement('span');
+      m.className = 'dl-mote';
+      var size = 3 + Math.random() * 6;
+      m.style.width = m.style.height = size.toFixed(1) + 'px';
+      m.style.left = (Math.random() * 100).toFixed(1) + '%';
+      m.style.setProperty('--dur', (11 + Math.random() * 9).toFixed(1) + 's');
+      m.style.setProperty('--delay', (-Math.random() * 18).toFixed(1) + 's');
+      m.style.setProperty('--drift', ((Math.random() - 0.5) * 80).toFixed(0) + 'px');
+      m.style.setProperty('--alpha', (0.35 + Math.random() * 0.5).toFixed(2));
+      layer.appendChild(m);
+    }
+    banner.prepend(layer);
+  }
+
   /* ---------- Reveal content softly as it scrolls into view ---------- */
   if (!('IntersectionObserver' in window)) return;
   var groups = '.grid-cards, .about-grid, .book-grid, .dl-bento, .dl-plans';
