@@ -29,30 +29,41 @@ body:not(.members-body) .btn { border-radius: 6px; }
 .home-intro {
   background: var(--paper);
   border-color: var(--line);
-  padding-block: var(--section-space);
+  padding-block: clamp(2.5rem, 6.25vw, 5.5rem);
 }
-.home-intro-inner, .editorial-grid {
+body.home-page .container {
+  max-width: 1080px;
+  padding-inline: clamp(1rem, 4vw, 2.25rem);
+}
+.editorial-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--fluid-gap);
 }
-.home-intro-copy { grid-column: span 7; }
-.home-intro-art { grid-column: span 5; }
-.home-intro-mark { width: min(100%, 24rem); }
-.home-intro h1, .coaching-page h1, .editorial-page-title {
+.home-intro-inner {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+.home-intro-art { justify-self: center; width: min(100%, 20rem); }
+.home-intro-mark { width: 100%; }
+.home-intro h1 {
+  font-size: clamp(2.85rem, 5.4vw, 4.6rem);
+  font-weight: 400;
+  line-height: .99;
+  text-wrap: balance;
+}
+.coaching-page h1, .editorial-page-title {
   font-size: clamp(2.75rem, 6vw, 5.5rem);
   font-weight: 400;
   line-height: 1.05;
   text-wrap: balance;
 }
-.home-intro p:not(.editorial-meta) { max-inline-size: 36ch; }
-.editorial-meta,
-.home-intro p.editorial-meta {
+.home-intro-copy p { max-inline-size: 39ch; }
+.editorial-meta {
   margin: 0 0 .65rem;
   font: 500 .75rem/1.5 var(--meta-font);
   color: var(--ink-soft);
 }
-.home-intro .btn { margin-top: clamp(1.25rem, 3vw, 2rem); }
 .home-proof {
   display: flex;
   flex-wrap: wrap;
@@ -98,10 +109,10 @@ body:not(.members-body) .btn { border-radius: 6px; }
 @media (max-width: 760px) {
   .home-intro-inner, .editorial-grid { grid-template-columns: minmax(0, 1fr); }
   .home-intro-inner > *, .editorial-grid > * { grid-column: 1; }
-  .home-intro-inner { text-align: left; }
-  .home-intro-art { justify-items: start; }
-  .home-intro-mark { width: clamp(8rem, 28vw, 12rem); }
-  .home-intro h1 br { display: none; }
+  .home-intro-inner { text-align: center; }
+  .home-intro-art { width: clamp(8rem, 30vw, 12rem); }
+  .home-intro-copy p { margin-inline: auto; }
+  .home-intro h1 { max-width: 17ch; margin-inline: auto; }
   .immersion-photo { max-width: 22rem; }
   .immersion-photo img { aspect-ratio: 5 / 4; }
 }
