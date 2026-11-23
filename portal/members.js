@@ -150,6 +150,7 @@ async function openAccount() {
   byId('sign-out').hidden = false;
   account = demo ? demoAccount() : await api();
   byId('account').hidden = false;
+  byId('member-preview').hidden = demo || account.active;
   byId('subscription-status').textContent = account.active ? 'Your membership is active.' :
     account.hasBilling ? 'Manage billing to restore access.' : 'Join to unlock your member library and save lesson progress.';
   if (account.billingReady === false) {
@@ -245,6 +246,7 @@ byId('complete').onclick = event => void run(event.currentTarget, async () => {
 
 void run(byId('auth-submit'), async () => {
   if (demo) {
+    byId('login-demo-link').hidden = true;
     if (query.get('view') === 'library') {
       await openAccount();
     }
