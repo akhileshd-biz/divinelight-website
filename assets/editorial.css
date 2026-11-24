@@ -132,44 +132,6 @@ body.home-page .container {
 }
 .journal-prose { display: grid; gap: 16px; margin-block: 16px; }
 
-.lotus-pause {
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 3vw, 28px);
-  margin-top: clamp(16px, 4vw, 32px);
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-}
-.lotus-pause[hidden] { display: none; }
-.lotus-pause-mark {
-  flex: none;
-  width: clamp(56px, 9vw, 80px);
-  height: auto;
-  transform: scale(.9);
-  transition: transform 240ms ease-out;
-}
-.lotus-pause[data-phase="in"] .lotus-pause-mark {
-  transform: scale(1.12);
-  transition-duration: 4s;
-}
-.lotus-pause[data-phase="out"] .lotus-pause-mark { transition-duration: 6s; }
-.lotus-pause-status { color: var(--ink-soft); }
-.lotus-pause-button {
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-  font: inherit;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: .25em;
-  touch-action: manipulation;
-}
-@media (prefers-reduced-motion: reduce) {
-  .lotus-pause-mark, .lotus-pause[data-phase="in"] .lotus-pause-mark { transform: none; }
-}
-
 .rates-page { padding-block: clamp(32px, 6vw, 72px); }
 .rates-intro { padding-bottom: clamp(24px, 4vw, 48px); }
 .rates-intro h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
@@ -218,6 +180,3 @@ body.home-page .container {
   .rates-payment { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; text-align: left; }
   .rates-price small { display: inline; }
 }
-
-.lotus-pause-link { margin-inline-start: 16px; }
-.lotus-pause-link[hidden] { display: none; }
