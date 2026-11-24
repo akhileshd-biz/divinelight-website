@@ -150,7 +150,9 @@ async function openAccount() {
   byId('sign-out').hidden = false;
   account = demo ? demoAccount() : await api();
   byId('account').hidden = false;
-  byId('member-preview').hidden = demo || account.active;
+  const showPreview = !demo && !account.active;
+  byId('member-preview').hidden = !showPreview;
+  byId('member-preview-copy').hidden = !showPreview;
   byId('subscription-status').textContent = account.active ? 'Your membership is active.' :
     account.hasBilling ? 'Manage billing to restore access.' : 'Join to unlock your member library and save lesson progress.';
   if (account.billingReady === false) {

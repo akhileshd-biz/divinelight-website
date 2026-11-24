@@ -184,31 +184,34 @@
   align-items: center;
   gap: 0 16px;
 }
-.member-preview {
+.member-hero:has(.member-hero-image:not([hidden])) {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  align-items: center;
-  margin-top: clamp(24px, 4vw, 40px);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
+  grid-template-columns: minmax(0, 1fr);
 }
-.member-preview img {
+.member-hero-image {
+  display: block;
+  grid-row: 1;
   width: 100%;
-  height: 100%;
-  max-height: 260px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: center;
 }
-.member-preview-copy { padding: clamp(20px, 4vw, 40px); }
-.member-preview h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); font-weight: 400; }
-.member-preview a { display: inline-flex; align-items: center; min-height: 44px; }
-@media (max-width: 620px) {
-  .member-preview { grid-template-columns: minmax(0, 1fr); }
-  .member-preview img { aspect-ratio: 2 / 1; height: auto; }
+.member-preview-copy { margin: 16px 0; }
+#account .member-preview-copy p { color: var(--brand-plum); }
+.member-preview-copy a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (min-width: 800px) {
+  .member-hero:has(.member-hero-image:not([hidden])) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: clamp(24px, 4vw, 48px);
+  }
+  .member-hero-image {
+    grid-column: 2;
+    height: 100%;
+    min-height: 320px;
+    aspect-ratio: auto;
+  }
 }
-
 .members-body .login-art {
   background: linear-gradient(0deg, rgba(27, 22, 30, .78), transparent 80%),
     url('/assets/member-woodland-path.webp') center / cover;
@@ -227,14 +230,6 @@
   text-transform: none;
 }
 #account .hero { margin-bottom: 16px; }
-#account .member-preview {
-  background: var(--brand-lavender);
-  border-color: var(--brand-lavender-line);
-  margin: 0 0 24px;
-}
-#account .member-preview :is(h2, a) { color: var(--brand-plum); }
-#account .offers { width: min(100%, 620px); margin-bottom: 24px; }
-#account .offers:not(:has(> :not([hidden]))) { margin-bottom: 0; }
 @media (max-width: 620px) {
   .members-body .login-art {
     display: flex;
@@ -242,4 +237,13 @@
     padding: 20px;
   }
   .members-body .login-art p { font-size: clamp(1.75rem, 6vw, 2.25rem); }
+}
+
+.members-body {
+  --paper: #F8F7FA;
+  --line: #E4DFE9;
+}
+#account .offers .membership { background: var(--brand-lavender); border-color: var(--line); }
+@media (max-width: 620px) {
+  #account .offers .membership { background: transparent; }
 }

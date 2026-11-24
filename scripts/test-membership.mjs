@@ -65,7 +65,7 @@ try {
     const nav = page.getByRole('navigation', { name: 'Primary' });
     await Promise.all([
       page.waitForRequest(origin + '/api/member-auth'),
-      nav.getByRole('link', { name: 'Membership', exact: true }).click(),
+      nav.getByRole('link', { name: 'Join today', exact: true }).click(),
     ]);
     await page.waitForURL(origin + '/members');
     await page.getByRole('heading', { name: 'Member library', exact: true }).waitFor();

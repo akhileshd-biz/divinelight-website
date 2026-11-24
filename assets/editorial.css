@@ -1,13 +1,13 @@
 /* Public site. The member portal keeps its own styles. */
 :root {
-  --paper: #F9F8F6;
+  --paper: #F8F7FA;
   --card: #FFFFFF;
   --ink: #272824;
   --ink-soft: #595A50;
-  --line: #DDD8D4;
+  --line: #E4DFE9;
   --rose: #35362F;
   --rose-deep: #35362F;
-  --rose-tint: #EEECE5;
+  --rose-tint: #F0EBF5;
   --display-font: 'Newsreader', Georgia, serif;
   --body-font: 'DM Sans', system-ui, sans-serif;
   --meta-font: 'JetBrains Mono', monospace;
@@ -44,7 +44,7 @@ body.home-page .container {
   grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
   gap: clamp(1.5rem, 5vw, 4rem);
 }
-.home-intro-art { justify-self: center; width: min(100%, 20rem); }
+.home-intro-art { justify-self: center; width: min(100%, 23rem); }
 .home-intro-mark { width: 100%; }
 .home-intro h1 {
   font-size: clamp(2.85rem, 5.4vw, 4.6rem);
@@ -110,7 +110,7 @@ body.home-page .container {
   .home-intro-inner, .editorial-grid { grid-template-columns: minmax(0, 1fr); }
   .home-intro-inner > *, .editorial-grid > * { grid-column: 1; }
   .home-intro-inner { text-align: center; }
-  .home-intro-art { width: clamp(8rem, 30vw, 12rem); }
+  .home-intro-art { width: clamp(9rem, 34vw, 13rem); }
   .home-intro-copy p { margin-inline: auto; }
   .home-intro h1 { max-width: 17ch; margin-inline: auto; }
   .immersion-photo { max-width: 22rem; }
@@ -168,4 +168,53 @@ body.home-page .container {
 }
 @media (prefers-reduced-motion: reduce) {
   .lotus-pause-mark, .lotus-pause[data-phase="in"] .lotus-pause-mark { transform: none; }
+}
+
+.rates-page { padding-block: clamp(32px, 6vw, 72px); }
+.rates-intro { padding-bottom: clamp(24px, 4vw, 48px); }
+.rates-intro h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+.rates-intro > p, .rates-meta, .rates-help { color: var(--ink-soft); }
+.rates-jumps { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 12px; }
+.rates-jumps a, .rates-payment a, .rates-help a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brand-plum);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.rates-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.8fr);
+  gap: clamp(12px, 3vw, 36px);
+  padding-block: clamp(20px, 4vw, 40px);
+  border-top: 1px solid var(--brand-lavender-line);
+  scroll-margin-top: 145px;
+}
+.rates-group h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; }
+.rates-options { list-style: none; padding: 0; margin: 0; }
+.rates-option {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rates-option:first-child { padding-top: 0; }
+.rates-option h3 { font-size: 1.4rem; }
+.rates-option h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.rates-meta { font-size: .875rem; margin-top: 4px; }
+.rates-description { margin-top: 8px; }
+.rates-payment { text-align: right; }
+.rates-price { font-variant-numeric: tabular-nums; }
+.rates-price small { display: block; color: var(--ink-soft); }
+.rates-help { margin-top: 12px; }
+@media (max-width: 760px) {
+  .rates-group { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .rates-option { grid-template-columns: minmax(0, 1fr); }
+  .rates-payment { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; text-align: left; }
+  .rates-price small { display: inline; }
 }

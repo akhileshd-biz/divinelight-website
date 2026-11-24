@@ -60,32 +60,6 @@ img,svg{display:block;max-width:100%;}
 .sticky-cta a{color:#fff;font-weight:600;font-size:15px;display:block;}
 @media (max-width:640px){.sticky-cta{display:block;} .site-footer{padding-bottom:88px;}}
 .section{padding:56px 36px;}
-.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--card);}
-table.dl-table{width:100%;border-collapse:collapse;min-width:640px;}
-table.dl-table th,table.dl-table td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line);font-size:15px;}
-table.dl-table tr:last-child td{border-bottom:none;}
-table.dl-table th{font-family:'Work Sans',sans-serif;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;background:var(--paper);}
-table.dl-table td a{color:var(--ink);font-weight:600;}
-table.dl-table td a:hover{color:var(--rose-deep);}
-.price-cell{color:var(--rose-deep);font-weight:600;white-space:nowrap;}
-.note-box{background:var(--sage-tint);border:1px solid var(--sage);border-radius:3px;padding:18px 22px;font-size:15px;color:var(--sage-deep);margin-top:22px;}
-.pay-cell{white-space:nowrap;}
-.dl-pay-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--rose);color:#fff !important;font-weight:600;font-size:14px;text-decoration:none;transition:background-color .2s ease,transform .2s ease;}
-.dl-pay-btn:hover{background:var(--cream-dark);transform:scale(1.03);}
-.dl-pay-btn:focus-visible{outline:3px solid var(--rose-deep);outline-offset:2px;}
-@media (max-width:640px){
-.table-scroll{overflow:visible;border:none;background:none;}
-table.dl-table{min-width:0;}
-table.dl-table thead{display:none;}
-table.dl-table,table.dl-table tbody{display:block;}
-table.dl-table tr{display:grid;grid-template-columns:1fr auto;grid-template-areas:"name name" "fmt pay" "dur pay" "price pay";gap:4px 14px;align-items:center;padding:16px 18px;margin-bottom:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;}
-table.dl-table td,table.dl-table tr:last-child td{display:block;padding:0;border:none;font-size:14.5px;}
-table.dl-table td:nth-child(1){grid-area:name;font-size:16px;margin-bottom:4px;}
-table.dl-table td:nth-child(2){grid-area:fmt;color:var(--ink-soft);}
-table.dl-table td:nth-child(3){grid-area:dur;color:var(--ink-soft);}
-table.dl-table td:nth-child(4){grid-area:price;white-space:normal;}
-table.dl-table td:nth-child(5){grid-area:pay;}
-}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/editorial.css">
@@ -98,55 +72,158 @@ table.dl-table td:nth-child(5){grid-area:pay;}
     <span class="brand-text"><span class="brand-word">Divine Light</span><span class="brand-sub">Healing &amp; Life Coaching</span></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
-    <a href="/services" class="current" aria-current="location">Services</a>
     <a href="/about">About</a>
-    <a href="/library">Library</a>
     <a href="/journal">Journal</a>
-    <a href="/members">Membership</a>
+    <a href="/services" class="current" aria-current="location">Services</a>
+    <a href="/members">Join today</a>
   </nav>
   <a href="/contact#book" class="nav-booking">Book a free call</a>
 </header>
 
-<main>
-<section class="section" aria-labelledby="rates-title">
+<main class="rates-page">
   <div class="container">
-    <h1 id="rates-title" class="editorial-page-title">Rates and packages</h1>
-    <p>Sessions are available in person in Oregon or online.</p>
-    <a class="editorial-link" href="/life-coaching#immersion">Explore the six-month Coaching Immersion</a>
+    <header class="rates-intro">
+      <h1 id="rates-title" class="editorial-page-title">Rates and packages</h1>
+      <p>Meet in person in Oregon or online, depending on the session.</p>
+      <nav class="rates-jumps" aria-label="Browse rates">
+        <a href="#coaching-rates">Coaching</a>
+        <a href="#reiki-rates">Reiki</a>
+        <a href="#support-rates">Other support</a>
+      </nav>
+    </header>
+    <section class="rates-group" id="coaching-rates" aria-labelledby="coaching-rates-title">
+      <h2 id="coaching-rates-title">Coaching packages</h2>
+      <ul class="rates-options">
+        <li class="rates-option">
+          <div>
+            <h3><a href="/life-coaching#immersion">Coaching Immersion</a></h3>
+            <p class="rates-meta">12 private sessions over six months · In person or online</p>
+            <p class="rates-description">Time to work through a major transition, with space to try what you learn between sessions.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$3,300</strong> <small>upfront · normally $3,600</small></p>
+            <a href="https://buy.stripe.com/00wcMY5L612jaze9aN0Ba07" rel="noopener" aria-label="Pay $3,300 for Life Coaching Immersion package, paid upfront">Pay $3,300</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/life-coaching">One-month coaching</a></h3>
+            <p class="rates-meta">4 private sessions over one month · In person or online</p>
+            <p class="rates-description">Four focused conversations to work through one decision, goal, or change.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$1,080</strong> <small>upfront · normally $1,200</small></p>
+            <a href="https://buy.stripe.com/3cIeV66Pa6mD22I72F0Ba09" rel="noopener" aria-label="Pay $1,080 for Life Coaching Starter package, paid upfront">Pay $1,080</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="rates-group" id="reiki-rates" aria-labelledby="reiki-rates-title">
+      <h2 id="reiki-rates-title">Reiki sessions</h2>
+      <ul class="rates-options">
+        <li class="rates-option">
+          <div>
+            <h3><a href="/reiki">Full-body Reiki</a></h3>
+            <p class="rates-meta">50 minutes · In person</p>
+            <p class="rates-description">A full-body session with time to settle in and rest quietly.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$60</strong></p>
+            <a href="https://buy.stripe.com/3cI3coc9ueT99va9aN0Ba05" rel="noopener" aria-label="Pay $60 for Reiki full body session">Pay $60</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/reiki">Spot Reiki</a></h3>
+            <p class="rates-meta">30 minutes · In person</p>
+            <p class="rates-description">A shorter session that focuses on one area.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$30</strong></p>
+            <a href="https://buy.stripe.com/cNi4gs4H2aCT5eUcmZ0Ba04" rel="noopener" aria-label="Pay $30 for Spot Reiki session">Pay $30</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/reiki">Distance Reiki</a></h3>
+            <p class="rates-meta">45 minutes · Online</p>
+            <p class="rates-description">A Reiki session you can receive from a quiet space at home.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$45</strong></p>
+            <a href="https://buy.stripe.com/cNi00c3CYdP56iYev70Ba08" rel="noopener" aria-label="Pay $45 for Distance Reiki session">Pay $45</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="rates-group" id="support-rates" aria-labelledby="support-rates-title">
+      <h2 id="support-rates-title">Other ways to find support</h2>
+      <ul class="rates-options">
+        <li class="rates-option">
+          <div>
+            <h3><a href="/listening-service">Listening session</a></h3>
+            <p class="rates-meta">45 minutes · In person or online</p>
+            <p class="rates-description">A private space to talk through what’s on your mind.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$60</strong></p>
+            <a href="https://buy.stripe.com/4gMaEQ2yU7qHbDi4Ux0Ba03" rel="noopener" aria-label="Pay $60 for Listening Service session">Pay $60</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/subconscious-programming">Subconscious programming</a></h3>
+            <p class="rates-meta">45 minutes · In person or online</p>
+            <p class="rates-description">Guided hypnosis to explore habits and beliefs you want to change.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$100</strong></p>
+            <a href="https://buy.stripe.com/00waEQ7TeeT96iY72F0Ba00" rel="noopener" aria-label="Pay $100 for Subconscious Programming session">Pay $100</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/chakra-healing">Chakra healing</a></h3>
+            <p class="rates-meta">25 minutes · In person or online</p>
+            <p class="rates-description">A guided session focused on the body’s energy centers.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$40</strong></p>
+            <a href="https://buy.stripe.com/00wfZa2yU3ar9va4Ux0Ba02" rel="noopener" aria-label="Pay $40 for Chakra Healing session">Pay $40</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/emotional-detox">Emotional detox</a></h3>
+            <p class="rates-meta">30 minutes · In person or online</p>
+            <p class="rates-description">A guided session to notice and work through difficult feelings.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$45</strong></p>
+            <a href="https://buy.stripe.com/7sY14g5L626n4aQbiV0Ba01" rel="noopener" aria-label="Pay $45 for Emotional Detox session">Pay $45</a>
+          </div>
+        </li>
+        <li class="rates-option">
+          <div>
+            <h3><a href="/anxiety-support">Anxiety support</a></h3>
+            <p class="rates-meta">30 minutes · Online</p>
+            <p class="rates-description">One-on-one support for everyday worries and overwhelm.</p>
+          </div>
+          <div class="rates-payment">
+            <p class="rates-price"><strong>$50</strong></p>
+            <a href="https://buy.stripe.com/aFaaEQgpKcL1cHm72F0Ba06" rel="noopener" aria-label="Pay $50 for Anxiety Support session">Pay $50</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <p class="rates-help">Already booked? Pay online through Stripe. <a href="/contact#book">Book a free call</a> if you’d like help choosing.</p>
   </div>
-</section>
-
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="table-scroll">
-      <table class="dl-table">
-        <thead><tr><th>Service</th><th>Format</th><th>Duration</th><th>Price</th><th>Pay online</th></tr></thead>
-        <tbody>
-          <tr><td><a href="reiki">Reiki – Full Body</a></td><td>In-person</td><td>50 min</td><td class="price-cell">$60</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/3cI3coc9ueT99va9aN0Ba05" rel="noopener" aria-label="Pay $60 for Reiki full body session">Pay $60</a></td></tr>
-          <tr><td><a href="reiki">Reiki – Spot Reiki</a></td><td>In-person</td><td>30 min</td><td class="price-cell">$30</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/cNi4gs4H2aCT5eUcmZ0Ba04" rel="noopener" aria-label="Pay $30 for Spot Reiki session">Pay $30</a></td></tr>
-          <tr><td><a href="reiki">Reiki – Distance</a></td><td>Remote</td><td>45 min</td><td class="price-cell">$45</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/cNi00c3CYdP56iYev70Ba08" rel="noopener" aria-label="Pay $45 for Distance Reiki session">Pay $45</a></td></tr>
-          <tr><td><a href="life-coaching">Life Coaching – Starter</a></td><td>In-person or remote</td><td>4 sessions / 1 month</td><td class="price-cell">$1,200 ($1,080 promo)</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/3cIeV66Pa6mD22I72F0Ba09" rel="noopener" aria-label="Pay $1,080 for Life Coaching Starter package, paid upfront">Pay $1,080</a></td></tr>
-          <tr><td><a href="life-coaching">Life Coaching – Immersion</a></td><td>In-person or remote</td><td>12 sessions / 6 months</td><td class="price-cell">$3,600 ($3,300 promo)</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/00wcMY5L612jaze9aN0Ba07" rel="noopener" aria-label="Pay $3,300 for Life Coaching Immersion package, paid upfront">Pay $3,300</a></td></tr>
-          <tr><td><a href="listening-service">Listening Service</a></td><td>Zoom or in-person</td><td>45 min</td><td class="price-cell">$60</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/4gMaEQ2yU7qHbDi4Ux0Ba03" rel="noopener" aria-label="Pay $60 for Listening Service session">Pay $60</a></td></tr>
-          <tr><td><a href="subconscious-programming">Subconscious Programming</a></td><td>In-person or remote</td><td>45 min</td><td class="price-cell">$100</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/00waEQ7TeeT96iY72F0Ba00" rel="noopener" aria-label="Pay $100 for Subconscious Programming session">Pay $100</a></td></tr>
-          <tr><td><a href="chakra-healing">Chakra Healing</a></td><td>In-person or remote</td><td>25 min</td><td class="price-cell">$40</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/00wfZa2yU3ar9va4Ux0Ba02" rel="noopener" aria-label="Pay $40 for Chakra Healing session">Pay $40</a></td></tr>
-          <tr><td><a href="emotional-detox">Emotional Detox</a></td><td>In-person or remote</td><td>30 min</td><td class="price-cell">$45</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/7sY14g5L626n4aQbiV0Ba01" rel="noopener" aria-label="Pay $45 for Emotional Detox session">Pay $45</a></td></tr>
-          <tr><td><a href="anxiety-support">Anxiety Support</a></td><td>Remote</td><td>30 min</td><td class="price-cell">$50</td><td class="pay-cell"><a class="dl-pay-btn" href="https://buy.stripe.com/aFaaEQgpKcL1cHm72F0Ba06" rel="noopener" aria-label="Pay $50 for Anxiety Support session">Pay $50</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note-box">A free 15-minute discovery call is available before any booking. Package pricing (the promo rates above) applies when paid upfront. Already booked your time? Pay securely online by card, Apple Pay or Google Pay (payments handled by Stripe).</div>
-    <div style="text-align:center;margin-top:36px;">
-      <a href="/contact#book" class="btn btn-primary">Book a free 15-min call</a>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer class="site-footer compact-footer">
   <p class="footer-location">In person in Oregon or online</p>
   <nav aria-label="Footer">
+    <a href="/library">Library</a>
     <a href="/contact">Contact</a>
     <a href="/legal#privacy">Privacy</a>
     <a href="/legal#terms">Terms</a>
