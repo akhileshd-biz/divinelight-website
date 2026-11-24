@@ -143,6 +143,13 @@
 #account .hero { align-items: flex-start; gap: 24px; margin-bottom: 24px; }
 #account .hero:has(~ #downloads[hidden]):has(~ #course-library[hidden]) { margin-bottom: 0; }
 #account .hero h1 { font-size: clamp(2.25rem, 4.2vw, 3.5rem); margin-block: 8px; }
+#account .member-hero:has(.member-hero-image:not([hidden])) .eyebrow { display: none; }
+#account .member-hero:has(.member-hero-image:not([hidden])) h1 {
+  margin-block: 0 8px;
+  font: 600 1.125rem/1.4 var(--sans);
+  letter-spacing: normal;
+}
+
 #account .offers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
