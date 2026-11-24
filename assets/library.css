@@ -33,7 +33,7 @@
 a.lib-card:hover .lib-cover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(39,40,36,.14);}
 a.lib-card:hover .lib-card-title{color:var(--rose-deep);}
 .lib-card-type{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;}
-.lib-card-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;font-weight:600;line-height:1.15;}
+.lib-card-title{font-family:var(--display-font);font-size:23px;font-weight:600;line-height:1.15;}
 .lib-card-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
 .lib-card-meta{font-size:13px;color:var(--ink-soft);display:flex;gap:10px;align-items:center;}
 .lib-soon{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);background:var(--sage-tint);border:1px solid var(--line);padding:2px 9px;border-radius:10px;}
@@ -145,7 +145,7 @@ a.lib-card:hover .lib-card-title{color:var(--rose-deep);}
 .lib-player.is-playing .lib-play .i-play{display:none;}
 .lib-player.is-playing .lib-play .i-pause{display:block;}
 .lib-player-title{display:flex;flex-direction:column;min-width:0;}
-.lib-player-title strong{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;line-height:1.1;}
+.lib-player-title strong{font-family:var(--display-font);font-size:22px;font-weight:600;line-height:1.1;}
 .lib-player-title small{font-size:13px;color:var(--ink-soft);}
 .lib-seek-row{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums;}
 .lib-seek{flex:1;min-width:0;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:linear-gradient(to right,var(--rose) var(--p,0%),var(--line) var(--p,0%));cursor:pointer;}
