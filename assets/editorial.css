@@ -218,3 +218,6 @@ body.home-page .container {
   .rates-payment { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; text-align: left; }
   .rates-price small { display: inline; }
 }
+
+.lotus-pause-link { margin-inline-start: 16px; }
+.lotus-pause-link[hidden] { display: none; }

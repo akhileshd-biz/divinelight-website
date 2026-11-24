@@ -4,13 +4,15 @@
 
   const button = pause.querySelector('button');
   const status = pause.querySelector('[role="status"]');
+  const next = pause.querySelector('.lotus-pause-link');
   let timer;
 
-  function finish(message, label) {
+  function finish(message, label, completed = false) {
     clearTimeout(timer);
     delete pause.dataset.phase;
     status.textContent = message;
     button.textContent = label;
+    next.hidden = !completed;
   }
 
   button.addEventListener('click', () => {
@@ -19,13 +21,14 @@
       return;
     }
 
+    next.hidden = true;
     pause.dataset.phase = 'in';
     status.textContent = 'Breathe in gently.';
     button.textContent = 'Stop';
     timer = setTimeout(() => {
       pause.dataset.phase = 'out';
       status.textContent = 'Breathe out slowly.';
-      timer = setTimeout(() => finish('Take your time.', 'Take another breath'), 6000);
+      timer = setTimeout(() => finish('Take your time.', 'Take another breath', true), 6000);
     }, 4000);
   });
 
