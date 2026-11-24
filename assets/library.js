@@ -5,12 +5,17 @@
   var chips = document.querySelectorAll('.lib-chip');
   var cards = document.querySelectorAll('.lib-grid .lib-card');
   var count = document.querySelector('[data-lib-count]');
-  function applyFilter(cat) {
+  function applyFilter(cat, animate) {
     var shown = 0;
     Array.prototype.forEach.call(cards, function (c) {
       var match = cat === 'all' || c.getAttribute('data-cat') === cat;
       c.hidden = !match;
-      if (match) shown++;
+      if (match) {
+        shown++;
+        if (animate && c.animate) {
+          c.animate([{ opacity: .65 }, { opacity: 1 }], { duration: 200, easing: 'ease-out' });
+        }
+      }
     });
     Array.prototype.forEach.call(chips, function (b) {
       b.setAttribute('aria-pressed', b.getAttribute('data-filter') === cat ? 'true' : 'false');
@@ -18,7 +23,11 @@
     if (count) count.textContent = shown + (shown === 1 ? ' item' : ' items');
   }
   Array.prototype.forEach.call(chips, function (b) {
-    b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
+    b.addEventListener('click', function () {
+      if (b.getAttribute('aria-pressed') === 'true') return;
+      var animate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      applyFilter(b.getAttribute('data-filter'), animate);
+    });
   });
   if (chips.length) applyFilter('all');
 

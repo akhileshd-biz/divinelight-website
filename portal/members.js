@@ -151,7 +151,7 @@ async function openAccount() {
   account = demo ? demoAccount() : await api();
   byId('account').hidden = false;
   const showPreview = !demo && !account.active;
-  byId('account-title').textContent = showPreview ? 'Membership' : 'Your member library';
+  byId('account-title').textContent = showPreview ? 'Personal member library' : 'Your member library';
   byId('member-preview').hidden = !showPreview;
   byId('member-preview-copy').hidden = !showPreview;
   byId('subscription-status').textContent = account.active ? 'Your membership is active.' :
