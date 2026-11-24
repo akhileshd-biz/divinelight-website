@@ -191,9 +191,23 @@
   align-items: center;
   gap: 0 16px;
 }
-.member-hero:has(.member-hero-image:not([hidden])) {
+#account.page:has(.member-hero-image:not([hidden])) {
+  max-width: none;
+  padding: 0;
+}
+#account .member-hero:has(.member-hero-image:not([hidden])) {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin-bottom: 0;
+}
+.member-hero:has(.member-hero-image:not([hidden])) .member-hero-copy {
+  width: 100%;
+  padding: clamp(24px, 5vw, 72px) clamp(16px, 5vw, 72px);
+}
+#account:has(.member-hero-image:not([hidden])) > .downloads {
+  width: min(calc(100% - 32px), 1008px);
+  margin: 24px auto 36px;
 }
 .member-hero-image {
   position: relative;
@@ -202,7 +216,7 @@
   grid-row: 1;
   margin: 0;
   width: 100%;
-  min-height: 220px;
+  min-height: 240px;
   aspect-ratio: 16 / 9;
   isolation: isolate;
 }
@@ -224,22 +238,29 @@
   max-width: 18ch;
   padding: 0 clamp(20px, 4vw, 40px) clamp(18px, 3vw, 32px);
   color: #fff;
-  font: 400 clamp(1.65rem, 3vw, 2.6rem)/1.12 var(--serif);
+  font: 400 clamp(1.7rem, 3.2vw, 3.25rem)/1.12 var(--serif);
   text-shadow: 0 1px 4px #242024;
 }
 .member-preview-copy { margin: 12px 0 16px; }
 .member-preview-copy a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (min-width: 800px) {
-  .member-hero:has(.member-hero-image:not([hidden])) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: clamp(24px, 4vw, 48px);
+  #account .member-hero:has(.member-hero-image:not([hidden])) {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    align-items: center;
   }
-  .member-hero-copy { grid-column: 2; grid-row: 1; }
+  .member-hero:has(.member-hero-image:not([hidden])) .member-hero-copy {
+    max-width: 690px;
+    grid-column: 2;
+    grid-row: 1;
+  }
   .member-hero-image {
     grid-column: 1;
     align-self: stretch;
-    min-height: 320px;
+    min-height: clamp(440px, 39vw, 660px);
     aspect-ratio: auto;
+  }
+  .member-hero-image figcaption {
+    padding: 0 clamp(28px, 5vw, 76px) clamp(32px, 5vw, 72px);
   }
 }
 .members-body .login-art {

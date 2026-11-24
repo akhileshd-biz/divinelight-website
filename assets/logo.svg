@@ -89,20 +89,9 @@
   </g>
 
   
-  <g transform="translate(200,40)">
-    <rect x="-112" y="-6.5" width="224" height="13" rx="6.5" fill="url(#bamboo)" stroke="#7A5220" stroke-width="0.8"></rect>
-    <rect x="-102" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="-95" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
-    <rect x="91" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="98" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
-    <ellipse cx="-70" cy="0" rx="3.6" ry="2.6" fill="#4A2E10"></ellipse>
-    <circle cx="-10" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="6" cy="0" r="2.6" fill="#4A2E10"></circle>
-    <circle cx="22" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="38" cy="0" r="2.6" fill="#4A2E10"></circle>
-    <circle cx="54" cy="0" r="2.6" fill="#4A2E10"></circle><circle cx="70" cy="0" r="2.6" fill="#4A2E10"></circle>
-    <path d="M-100,6 C-106,18 -96,26 -102,38" fill="none" stroke="#874D70" stroke-width="2" stroke-linecap="round"></path>
-    <circle cx="-102" cy="40" r="3" fill="#C9A24A"></circle>
-  </g>
 
   
-  <g transform="translate(200,322)">
+  <g transform="translate(200,317) scale(1.25)">
     <rect x="-112" y="-6.5" width="224" height="13" rx="6.5" fill="url(#bamboo)" stroke="#7A5220" stroke-width="0.8"></rect>
     <rect x="-102" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="-95" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
     <rect x="91" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect><rect x="98" y="-6.5" width="4" height="13" fill="#7A3A2A"></rect>
