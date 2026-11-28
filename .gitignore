@@ -1,7 +1,9 @@
 .netlify
 .DS_Store
 .claude
-media/
+media/*
+!media/i-am-enough-short.mp3
+!media/i-am-enough-long.mp3
 node_modules/
 site-deploy/
 _site
