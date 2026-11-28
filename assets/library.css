@@ -174,3 +174,6 @@ a.lib-card:hover .lib-card-title{color:var(--rose-deep);}
 @media (max-width:640px){.lib-hero,.lib-feature,.lib-browse,.lib-lesson,.lib-cta{padding-left:16px;padding-right:16px;}.lib-crumbs{padding-left:16px;padding-right:16px;}}
 .lib-download{align-self:flex-start;font-size:14px;font-weight:500;color:var(--rose-deep);text-decoration:underline;text-underline-offset:3px;}
 .lib-player.is-unavailable .lib-download{display:none;}
+.lib-versions{display:flex;gap:8px;flex-wrap:wrap;}
+.lib-versions .lib-chip{display:inline-flex;align-items:center;gap:6px;}
+.lib-versions .lib-chip small{font-size:12.5px;opacity:.8;}

@@ -17,6 +17,8 @@ const lessons = [
 // Files a one-time library buyer can download. Add new recordings here.
 const downloads = [
   { id: "relax", title: "Relax", file: "/media/relax.mp3", name: "Divine-Light-Relax.mp3", size: "44 MB" },
+  { id: "i-am-enough-short", title: "I am worthy, I am enough (short)", file: "/media/i-am-enough-short.mp3", name: "Divine-Light-I-Am-Enough-Short.mp3", size: "18 MB" },
+  { id: "i-am-enough-long", title: "I am worthy, I am enough (long)", file: "/media/i-am-enough-long.mp3", name: "Divine-Light-I-Am-Enough-Long.mp3", size: "40 MB" },
 ];
 
 export function isLibraryPurchase(session, libraryPrice) {

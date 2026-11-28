@@ -2,7 +2,7 @@
 // Without JS, every card shows and the plain <audio> controls still work.
 (function () {
   /* ---------- Filters on the library page ---------- */
-  var chips = document.querySelectorAll('.lib-chip');
+  var chips = document.querySelectorAll('.lib-chip[data-filter]');
   var cards = document.querySelectorAll('.lib-grid .lib-card');
   var count = document.querySelector('[data-lib-count]');
   function applyFilter(cat, animate) {
@@ -112,6 +112,32 @@
     audio.playbackRate = speeds[i];
     speedBtn.textContent = speeds[i] + '×';
     speedBtn.setAttribute('aria-label', 'Playback speed ' + speeds[i] + ' times');
+  });
+
+  // Version switch (for lessons with a short and a long recording).
+  var versions = document.querySelectorAll('[data-version-src]');
+  var download = player.querySelector('.lib-download');
+  var subtitle = player.querySelector('.lib-player-title small');
+  Array.prototype.forEach.call(versions, function (b) {
+    b.addEventListener('click', function () {
+      if (b.getAttribute('aria-pressed') === 'true') return;
+      save();
+      audio.pause();
+      Array.prototype.forEach.call(versions, function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      key = 'dl-lib-pos:' + b.getAttribute('data-version-id');
+      player.classList.remove('is-unavailable');
+      msg.textContent = '';
+      audio.src = b.getAttribute('data-version-src');
+      audio.load();
+      dur.textContent = b.getAttribute('data-version-dur') || '0:00';
+      if (subtitle) subtitle.textContent = b.getAttribute('data-version-label');
+      if (download) {
+        download.href = b.getAttribute('data-version-src');
+        download.setAttribute('download', b.getAttribute('data-version-file'));
+        download.textContent = 'Download to listen offline (MP3, ' + b.getAttribute('data-version-size') + ')';
+      }
+      paint();
+    });
   });
 
   // Space toggles play when focus is not on a control that uses it.
